@@ -894,7 +894,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
     }
+    .contact-method:hover { background: rgba(157,142,104,0.06); }
 
     .contact-method-label {
       font-size: 0.58rem;
@@ -1064,9 +1068,9 @@
       background: var(--midnight);
       border-top: 1px solid var(--border);
       padding: 40px 52px 32px 52px;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 24px;
     }
 
@@ -1081,7 +1085,7 @@
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      transform: translateX(20px) translateY(5px);
+      transform: none;
     }
 
     .footer-right {
@@ -1328,14 +1332,6 @@
     </div>
   </section>
 
-  <!-- TAGLINE STRIP -->
-  <div class="tagline-strip">
-    <div class="tagline-inner fade-up">
-      <p class="tagline-small">"Jill and Emma make it easy to be yourself.<br>You come in for a treatment, but you end up staying for the conversation and leave feeling taken care of."</p>
-      <p class="tagline-large">— Susie, client since 2018</p>
-    </div>
-  </div>
-
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="services-header">
@@ -1385,33 +1381,34 @@
       </div>
     </div>
     <div class="contact-methods fade-up">
-      <div class="contact-method">
+      <a class="contact-method" href="mailto:hello@lumalancaster.com">
         <div>
           <div class="contact-method-label">Email</div>
-          <div class="contact-method-value">hello@lumalaser.com</div>
+          <div class="contact-method-value">hello@lumalancaster.com</div>
         </div>
         <span class="contact-method-arrow">↗</span>
-      </div>
-      <div class="contact-method">
+      </a>
+      <a class="contact-method" href="tel:+17172010037">
         <div>
           <div class="contact-method-label">Phone</div>
           <div class="contact-method-value">717-201-0037</div>
         </div>
         <span class="contact-method-arrow">↗</span>
-      </div>
-      <div class="contact-method">
+      </a>
+      <a class="contact-method" href="https://maps.google.com/?q=440+E+Roseville+Road,+Lancaster,+PA+17601" target="_blank" rel="noopener" style="padding-bottom: 35px;">
         <div>
           <div class="contact-method-label">Studio Location</div>
           <div class="contact-method-value">440 E Roseville Road, Lancaster, PA 17601</div>
         </div>
-      </div>
+        <span class="contact-method-arrow">↗</span>
+      </a>
     </div>
   </section>
 
   <!-- CTA BANNER -->
   <div class="cta-banner">
     <p class="section-label fade-up">LUMA Laser & Electrolysis</p>
-    <h2 class="cta-title fade-up">Confidence<br>starts <em>here.</em></h2>
+    <h2 class="cta-title fade-up">Confidence starts <em>here.</em></h2>
   </div>
 
   <!-- FOOTER -->
