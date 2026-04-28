@@ -6,7 +6,7 @@
   <title>LUMA — Laser & Electrolysis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -203,11 +203,11 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
+      
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 52px 72px;
+      justify-content: flex-start;
+      padding: 170px 52px 65px;
       position: relative;
       overflow: hidden;
     }
@@ -215,7 +215,9 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      padding: 60px 0 8px;
+      padding: 0 0 8px;
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-bg {
@@ -262,6 +264,11 @@
       opacity: 0.55;
     }
 
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
     .hero-title {
       font-family: var(--serif);
       font-size: clamp(3.5rem, 7vw, 8rem);
@@ -272,6 +279,9 @@
       position: relative;
       z-index: 1;
       color: var(--linen);
+      animation: heroFadeIn 1s ease forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
     }
 
     .hero-title em {
@@ -281,7 +291,7 @@
     }
 
     .hero-bottom {
-      margin-top: 32px;
+      margin-top: 0;
       margin-bottom: -17px;
       display: flex;
       align-items: flex-end;
@@ -294,10 +304,11 @@
     .hero-sub {
       font-size: 0.95rem;
       color: var(--text-muted);
-      max-width: 425px;
+      max-width: 450px;
       line-height: 1.8;
       font-weight: 300;
-      margin-top: 32px;
+      margin-top: 16px;
+      margin-bottom: 40px;
     }
 
     .hero-actions {
@@ -460,7 +471,7 @@
     .about-story-btn {
       display: inline-block;
       margin-top: 24px;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -648,6 +659,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       padding-right: 24px;
     }
 
@@ -698,6 +710,7 @@
       color: var(--text-dim);
       line-height: 1.78;
       font-weight: 300;
+      max-width: calc(50vw - 104px);
     }
 
     /* ── TEAM ── */
@@ -889,7 +902,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--warm-honey);
-      margin-bottom: 5px;
+      margin-bottom: 20px;
       opacity: 0.65;
     }
 
@@ -1175,7 +1188,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--linen);
+      background: #9D8E68;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       padding: 0;
@@ -1184,15 +1197,15 @@
 
     .tagline-inner {
       text-align: center;
-      max-width: 800px;
+      max-width: 810px;
       padding: 0 24px;
     }
 
     .tagline-small {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-style: italic;
       font-size: 2rem;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: -0.01em;
       color: var(--midnight);
       line-height: 1.3;
@@ -1217,7 +1230,7 @@
       .nav-links a { font-size: 0.75rem; }
       .nav-cta { padding: 7px 14px; font-size: 0.75rem; }
       section { padding: 36px 28px 80px; }
-      .hero { padding: 0 28px 80px; }
+      .hero { padding: 170px 28px 65px; }
       .hero-bottom { flex-direction: column; align-items: flex-start; gap: 28px; }
       .about-inner { grid-template-columns: 1fr; gap: 52px; }
       .about-visual { height: 360px; }
@@ -1260,8 +1273,8 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <p class="hero-eyebrow fade-up">Lancaster, PA · Since 1989</p>
-      <h1 class="hero-title fade-up"><span style="white-space: nowrap;">36 Years of Experience.</span><br><em>Care You Can Trust.</em></h1>
-      <p class="hero-sub fade-up">Luma Laser and Electrolysis is a family-owned practice in Lancaster, PA, built on 36 years of experience in laser hair removal, electrolysis, and skin resurfacing. We're here to help you feel confident, comfortable, and truly cared for.</p>
+      <h1 class="hero-title"><span style="white-space: nowrap;">36 Years of Experience.</span><br><em style="white-space: nowrap;">Care You Can Trust.</em></h1>
+      <p class="hero-sub fade-up">Luma Laser and Electrolysis is a family-owned practice in Lancaster, PA, built on 36 years of experience in laser hair removal, electrolysis, and skin resurfacing.</p>
       <div class="hero-bottom">
         <div class="hero-actions fade-up">
           <a href="#contact" class="btn-primary">Book a Consultation</a>
@@ -1283,6 +1296,7 @@
       <span class="marquee-item">Acne Laser Therapy</span><span class="marquee-dot"> ✦ </span>
       <span class="marquee-item">Gender Affirming Hair Removal</span><span class="marquee-dot"> ✦ </span>
       <span class="marquee-item">Red Vein & Brown Spot Removal</span><span class="marquee-dot"> ✦ </span>
+      <span class="marquee-item">Helix Skin Resurfacing</span><span class="marquee-dot"> ✦ </span>
       <!-- duplicate for seamless loop -->
       <span class="marquee-item">Inclusive Studio</span><span class="marquee-dot"> ✦ </span>
       <span class="marquee-item">Trusted Expertise</span><span class="marquee-dot"> ✦ </span>
@@ -1292,6 +1306,7 @@
       <span class="marquee-item">Acne Laser Therapy</span><span class="marquee-dot"> ✦ </span>
       <span class="marquee-item">Gender Affirming Hair Removal</span><span class="marquee-dot"> ✦ </span>
       <span class="marquee-item">Red Vein & Brown Spot Removal</span><span class="marquee-dot"> ✦ </span>
+      <span class="marquee-item">Helix Skin Resurfacing</span><span class="marquee-dot"> ✦ </span>
     </div>
   </div>
 
@@ -1301,8 +1316,8 @@
       <div>
         <p class="section-label fade-up">About LUMA</p>
         <h2 class="section-title fade-up" style="white-space: nowrap;">A place where you <em>belong.</em></h2>
-        <p class="about-body fade-up">LUMA Laser and Electrolysis is a  studio created by Jill Sherman and Emma Schutte. We offer laser hair removal, electrolysis, and skin treatments with a focus on thoughtful care, expertise, and results.</p>
-        <p class="about-body fade-up">Founded on the belief that clinical shouldn't feel cold, we've created something different. Our space is a reflection of who we are—thoughtful, warm, and personal. It's designed to feel less like a place of service and more like an extension of our home. A place where you can settle in and feel comfortable.</p>
+        <p class="about-body fade-up">LUMA Laser and Electrolysis is a  studio created by Jill Sherman and Emma Schutte.<br>We offer laser hair removal, electrolysis, and skin treatments with a focus<br>on thoughtful care, expertise, and results.</p>
+        <p class="about-body fade-up">Founded on the belief that clinical shouldn't feel cold, we've created something different.<br>Our space is a reflection of who we are—thoughtful, warm, and personal. It's designed to<br>feel less like a place of service and more like an extension of our home. A place where you<br>can settle in and feel comfortable.</p>
         <a href="#contact" class="about-story-btn fade-up">Learn More About Our Story</a>
       </div>
     </div>
@@ -1316,7 +1331,7 @@
   <!-- TAGLINE STRIP -->
   <div class="tagline-strip">
     <div class="tagline-inner fade-up">
-      <p class="tagline-small">"Jill and Emma make it easy to be yourself. You come in for a treatment, but you end up staying for the conversation and leave feeling taken care of."</p>
+      <p class="tagline-small">"Jill and Emma make it easy to be yourself.<br>You come in for a treatment, but you end up staying for the conversation and leave feeling taken care of."</p>
       <p class="tagline-large">— Susie, client since 2018</p>
     </div>
   </div>
@@ -1438,9 +1453,16 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-up').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
   </script>
 </body>
 </html>
