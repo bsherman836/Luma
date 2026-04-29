@@ -1277,7 +1277,7 @@
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         border-bottom: 1px solid rgba(224,216,195,0.08) !important;
-        box-shadow: none !important;
+        box-shadow: 0 -9999px 0 9999px #1f211c !important;
         transition: none !important;
         display: flex !important;
         align-items: center !important;
@@ -1375,14 +1375,6 @@
       .hero-title-mobile { display: block; }
       body { overscroll-behavior-y: none; }
       .mobile-nav-cap { display: none; }
-      nav::before {
-        content: '';
-        position: absolute;
-        top: -100vh;
-        left: 0; right: 0;
-        height: 100vh;
-        background: #1f211c;
-      }
       /* HERO */
       .hero { padding: 104px 24px 24px; }
       .hero-title {
