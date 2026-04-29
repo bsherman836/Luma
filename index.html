@@ -1374,13 +1374,14 @@
       .hero-title-desktop { display: none; }
       .hero-title-mobile { display: block; }
       body { overscroll-behavior-y: none; }
-      .mobile-nav-cap {
-        display: block;
-        position: fixed;
-        top: 0; left: 0; right: 0;
-        height: 20px;
+      .mobile-nav-cap { display: none; }
+      nav::before {
+        content: '';
+        position: absolute;
+        top: -60px;
+        left: 0; right: 0;
+        height: 60px;
         background: #1f211c;
-        z-index: 300;
       }
       /* HERO */
       .hero { padding: 104px 24px 24px; }
