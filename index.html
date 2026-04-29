@@ -1372,6 +1372,8 @@
 
       .hero-title-desktop { display: none; }
       .hero-title-mobile { display: block; }
+      body { overscroll-behavior-y: none; }
+      body::before { background: #1f211c; opacity: 1; z-index: 201; height: env(safe-area-inset-top, 0px); }
       /* HERO */
       .hero { padding: 104px 24px 24px; }
       .hero-title {
