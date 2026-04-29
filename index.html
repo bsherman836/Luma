@@ -1705,15 +1705,5 @@
     });
   </script>
 
-  <script>
-    if (window.visualViewport && window.innerWidth <= 768) {
-      const navEl2 = document.querySelector('nav');
-      function pinNav() {
-        navEl2.style.top = window.visualViewport.offsetTop + 'px';
-      }
-      window.visualViewport.addEventListener('resize', pinNav);
-      window.visualViewport.addEventListener('scroll', pinNav);
-    }
-  </script>
 </body>
 </html>
