@@ -1268,10 +1268,10 @@
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
-        height: 80px !important;
-        min-height: 80px !important;
-        max-height: 80px !important;
-        padding: 0 24px !important;
+        height: calc(80px + env(safe-area-inset-top, 0px)) !important;
+        min-height: calc(80px + env(safe-area-inset-top, 0px)) !important;
+        max-height: calc(80px + env(safe-area-inset-top, 0px)) !important;
+        padding: env(safe-area-inset-top, 0px) 24px 0 !important;
         background: #1f211c !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
@@ -1425,6 +1425,7 @@
       footer { flex-direction: column; align-items: flex-start; gap: 32px; padding: 40px 24px 32px; }
       .footer-center { align-items: flex-start; transform: none; }
       .footer-links { flex-wrap: wrap; gap: 16px; }
+      .footer-social a:active { border-color: var(--warm-honey); color: var(--warm-honey); }
     }
   </style>
 </head>
