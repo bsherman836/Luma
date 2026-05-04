@@ -970,6 +970,16 @@
     .testimonial-card:hover .star:nth-child(3) { animation-delay: 0.18s; }
     .testimonial-card:hover .star:nth-child(4) { animation-delay: 0.27s; }
     .testimonial-card:hover .star:nth-child(5) { animation-delay: 0.36s; }
+    @media (min-width: 901px) {
+      .testimonial-card.stars-active .star { animation: star-light 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.half { animation: star-light-half 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.empty { animation: none; }
+      .testimonial-card.stars-active .star:nth-child(1) { animation-delay: 0s; }
+      .testimonial-card.stars-active .star:nth-child(2) { animation-delay: 0.09s; }
+      .testimonial-card.stars-active .star:nth-child(3) { animation-delay: 0.18s; }
+      .testimonial-card.stars-active .star:nth-child(4) { animation-delay: 0.27s; }
+      .testimonial-card.stars-active .star:nth-child(5) { animation-delay: 0.36s; }
+    }
     .testimonial-quote {
       font-family: var(--serif);
       font-style: italic;
@@ -1241,6 +1251,14 @@
       /* Mobile review slider */
       .testimonials-track-wrapper { -webkit-mask-image: none; mask-image: none; overflow: hidden; width: 100%; }
       .testimonials-track { animation: none !important; display: flex; gap: 0; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
+      .testimonial-card.stars-active .star { animation: star-light 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.half { animation: star-light-half 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.empty { animation: none; }
+      .testimonial-card.stars-active .star:nth-child(1) { animation-delay: 0s; }
+      .testimonial-card.stars-active .star:nth-child(2) { animation-delay: 0.09s; }
+      .testimonial-card.stars-active .star:nth-child(3) { animation-delay: 0.18s; }
+      .testimonial-card.stars-active .star:nth-child(4) { animation-delay: 0.27s; }
+      .testimonial-card.stars-active .star:nth-child(5) { animation-delay: 0.36s; }
       .testimonial-card { margin: 0; box-sizing: border-box; flex-shrink: 0; }
       .mobile-review-nav { display: flex !important; align-items: center; justify-content: center; gap: 20px; padding: 20px 28px 0; }
       .mobile-nav-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--warm-honey); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; flex-shrink: 0; }
@@ -1267,6 +1285,7 @@
       .cta-banner { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 280px; padding-top: 60px; padding-bottom: 60px; }
       .cta-banner .section-label { justify-content: center; }
       .cta-title { text-align: center; margin-top: 6px; }
+      .svc-row-break { display: none; }
       footer { display: grid; grid-template-areas: "left right" "center center"; grid-template-columns: 1fr auto; align-items: center; text-align: left; padding: 36px 28px 28px; gap: 20px 0; }
       .footer-left { grid-area: left; justify-content: flex-start; align-items: flex-start; }
       .footer-center { grid-area: center; align-items: flex-start; gap: 14px; }
@@ -1322,7 +1341,7 @@
         <span class="svc-tag">All Skin Tones</span>
         <span class="svc-tag">FDA-Cleared</span>
         <span class="svc-tag">Permanent Reduction</span>
-        <span style="flex-basis:100%;height:0;"></span>
+        <span class="svc-row-break" style="flex-basis:100%;height:0;"></span>
         <span class="svc-tag">No Downtime</span>
         <span class="svc-tag">Personalized Plans</span>
       </div>
@@ -1876,6 +1895,26 @@
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
 
+    // Desktop: trigger stars when card reaches viewport center
+    if (window.innerWidth > 900) {
+      const starObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const card = entry.target;
+          if (entry.isIntersecting) {
+            card.classList.remove('stars-active');
+            void card.offsetWidth; // restart animation
+            card.classList.add('stars-active');
+          } else {
+            card.classList.remove('stars-active');
+          }
+        });
+      }, {
+        rootMargin: '0px -42% 0px -42%',
+        threshold: 0
+      });
+      document.querySelectorAll('.testimonial-card').forEach(c => starObserver.observe(c));
+    }
+
     // Mobile review slider
     (function() {
       if (window.innerWidth > 900) return;
@@ -1913,6 +1952,9 @@
         dotsContainer.querySelectorAll('.mobile-nav-dot').forEach((d, i) => {
           d.classList.toggle('active', i === current);
         });
+        // Trigger star animation on the card sliding into view
+        cards.forEach(c => c.classList.remove('stars-active'));
+        setTimeout(() => cards[current].classList.add('stars-active'), 350);
       }
 
       nav.querySelector('.mobile-nav-prev').addEventListener('click', () => goTo(current - 1));
