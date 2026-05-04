@@ -1226,7 +1226,6 @@
       .contact-form { padding: 36px 28px; }
       .form-row { grid-template-columns: 1fr; }
       .cta-banner { padding: 96px 28px; }
-      footer { flex-direction: column; align-items: flex-start; padding-left: 28px; padding-right: 28px; }
       .footer-links { flex-wrap: wrap; }
     }
 
@@ -1400,9 +1399,14 @@
       .cta-title { font-size: clamp(2.4rem, 10vw, 3.2rem); }
 
       /* FOOTER */
-      footer { flex-direction: column; align-items: flex-start; gap: 32px; padding: 40px 24px 32px; }
-      .footer-center { align-items: flex-start; transform: none; }
-      .footer-links { flex-wrap: wrap; gap: 16px; }
+      footer { display: grid; grid-template-areas: "left right" "center center"; grid-template-columns: 1fr auto; align-items: center; text-align: left; padding: 36px 28px 28px; gap: 20px 0; }
+      .footer-left { grid-area: left; justify-content: flex-start; align-items: flex-start; }
+      .footer-center { grid-area: center; align-items: flex-start; gap: 14px; transform: none; }
+      .footer-links { flex-wrap: wrap; justify-content: flex-start; gap: 14px 24px; }
+      .footer-right { grid-area: right; align-items: flex-end; justify-content: flex-start; }
+      .footer-social { flex-direction: column; gap: 3px; }
+      .footer-social a { width: 26px; height: 26px; }
+      .footer-social svg { width: 13px; height: 13px; }
       .footer-social a:active { border-color: var(--warm-honey); color: var(--warm-honey); }
     }
   </style>
