@@ -801,6 +801,79 @@
         inset -1px -1px 4px rgba(255,255,255,0.06);
     }
 
+    /* ── TECHNOLOGY ── */
+    .svc-technology {
+      background: #353B31;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-items: stretch;
+      min-height: 480px;
+    }
+    .tech-left {
+      padding: 60px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .tech-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      color: var(--linen);
+      line-height: 1.08;
+      margin-bottom: 28px;
+    }
+    .tech-heading em { font-style: italic; }
+    .tech-body {
+      font-size: 0.95rem;
+      line-height: 1.82;
+      color: var(--sandstone);
+      font-weight: 300;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .tech-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+    .tech-spec {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tech-spec-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+    }
+    .tech-spec-value {
+      font-size: 0.88rem;
+      color: var(--sandstone);
+      text-align: right;
+    }
+    .tech-right {
+      position: relative;
+      overflow: hidden;
+      background: #353B31;
+    }
+    .tech-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+
     /* ── TESTIMONIALS ── */
     .svc-testimonials {
       background: #353B31;
@@ -1230,6 +1303,18 @@
       <span class="area-item">Upper / Lower Lip</span>
       <span class="area-item">Lip + Chin</span>
       <span class="area-item">Lip + Chin + Neck</span>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="svc-technology" id="technology">
+    <div class="tech-left">
+      <p class="section-label fade-up">Our Technology</p>
+      <h2 class="tech-heading fade-up">Clarity II<br><em>by Lutronic.</em></h2>
+      <p class="tech-body fade-up">We invested in the Clarity II because we believe every client deserves the best. It's one of the most advanced laser systems available — powerful enough to deliver lasting results, yet gentle enough for even the most sensitive skin. Treatments are quick, comfortable, and require no downtime — most clients are back to their day within the hour.</p>
+    </div>
+    <div class="tech-right">
+      <img class="tech-img" src="images/clarity-ii.webp" alt="Clarity II by Lutronic" />
     </div>
   </section>
 
