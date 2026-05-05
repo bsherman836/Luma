@@ -1166,6 +1166,78 @@
       transition: background 0.2s;
     }
     .service-learn-more:hover { background: var(--sandstone); }
+
+    /* Rainbow + sparkle hover for Gender Affirming Care */
+    .service-learn-more.pride {
+      position: relative;
+      overflow: visible;
+      transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-learn-more.pride:hover {
+      background: linear-gradient(90deg,
+        #e63946 0%,
+        #f4a261 16.6%,
+        #f1c40f 33.3%,
+        #2a9d8f 50%,
+        #4361ee 66.6%,
+        #7b2cbf 83.3%,
+        #e63946 100%);
+      background-size: 200% 100%;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.3),
+        0 0 24px rgba(255,180,220,0.45);
+      animation: pride-shift 2.4s linear infinite;
+    }
+    @keyframes pride-shift {
+      from { background-position: 0% 50%; }
+      to   { background-position: 200% 50%; }
+    }
+
+    /* Big anchor sparkle (top-left) */
+    .service-learn-more.pride::before {
+      content: '\2726';
+      position: absolute;
+      top: -10px;
+      left: -8px;
+      font-size: 0.95rem;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.95), 0 0 14px rgba(255,200,255,0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .service-learn-more.pride:hover::before {
+      opacity: 1;
+      animation: pride-spin 1.8s linear infinite;
+    }
+    @keyframes pride-spin {
+      0%   { transform: scale(0.5) rotate(0deg);   opacity: 0.4; }
+      50%  { transform: scale(1.2) rotate(180deg); opacity: 1; }
+      100% { transform: scale(0.5) rotate(360deg); opacity: 0.4; }
+    }
+
+    /* Sparkle field overlay */
+    .service-learn-more.pride::after {
+      content: '';
+      position: absolute;
+      inset: -14px -12px;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 60'><g fill='white'><path d='M30 12 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M90 6 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M150 14 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M200 8 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M50 50 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M120 48 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M180 50 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/></g></svg>");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .service-learn-more.pride:hover::after {
+      opacity: 1;
+      animation: pride-twinkle 1.2s ease-in-out infinite;
+    }
+    @keyframes pride-twinkle {
+      0%, 100% { opacity: 0.45; transform: scale(0.95); }
+      50%      { opacity: 1;    transform: scale(1.05); }
+    }
     .tagline-strip {
       display: flex;
       align-items: center;
@@ -1539,7 +1611,7 @@
         <div class="service-card-content">
           <h3 class="service-title">Gender Affirming Care</h3>
           <p class="service-desc">We proudly offer a welcoming, inclusive, and affirming space for LGBTQIA+ clients seeking electrolysis and laser hair removal services. We understand that gender-affirming hair removal is a deeply personal journey, and our goal is to offer compassionate care tailored to your needs.</p>
-          <a href="#contact" class="service-learn-more">Learn More</a>
+          <a href="#contact" class="service-learn-more pride">Learn More</a>
         </div>
         <div class="service-card-img" style="background: url('images/gender-affirming-care.webp') center/cover no-repeat;"></div>
       </div>
