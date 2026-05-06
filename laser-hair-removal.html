@@ -526,7 +526,7 @@
       grid-template-columns: 72px 1fr;
       column-gap: 52px;
       row-gap: 0;
-      align-items: end;
+      align-items: start;
       transition: background 0.35s;
     }
     .process-step::before {
@@ -550,8 +550,8 @@
       opacity: 0.18;
       line-height: 1;
       grid-column: 1;
-      grid-row: 1;
-      align-self: end;
+      grid-row: 1 / span 2;
+      align-self: start;
     }
     .process-step-text { grid-column: 2; grid-row: 1; }
     .process-title {
@@ -562,14 +562,14 @@
       margin-bottom: 0;
     }
     .process-body {
-      grid-column: 1 / -1;
+      grid-column: 2;
       grid-row: 2;
       font-size: 0.9rem;
       line-height: 1.78;
       color: var(--sandstone);
       font-weight: 300;
       max-width: 680px;
-      margin-top: 12px;
+      margin-top: 5px;
     }
 
     /* ── EXPECT ── */
@@ -1229,10 +1229,10 @@
       .mobile-menu-link:first-child { border-top: 1px solid var(--border); }
       .mobile-menu-link:hover { color: var(--warm-honey); }
       .process-grid, .expect-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
-      .process-step { grid-template-columns: 44px 1fr; column-gap: 12px; padding: 22px 18px; }
-      .process-num { font-size: 2.2rem; }
+      .process-step { grid-template-columns: 44px 1fr; column-gap: 12px; padding: 22px 18px; align-items: end; }
+      .process-num { font-size: 2.2rem; grid-row: 1; align-self: end; }
       .process-title { font-size: 1.2rem; }
-      .process-body { margin-top: 10px; }
+      .process-body { grid-column: 1 / -1; margin-top: 10px; }
       .svc-process, .svc-expect, .svc-pricing, .svc-personal, .svc-testimonials, .svc-before, .svc-post, .contact-section, .cta-banner { padding-left: 28px; padding-right: 28px; }
       .svc-process { padding-left: 16px; padding-right: 16px; padding-bottom: 50px; }
       .areas-subtext br { display: none; }
