@@ -782,7 +782,7 @@
 
     /* ── POST TREATMENT ── */
     .svc-post {
-      background: #1F211C;
+      background: var(--moss);
       padding: 54px 52px 60px;
       border-top: 1px solid var(--border);
     }
@@ -901,125 +901,6 @@
       object-fit: contain;
       object-position: center center;
       z-index: 2;
-    }
-
-    /* ── TESTIMONIALS ── */
-    .svc-testimonials {
-      background: #4A5443;
-      padding: 60px 0;
-      overflow: hidden;
-    }
-    .svc-testimonials-heading {
-      font-family: var(--serif);
-      font-size: clamp(2.4rem, 4vw, 4rem);
-      font-weight: 400;
-      color: var(--linen);
-      margin-bottom: 56px;
-      max-width: 700px;
-      padding: 0 52px;
-    }
-    .svc-testimonials .section-label {
-      padding: 0 52px;
-    }
-    /* Marquee */
-    @keyframes testimonials-scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .testimonials-track-wrapper {
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    }
-    .testimonials-track {
-      display: flex;
-      gap: 24px;
-      width: max-content;
-      animation: testimonials-scroll 32s linear infinite;
-    }
-    .testimonials-track:hover {
-      animation-play-state: paused;
-    }
-    .testimonial-card {
-      background: var(--juniper);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 36px 32px;
-      width: 420px;
-      flex-shrink: 0;
-    }
-    @keyframes star-light {
-      0%   { color: var(--warm-honey); text-shadow: none; }
-      55%  { color: #FFE898; text-shadow: 0 0 10px rgba(255,220,100,1), 0 0 22px rgba(255,200,60,0.7), 0 0 36px rgba(255,170,30,0.4); }
-      100% { color: #FFD97A; text-shadow: 0 0 6px rgba(255,210,80,0.8), 0 0 14px rgba(255,190,50,0.4); }
-    }
-    @keyframes star-light-half {
-      0%   { color: rgba(157,142,104,0.4); text-shadow: none; }
-      55%  { color: rgba(255,220,100,0.65); text-shadow: 0 0 8px rgba(255,210,80,0.5); }
-      100% { color: rgba(255,200,80,0.5); text-shadow: 0 0 4px rgba(255,190,50,0.3); }
-    }
-    .testimonial-stars { font-size: 1rem; letter-spacing: 1px; }
-    .star { color: var(--warm-honey); display: inline-block; }
-    .star.half { color: rgba(157,142,104,0.4); }
-    .star.empty { color: rgba(157,142,104,0.15); }
-    .testimonial-card:hover .star { animation: star-light 0.5s ease-out both; }
-    .testimonial-card:hover .star.half { animation: star-light-half 0.5s ease-out both; }
-    .testimonial-card:hover .star.empty { animation: none; }
-    .testimonial-card:hover .star:nth-child(1) { animation-delay: 0s; }
-    .testimonial-card:hover .star:nth-child(2) { animation-delay: 0.09s; }
-    .testimonial-card:hover .star:nth-child(3) { animation-delay: 0.18s; }
-    .testimonial-card:hover .star:nth-child(4) { animation-delay: 0.27s; }
-    .testimonial-card:hover .star:nth-child(5) { animation-delay: 0.36s; }
-    @media (min-width: 901px) {
-      .testimonial-card.stars-active .star { animation: star-light 0.5s ease-out both; }
-      .testimonial-card.stars-active .star.half { animation: star-light-half 0.5s ease-out both; }
-      .testimonial-card.stars-active .star.empty { animation: none; }
-      .testimonial-card.stars-active .star:nth-child(1) { animation-delay: 0s; }
-      .testimonial-card.stars-active .star:nth-child(2) { animation-delay: 0.09s; }
-      .testimonial-card.stars-active .star:nth-child(3) { animation-delay: 0.18s; }
-      .testimonial-card.stars-active .star:nth-child(4) { animation-delay: 0.27s; }
-      .testimonial-card.stars-active .star:nth-child(5) { animation-delay: 0.36s; }
-    }
-    .testimonial-quote {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.02rem;
-      line-height: 1.72;
-      color: var(--linen);
-      margin-top: 18px;
-    }
-    .testimonial-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 22px 0;
-    }
-    .testimonial-footer {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .testimonial-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 1px solid var(--border);
-    }
-    .testimonial-meta { display: flex; flex-direction: column; }
-    .testimonial-name {
-      font-family: var(--sans);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--warm-honey);
-    }
-    .testimonial-source {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      margin-top: 3px;
     }
 
     /* ── CONTACT ── */
@@ -1157,7 +1038,6 @@
     .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
 
     /* Hide mobile-only elements on desktop */
-    .mobile-review-nav { display: none; }
     .footer-book-btn { display: none; }
 
     /* ── RESPONSIVE ── */
@@ -1228,12 +1108,12 @@
       }
       .mobile-menu-link:first-child { border-top: 1px solid var(--border); }
       .mobile-menu-link:hover { color: var(--warm-honey); }
-      .process-grid, .expect-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+      .process-grid, .expect-grid, .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
       .process-step { grid-template-columns: 44px 1fr; column-gap: 12px; padding: 22px 18px; align-items: end; }
       .process-num { font-size: 2.2rem; grid-row: 1; align-self: end; }
       .process-title { font-size: 1.2rem; }
       .process-body { grid-column: 1 / -1; margin-top: 10px; }
-      .svc-process, .svc-expect, .svc-pricing, .svc-personal, .svc-testimonials, .svc-before, .svc-post, .contact-section, .cta-banner { padding-left: 28px; padding-right: 28px; }
+      .svc-process, .svc-expect, .svc-pricing, .svc-personal, .svc-before, .svc-post, .contact-section, .cta-banner { padding-left: 28px; padding-right: 28px; }
       .svc-process { padding-left: 16px; padding-right: 16px; padding-bottom: 50px; }
       .areas-subtext br { display: none; }
       .before-label br { display: none; }
@@ -1244,27 +1124,7 @@
       .svc-overview-left { padding: 35px 28px 72px; }
       .svc-overview-right { padding: 35px 28px 72px; border-left: none; border-top: 1px solid var(--border); }
       .svc-overview-areas { padding: 35px 28px 72px; grid-template-columns: 1fr; gap: 36px; }
-      .svc-process, .svc-before, .svc-post, .svc-testimonials, .contact-section, .cta-banner { padding-top: 35px; }
-      .svc-testimonials { padding-bottom: 50px; }
-      .svc-testimonials-heading { padding-left: 0 !important; padding-right: 0 !important; }
-      .svc-testimonials .section-label { padding-left: 0 !important; padding-right: 0 !important; }
-      /* Mobile review slider */
-      .testimonials-track-wrapper { -webkit-mask-image: none; mask-image: none; overflow: hidden; width: 100%; }
-      .testimonials-track { animation: none !important; display: flex; gap: 0; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
-      .testimonial-card.stars-active .star { animation: star-light 0.5s ease-out both; }
-      .testimonial-card.stars-active .star.half { animation: star-light-half 0.5s ease-out both; }
-      .testimonial-card.stars-active .star.empty { animation: none; }
-      .testimonial-card.stars-active .star:nth-child(1) { animation-delay: 0s; }
-      .testimonial-card.stars-active .star:nth-child(2) { animation-delay: 0.09s; }
-      .testimonial-card.stars-active .star:nth-child(3) { animation-delay: 0.18s; }
-      .testimonial-card.stars-active .star:nth-child(4) { animation-delay: 0.27s; }
-      .testimonial-card.stars-active .star:nth-child(5) { animation-delay: 0.36s; }
-      .testimonial-card { margin: 0; box-sizing: border-box; flex-shrink: 0; }
-      .mobile-review-nav { display: flex !important; align-items: center; justify-content: center; gap: 20px; padding: 20px 28px 0; }
-      .mobile-nav-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--warm-honey); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; flex-shrink: 0; }
-      .mobile-nav-btn:hover { background: rgba(157,142,104,0.12); }
-      .mobile-nav-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--warm-honey); opacity: 0.3; margin: 0 3px; cursor: pointer; transition: opacity 0.2s; }
-      .mobile-nav-dot.active { opacity: 1; }
+      .svc-process, .svc-before, .svc-post, .contact-section, .cta-banner { padding-top: 35px; }
       .svc-technology { grid-template-columns: 1fr; min-height: unset; }
       .tech-left { padding: 35px 28px 32px; }
       .tech-right { height: 280px; overflow: hidden; }
@@ -1572,222 +1432,6 @@
 
     </div>
   </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="svc-testimonials" id="testimonials">
-    <p class="section-label fade-up">Patient Reviews</p>
-    <h2 class="svc-testimonials-heading fade-up">See what<br>our patients<br><em>are saying.</em></h2>
-    <div class="testimonials-track-wrapper">
-      <div class="testimonials-track">
-
-        <!-- Set 1 -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;I&#x2019;ve been going to Jill &amp; Emma for a year and the difference is remarkable. Jill and Emma are so knowledgeable and put me completely at ease from day one. After six sessions I&#x2019;ve seen an incredible reduction. I wish I&#x2019;d started sooner!&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Sarah+M&background=6B7A62&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Sarah M." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Sarah M.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;As someone with darker skin, I was nervous about laser hair removal. The team at Luma was incredibly thorough during the consultation, explained exactly how they&#x2019;d calibrate the settings, and made me feel so comfortable. Truly the best experience.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Taylor+R&background=5C4A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Taylor R." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Taylor R.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;The studio itself is beautiful &#x2014; warm and calm. But beyond the atmosphere, the results speak for themselves. I&#x2019;m six sessions in and barely need to shave anymore. Highly recommend Luma to anyone considering laser hair removal.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Melissa+K&background=3A4A55&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Melissa K." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Melissa K.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cards 4–8 (first pass) -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;As a trans woman, finding someone I could truly trust to treat me felt impossible. Jill approached my care with such sensitivity and never made me feel like anything other than exactly who I am.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Riley+M&background=7A4A6B&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Riley M." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Riley M.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;Jill and Emma create a space where everyone is genuinely welcome. As a non-binary person I never once felt judged or misunderstood &#x2014; they listened to my specific goals and treated me with complete respect. The results speak for themselves, but the care is what keeps me coming back.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Jordan+T&background=4A6B8A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Jordan T." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Jordan T.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;I&#x2019;ve followed Jill for years and she never disappoints. The level of care she brings to every appointment is unlike anything I&#x2019;ve experienced elsewhere. She genuinely cares about your results &#x2014; not just getting you in and out.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Rachel+H&background=5C5A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Rachel H." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Rachel H.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;What sets Jill and Emma apart is how personal it feels. They remember everything &#x2014; your skin, your goals, even what you talked about last time. You&#x2019;re never just another appointment. I won&#x2019;t go anywhere else.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Camille+B&background=3A5C5A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Camille B." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Camille B.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;A close friend raved about Jill and Emma for months before I finally made an appointment. I completely understand the hype now. The expertise, the warmth, the results &#x2014; they&#x2019;re truly in a league of their own.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Nicole+S&background=5C3A4A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Nicole S." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Nicole S.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Set 2 (duplicate all 8 for seamless loop) -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;I&#x2019;ve been going to Jill &amp; Emma for a year and the difference is remarkable. Jill and Emma are so knowledgeable and put me completely at ease from day one. After six sessions I&#x2019;ve seen an incredible reduction. I wish I&#x2019;d started sooner!&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Sarah+M&background=6B7A62&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Sarah M." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Sarah M.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;As someone with darker skin, I was nervous about laser hair removal. The team at Luma was incredibly thorough during the consultation, explained exactly how they&#x2019;d calibrate the settings, and made me feel so comfortable. Truly the best experience.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Taylor+R&background=5C4A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Taylor R." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Taylor R.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;The studio itself is beautiful &#x2014; warm and calm. But beyond the atmosphere, the results speak for themselves. I&#x2019;m six sessions in and barely need to shave anymore. Highly recommend Luma to anyone considering laser hair removal.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Melissa+K&background=3A4A55&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Melissa K." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Melissa K.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;As a trans woman, finding someone I could truly trust to treat me felt impossible. Jill approached my care with such sensitivity and never made me feel like anything other than exactly who I am.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Riley+M&background=7A4A6B&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Riley M." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Riley M.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;Jill and Emma create a space where everyone is genuinely welcome. As a non-binary person I never once felt judged or misunderstood &#x2014; they listened to my specific goals and treated me with complete respect. The results speak for themselves, but the care is what keeps me coming back.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Jordan+T&background=4A6B8A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Jordan T." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Jordan T.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;I&#x2019;ve followed Jill for years and she never disappoints. The level of care she brings to every appointment is unlike anything I&#x2019;ve experienced elsewhere. She genuinely cares about your results &#x2014; not just getting you in and out.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Rachel+H&background=5C5A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Rachel H." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Rachel H.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="testimonial-quote">&#x201C;What sets Jill and Emma apart is how personal it feels. They remember everything &#x2014; your skin, your goals, even what you talked about last time. You&#x2019;re never just another appointment. I won&#x2019;t go anywhere else.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Camille+B&background=3A5C5A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Camille B." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Camille B.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
-          <p class="testimonial-quote">&#x201C;A close friend raved about Jill and Emma for months before I finally made an appointment. I completely understand the hype now. The expertise, the warmth, the results &#x2014; they&#x2019;re truly in a league of their own.&#x201D;</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Nicole+S&background=5C3A4A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Nicole S." />
-            <div class="testimonial-meta">
-              <div class="testimonial-name">Nicole S.</div>
-              <div class="testimonial-source">via Google</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!-- Mobile arrow nav (hidden on desktop via CSS) -->
-    <div class="mobile-review-nav" aria-hidden="true">
-      <button class="mobile-nav-btn mobile-nav-prev" aria-label="Previous review">&#8592;</button>
-      <div class="mobile-nav-dots"></div>
-      <button class="mobile-nav-btn mobile-nav-next" aria-label="Next review">&#8594;</button>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="contact-grid">
@@ -1894,75 +1538,6 @@
       });
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
-
-    // Desktop: trigger stars when card reaches viewport center
-    if (window.innerWidth > 900) {
-      const starObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const card = entry.target;
-          if (entry.isIntersecting) {
-            card.classList.remove('stars-active');
-            void card.offsetWidth; // restart animation
-            card.classList.add('stars-active');
-          } else {
-            card.classList.remove('stars-active');
-          }
-        });
-      }, {
-        rootMargin: '0px -42% 0px -42%',
-        threshold: 0
-      });
-      document.querySelectorAll('.testimonial-card').forEach(c => starObserver.observe(c));
-    }
-
-    // Mobile review slider
-    (function() {
-      if (window.innerWidth > 900) return;
-      const wrapper = document.querySelector('.testimonials-track-wrapper');
-      const track = document.querySelector('.testimonials-track');
-      const nav = document.querySelector('.mobile-review-nav');
-      if (!track || !nav) return;
-
-      const allCards = Array.from(track.querySelectorAll('.testimonial-card'));
-      const cards = allCards.slice(0, 8);
-      allCards.slice(8).forEach(c => c.style.display = 'none');
-
-      // Force layout: each card = wrapper width
-      function resize() {
-        const w = wrapper.offsetWidth;
-        track.style.width = (w * cards.length) + 'px';
-        cards.forEach(c => { c.style.width = w + 'px'; c.style.minWidth = w + 'px'; c.style.maxWidth = w + 'px'; });
-        goTo(current);
-      }
-
-      let current = 0;
-      const dotsContainer = nav.querySelector('.mobile-nav-dots');
-
-      cards.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.className = 'mobile-nav-dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
-      });
-
-      function goTo(index) {
-        current = (index + cards.length) % cards.length;
-        const w = wrapper.offsetWidth;
-        track.style.transform = 'translateX(' + (-current * w) + 'px)';
-        dotsContainer.querySelectorAll('.mobile-nav-dot').forEach((d, i) => {
-          d.classList.toggle('active', i === current);
-        });
-        // Trigger star animation on the card sliding into view
-        cards.forEach(c => c.classList.remove('stars-active'));
-        setTimeout(() => cards[current].classList.add('stars-active'), 350);
-      }
-
-      nav.querySelector('.mobile-nav-prev').addEventListener('click', () => goTo(current - 1));
-      nav.querySelector('.mobile-nav-next').addEventListener('click', () => goTo(current + 1));
-
-      resize();
-      window.addEventListener('resize', resize);
-    })();
   </script>
 </body>
 </html>
