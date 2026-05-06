@@ -1451,10 +1451,13 @@
       animation-delay: 0.1s;
       opacity: 0;
     }
+    .svc-hero-title .br-mob { display: none; }
     @media (max-width: 900px) {
-      .svc-hero { min-height: unset; height: 37.5vh; overflow: hidden; justify-content: center; }
+      .svc-hero { min-height: unset; height: 37.5vh; margin-top: 0; overflow: hidden; justify-content: center; }
       .svc-hero-content { padding: 0 24px; display: flex; flex-direction: column; justify-content: center; }
       .svc-hero-title { font-size: clamp(3rem, 12vw, 5rem); }
+      .svc-hero-title .br-desk { display: none; }
+      .svc-hero-title .br-mob { display: inline; }
     }
 
     .svc-overview {
@@ -1664,10 +1667,13 @@
       object-fit: contain;
       z-index: 2;
     }
+    .tech-heading .br-mob { display: none; }
     @media (max-width: 900px) {
       .svc-technology { grid-template-columns: 1fr; min-height: unset; }
-      .tech-left { padding: 35px 28px 32px; }
+      .tech-left { padding: 35px 28px 8px; }
+      .tech-body { margin-bottom: 0; }
       .tech-right { height: 280px; overflow: hidden; }
+      .tech-img { object-position: center top; }
       .tech-right::before {
         left: 0; top: 0; transform: none;
         width: 100%; aspect-ratio: unset; height: 100%;
@@ -1680,6 +1686,8 @@
         );
       }
       .tech-heading { font-size: 2.4rem; }
+      .tech-heading .br-desk { display: none; }
+      .tech-heading .br-mob { display: inline; }
     }
 
     .svc-process {
@@ -1760,10 +1768,10 @@
     }
     @media (max-width: 900px) {
       .svc-process { padding: 35px 16px 50px; }
-      .process-step { grid-template-columns: 44px 1fr; column-gap: 12px; padding: 22px 18px; }
-      .process-num { font-size: 2.2rem; }
+      .process-step { grid-template-columns: auto 1fr; column-gap: 12px; padding: 22px 18px; align-items: end; }
+      .process-num { font-size: 2.2rem; grid-row: 1; align-self: end; }
       .process-title { font-size: 1.2rem; }
-      .process-body { margin-top: 10px; }
+      .process-body { grid-column: 1 / -1; margin-top: 10px; }
     }
 
     .svc-before {
@@ -1918,7 +1926,7 @@
   <section class="svc-hero">
     <div class="svc-hero-image" aria-hidden="true"></div>
     <div class="svc-hero-content">
-      <h1 class="svc-hero-title">The standard for<br>permanent hair removal.</h1>
+      <h1 class="svc-hero-title">The standard for<br class="br-desk"> permanent<br class="br-mob"> hair removal.</h1>
     </div>
   </section>
 
@@ -1989,7 +1997,7 @@
   <section class="svc-technology" id="technology">
     <div class="tech-left">
       <p class="section-label fade-up">Our Technology</p>
-      <h2 class="tech-heading fade-up">Elite Spectrum Epilator<br><em>by Instantron.</em></h2>
+      <h2 class="tech-heading fade-up">Elite Spectrum<br class="br-mob"> Epilator<br class="br-desk"> <em>by Instantron.</em></h2>
       <p class="tech-body fade-up">We chose the Elite Spectrum Epilator because precision matters in every session. Built for the demands of professional electrolysis, it delivers finely-tuned current to each individual follicle &mdash; for results that are both effective and exceptionally gentle. Sessions are calm, comfortable, and tailored to you, with no downtime needed before you continue with your day.</p>
     </div>
     <div class="tech-right">
