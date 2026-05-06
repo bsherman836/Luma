@@ -1543,6 +1543,7 @@
       .svc-overview { grid-template-columns: 1fr; }
       .svc-overview-left { padding: 35px 28px 72px; }
       .svc-overview-right { padding: 35px 28px 72px; border-left: none; border-top: 1px solid var(--border); }
+      .svc-tag { padding: 7px 12px; }
     }
 
     .svc-overview-areas {
@@ -1596,6 +1597,8 @@
     .area-item:hover { background: rgba(157,142,104,0.15); color: var(--linen); }
     @media (max-width: 900px) {
       .svc-overview-areas { padding: 35px 28px 72px; grid-template-columns: 1fr; gap: 36px; }
+      .areas-grid { max-width: 100%; margin: 0; align-self: stretch; }
+      .area-item { padding: 7px 9px; letter-spacing: 0.05em; }
     }
 
     /* ── TECH TRIO ── */
@@ -1638,7 +1641,6 @@
       position: relative;
       width: 100%;
       aspect-ratio: 4 / 5;
-      border: 1px solid var(--border);
       border-radius: 4px;
       background:
         linear-gradient(to top,
@@ -1650,10 +1652,9 @@
         var(--juniper);
       overflow: hidden;
       margin-bottom: 22px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      transition: transform 0.3s ease;
     }
     .tech-card:hover .tech-card-img {
-      border-color: rgba(157,142,104,0.42);
       transform: translateY(-3px);
     }
     .tech-card-fg {
@@ -1686,6 +1687,13 @@
       .tech-trio-intro { margin-bottom: 36px; }
       .tech-trio-grid { grid-template-columns: 1fr; gap: 28px; }
       .tech-card-img { aspect-ratio: 4 / 3; }
+      .tech-card-meta {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 6px;
+      }
+      .tech-card-name { margin-bottom: 0; }
     }
 
     .svc-technology {
@@ -1782,7 +1790,7 @@
     }
 
     .svc-process {
-      background: var(--midnight);
+      background: #4A5443;
       padding: 60px 52px 100px;
     }
     .svc-process-heading {
@@ -1921,7 +1929,9 @@
     }
     .before-item:hover { background: rgba(48,20,19,0.55); border-color: rgba(157,142,104,0.3); }
     .before-item:hover::before { transform: scaleX(1); }
-    .before-item:hover .before-label { font-weight: 600; }
+    .before-item:hover .before-label {
+      text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
+    }
     .before-icon-wrap {
       width: 100px;
       height: 100px;
@@ -2033,6 +2043,7 @@
         <span class="svc-tag">All Skin Types</span>
         <span class="svc-tag">FDA-Cleared Tech</span>
         <span class="svc-tag">Clinical Expertise</span>
+        <span class="svc-tag">Trusted Care</span>
         <span class="svc-tag">Personalized Plans</span>
         <span class="svc-tag">Lasting Results</span>
       </div>
@@ -2042,15 +2053,19 @@
       <h2 class="results-heading fade-up">Results that <em>show.</em></h2>
       <div class="result-stat fade-up">
         <div class="result-number">36+</div>
-        <div class="result-label">Years of clinical experience guiding every treatment</div>
+        <div class="result-label">Years of clinical experience in corrective skin treatments</div>
       </div>
       <div class="result-stat fade-up">
-        <div class="result-number">3&ndash;6</div>
-        <div class="result-label">Sessions typically needed for visible, lasting results</div>
+        <div class="result-number">5&ndash;7</div>
+        <div class="result-label">Days of typical downtime depending on treatment depth</div>
       </div>
       <div class="result-stat fade-up">
-        <div class="result-number">4&ndash;6</div>
-        <div class="result-label">Weeks between treatments for ideal recovery and steady progress</div>
+        <div class="result-number">3&ndash;4</div>
+        <div class="result-label">Sessions often recommended for texture and tone improvement</div>
+      </div>
+      <div class="result-stat fade-up">
+        <div class="result-number">Minimal</div>
+        <div class="result-label">Downtime for most skin types and schedules</div>
       </div>
     </div>
   </section>
@@ -2085,22 +2100,64 @@
         <div class="tech-card-img">
           <div class="tech-card-fg" style="background-image: url('images/skinpen.png');"></div>
         </div>
-        <h3 class="tech-card-name">SkinPen</h3>
-        <p class="tech-card-by">by Crown Aesthetics</p>
+        <div class="tech-card-meta">
+          <h3 class="tech-card-name">SkinPen</h3>
+          <p class="tech-card-by">by Crown Aesthetics</p>
+        </div>
       </div>
       <div class="tech-card fade-up">
         <div class="tech-card-img">
           <div class="tech-card-fg" style="background-image: url('images/clarity-ii.webp'); background-position: center bottom;"></div>
         </div>
-        <h3 class="tech-card-name">Clarity II</h3>
-        <p class="tech-card-by">by Lutronic</p>
+        <div class="tech-card-meta">
+          <h3 class="tech-card-name">Clarity II</h3>
+          <p class="tech-card-by">by Lutronic</p>
+        </div>
       </div>
       <div class="tech-card fade-up">
         <div class="tech-card-img">
           <div class="tech-card-fg" style="background-image: url('images/helix.png'); background-size: cover;"></div>
         </div>
-        <h3 class="tech-card-name">Helix</h3>
-        <p class="tech-card-by">by Cartessa</p>
+        <div class="tech-card-meta">
+          <h3 class="tech-card-name">Helix</h3>
+          <p class="tech-card-by">by Cartessa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="svc-process" id="how-it-works">
+    <p class="section-label fade-up">The Process</p>
+    <h2 class="svc-process-heading fade-up">How it <em>works.</em></h2>
+    <div class="process-grid">
+      <div class="process-step fade-up" style="transition-delay:0s">
+        <div class="process-num">01</div>
+        <div class="process-step-text">
+          <div class="process-title">Free Consultation</div>
+        </div>
+        <p class="process-body">We start with a complimentary 15-minute phone call to understand your skin concerns and goals. From there we&rsquo;ll recommend the right treatment &mdash; microneedling, laser therapy, resurfacing, or a combination &mdash; and build a plan that fits your skin and timeline.</p>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.1s">
+        <div class="process-num">02</div>
+        <div class="process-step-text">
+          <div class="process-title">Treatment Session</div>
+        </div>
+        <p class="process-body">Each session is calibrated to your skin and the treatment chosen. We use FDA-cleared technology<br>to deliver precise, controlled energy &mdash; comfortable, predictable, and tailored to your tolerance.<br>Most sessions take 15 to 30 minutes.</p>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.2s">
+        <div class="process-num">03</div>
+        <div class="process-step-text">
+          <div class="process-title">Recovery &amp; Aftercare</div>
+        </div>
+        <p class="process-body">Some redness, mild swelling, or temporary sensitivity is normal &mdash; most clients return to daily routines the same day. We send you home with simple aftercare instructions and check in to<br>make sure your skin is healing as expected.</p>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.3s">
+        <div class="process-num">04</div>
+        <div class="process-step-text">
+          <div class="process-title">Visible Results</div>
+        </div>
+        <p class="process-body">Most clients see noticeable improvements within 2 to 4 weeks as collagen rebuilds and pigmentation lifts. Sessions are typically spaced 4 to 6 weeks apart, building toward steady,<br>lasting results &mdash; clearer texture, brighter tone, renewed confidence.</p>
       </div>
     </div>
   </section>
