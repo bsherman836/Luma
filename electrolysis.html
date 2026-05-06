@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>LUMA — Laser & Electrolysis</title>
-  <meta name="description" content="Luma Laser & Electrolysis — 36 years of family-owned care in Lancaster, PA. Laser hair removal, electrolysis, and skin resurfacing." />
+  <title>Electrolysis — LUMA Laser &amp; Electrolysis</title>
+  <meta name="description" content="Electrolysis at Luma Laser &amp; Electrolysis in Lancaster, PA — permanent hair removal for every hair color and skin tone." />
   <meta name="theme-color" content="#1F211C" />
   <link rel="canonical" href="https://lumalancaster.com/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -936,7 +936,7 @@
     }
 
     .contact-section {
-      background: #353B31;
+      background: #4A5443;
       padding: 60px 52px;
       border-top: 1px solid var(--border);
       scroll-margin-top: 120px;
@@ -1166,78 +1166,6 @@
       transition: background 0.2s;
     }
     .service-learn-more:hover { background: var(--sandstone); }
-
-    /* Rainbow + sparkle hover for Gender Affirming Care */
-    .service-learn-more.pride {
-      position: relative;
-      overflow: visible;
-      transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .service-learn-more.pride:hover {
-      background: linear-gradient(90deg,
-        #e63946 0%,
-        #f4a261 16.6%,
-        #f1c40f 33.3%,
-        #2a9d8f 50%,
-        #4361ee 66.6%,
-        #7b2cbf 83.3%,
-        #e63946 100%);
-      background-size: 200% 100%;
-      color: #fff;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.3),
-        0 0 24px rgba(255,180,220,0.45);
-      animation: pride-shift 2.4s linear infinite;
-    }
-    @keyframes pride-shift {
-      from { background-position: 0% 50%; }
-      to   { background-position: 200% 50%; }
-    }
-
-    /* Big anchor sparkle (top-left) */
-    .service-learn-more.pride::before {
-      content: '\2726';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      font-size: 0.95rem;
-      color: #fff;
-      text-shadow: 0 0 8px rgba(255,255,255,0.95), 0 0 14px rgba(255,200,255,0.6);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease;
-    }
-    .service-learn-more.pride:hover::before {
-      opacity: 1;
-      animation: pride-spin 1.8s linear infinite;
-    }
-    @keyframes pride-spin {
-      0%   { transform: scale(0.5) rotate(0deg);   opacity: 0.4; }
-      50%  { transform: scale(1.2) rotate(180deg); opacity: 1; }
-      100% { transform: scale(0.5) rotate(360deg); opacity: 0.4; }
-    }
-
-    /* Sparkle field overlay */
-    .service-learn-more.pride::after {
-      content: '';
-      position: absolute;
-      inset: -14px -12px;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 60'><g fill='white'><path d='M30 12 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M90 6 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M150 14 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M200 8 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M50 50 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M120 48 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M180 50 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/></g></svg>");
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .service-learn-more.pride:hover::after {
-      opacity: 1;
-      animation: pride-twinkle 1.2s ease-in-out infinite;
-    }
-    @keyframes pride-twinkle {
-      0%, 100% { opacity: 0.45; transform: scale(0.95); }
-      50%      { opacity: 1;    transform: scale(1.05); }
-    }
     .tagline-strip {
       display: flex;
       align-items: center;
@@ -1477,6 +1405,478 @@
       .footer-social a:active { border-color: var(--warm-honey); color: var(--warm-honey); }
       .footer-social a:active { border-color: var(--warm-honey); color: var(--warm-honey); }
     }
+
+    .svc-hero {
+      min-height: unset;
+      margin-top: 120px;
+      padding: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .svc-hero-image {
+      position: absolute;
+      inset: 0;
+      background: url('images/electrolysis.webp') center 30%/cover no-repeat;
+      filter: brightness(0.6) saturate(0.8);
+    }
+    .svc-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(31,33,28,0.45) 0%, transparent 35%, transparent 55%, rgba(31,33,28,0.65) 100%);
+    }
+    .svc-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 80px 52px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .svc-hero-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(3rem, 6vw, 7rem);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      color: var(--linen);
+      animation: heroFadeIn 1.2s ease forwards;
+      animation-delay: 0.1s;
+      opacity: 0;
+    }
+    @media (max-width: 900px) {
+      .svc-hero { min-height: unset; height: 37.5vh; overflow: hidden; justify-content: center; }
+      .svc-hero-content { padding: 0 24px; display: flex; flex-direction: column; justify-content: center; }
+      .svc-hero-title { font-size: clamp(3rem, 12vw, 5rem); }
+    }
+
+    .svc-overview {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-items: stretch;
+      padding: 0;
+    }
+    .svc-overview-left {
+      background: var(--juniper);
+      padding: 60px 52px 80px;
+      overflow: hidden;
+    }
+    .svc-overview-right {
+      background: var(--midnight);
+      border-left: 1px solid var(--border);
+      padding: 60px 52px 80px;
+    }
+    .svc-overview-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--linen);
+      margin-bottom: 32px;
+    }
+    .svc-overview-heading em { font-style: italic; }
+    .svc-overview-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--sandstone);
+    }
+    .svc-overview-body + .svc-overview-body { margin-top: 16px; }
+    .svc-overview-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .svc-tag {
+      background: rgba(157,142,104,0.07);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 7px 16px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+      white-space: nowrap;
+    }
+    .results-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--linen);
+      margin-bottom: 48px;
+    }
+    .results-heading em { font-style: italic; }
+    .result-stat {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-stat:first-of-type { border-top: 1px solid var(--border); }
+    .result-number {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+      color: var(--warm-honey);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .result-label {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--sandstone);
+      margin-bottom: 4px;
+    }
+    @media (max-width: 900px) {
+      .svc-overview { grid-template-columns: 1fr; }
+      .svc-overview-left { padding: 35px 28px 72px; }
+      .svc-overview-right { padding: 35px 28px 72px; border-left: none; border-top: 1px solid var(--border); }
+    }
+
+    .svc-overview-areas {
+      background: #4A5443;
+      border-top: 1px solid var(--border);
+      padding: 54px 52px 60px;
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 64px;
+      align-items: start;
+    }
+    .areas-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--linen);
+      margin-bottom: 16px;
+    }
+    .areas-heading em { font-style: italic; }
+    .areas-subtext {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--sandstone);
+    }
+    .areas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-content: flex-start;
+    }
+    .area-item {
+      background: rgba(157,142,104,0.07);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 7px 14px;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sandstone);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .area-item:hover { background: rgba(157,142,104,0.15); color: var(--linen); }
+    @media (max-width: 900px) {
+      .svc-overview-areas { padding: 35px 28px 72px; grid-template-columns: 1fr; gap: 36px; }
+    }
+
+    .svc-technology {
+      background: #353B31;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-items: stretch;
+      min-height: 460px;
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+    .tech-right::before {
+      content: '';
+      position: absolute;
+      left: 65%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 170%;
+      aspect-ratio: 1;
+      background: radial-gradient(circle,
+        rgba(201,188,161,0.72) 0%,
+        rgba(201,188,161,0.48) 18%,
+        rgba(201,188,161,0.26) 38%,
+        rgba(201,188,161,0.10) 58%,
+        transparent 72%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+    .tech-left {
+      padding: 60px 52px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .tech-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      color: var(--linen);
+      line-height: 1.08;
+      margin-bottom: 28px;
+    }
+    .tech-heading em { font-style: italic; }
+    .tech-body {
+      font-size: 0.95rem;
+      line-height: 1.82;
+      color: var(--sandstone);
+      font-weight: 300;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .tech-right {
+      position: relative;
+      background: #353B31;
+    }
+    .tech-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
+      max-width: 80%;
+      max-height: 60%;
+      object-fit: contain;
+      z-index: 2;
+    }
+    @media (max-width: 900px) {
+      .svc-technology { grid-template-columns: 1fr; min-height: unset; }
+      .tech-left { padding: 35px 28px 32px; }
+      .tech-right { height: 280px; overflow: hidden; }
+      .tech-right::before {
+        left: 0; top: 0; transform: none;
+        width: 100%; aspect-ratio: unset; height: 100%;
+        background: linear-gradient(to top,
+          rgba(201,188,161,0.75) 0%,
+          rgba(201,188,161,0.52) 18%,
+          rgba(201,188,161,0.28) 42%,
+          rgba(201,188,161,0.08) 68%,
+          transparent 95%
+        );
+      }
+      .tech-heading { font-size: 2.4rem; }
+    }
+
+    .svc-process {
+      background: var(--midnight);
+      padding: 60px 52px 100px;
+    }
+    .svc-process-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      color: var(--linen);
+      margin-bottom: 56px;
+    }
+    .svc-process-heading em { font-style: italic; }
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .process-step {
+      background: rgba(31,33,28,0.72);
+      padding: 36px 44px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      column-gap: 52px;
+      row-gap: 0;
+      align-items: start;
+      transition: background 0.35s;
+    }
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--warm-honey), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .process-step:hover { background: rgba(31,33,28,0.92); }
+    .process-step:hover::before { transform: scaleX(1); }
+    .process-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 4rem;
+      font-weight: 400;
+      color: var(--warm-honey);
+      opacity: 0.18;
+      line-height: 1;
+      grid-column: 1;
+      grid-row: 1 / 3;
+      align-self: center;
+    }
+    .process-step-text { grid-column: 2; grid-row: 1; }
+    .process-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--linen);
+      margin-bottom: 0;
+    }
+    .process-body {
+      grid-column: 2;
+      grid-row: 2;
+      font-size: 0.9rem;
+      line-height: 1.78;
+      color: var(--sandstone);
+      font-weight: 300;
+      max-width: 680px;
+      margin-top: 12px;
+    }
+    @media (max-width: 900px) {
+      .svc-process { padding: 35px 16px 50px; }
+      .process-step { grid-template-columns: 44px 1fr; column-gap: 12px; padding: 22px 18px; }
+      .process-num { font-size: 2.2rem; }
+      .process-title { font-size: 1.2rem; }
+      .process-body { margin-top: 10px; }
+    }
+
+    .svc-before {
+      background: var(--juniper);
+      padding: 54px 52px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .svc-before-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      color: var(--linen);
+      margin-bottom: 16px;
+    }
+    .svc-before-heading em { font-style: italic; }
+    .svc-before-intro {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--sandstone);
+      font-weight: 300;
+      max-width: 720px;
+      margin-bottom: 8px;
+    }
+    .before-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+    .before-item {
+      flex: 0 0 calc(25% - 15px);
+      background: rgba(157,142,104,0.05);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 40px 28px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      text-align: center;
+      transition: background 0.25s, border-color 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .before-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--warm-honey), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .before-item:hover { background: rgba(48,20,19,0.55); border-color: rgba(157,142,104,0.3); }
+    .before-item:hover::before { transform: scaleX(1); }
+    .before-item:hover .before-label { font-weight: 600; }
+    .before-icon-wrap {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(157,142,104,0.35);
+      background: rgba(157,142,104,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+    .before-item:hover .before-icon-wrap {
+      background: var(--juniper);
+      border-color: transparent;
+      box-shadow:
+        inset 3px 3px 8px rgba(0,0,0,0.45),
+        inset -1px -1px 4px rgba(255,255,255,0.06);
+    }
+    .before-icon-wrap svg {
+      width: 44px;
+      height: 44px;
+      stroke: var(--warm-honey);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .before-label {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      line-height: 1.78;
+      color: var(--sandstone);
+      font-weight: 300;
+    }
+    @media (max-width: 900px) {
+      .svc-before { padding: 35px 28px 50px; }
+      .before-grid { gap: 16px; }
+      .before-item { flex: 0 0 calc(50% - 8px); padding: 28px 20px 24px; }
+      .before-label { font-size: 0.82rem; }
+      .before-label br { display: none; }
+    }
+
+    .svc-post {
+      background: #1F211C;
+      padding: 54px 52px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .svc-post .before-item:hover .before-icon-wrap {
+      background: #4A5443;
+      border-color: transparent;
+      box-shadow:
+        inset 3px 3px 8px rgba(0,0,0,0.45),
+        inset -1px -1px 4px rgba(255,255,255,0.06);
+    }
+    @media (max-width: 900px) {
+      .svc-post { padding: 35px 28px 50px; }
+    }
   </style>
 </head>
 <body>
@@ -1484,14 +1884,14 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">
+    <a class="nav-logo" href="/">
       <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNDY5LjM3IDExNDguMDQiPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAzMC4zLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuMyBCdWlsZCAxODIpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2M5YmNhMTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE1OCAxMDYxLjQ4IDEzOC41NiAxMDYxLjQ4IDEzOC41NiAxMTQ1LjIxIDIxNi4yNyAxMTQ1LjIxIDIxNi4yNyAxMTI4LjMzIDE1OCAxMTI4LjMzIDE1OCAxMDYxLjQ4Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjkxLjk0LDEwNjEuNDhsLTQ1LjM3LDgzLjczaDIwLjczbDguODctMTYuNDFoNDcuNTNsOC44OCwxNi40MWgyMC43M2wtNDUuMzctODMuNzNoLTE2Wk0yODQuOTksMTExMi41MWwxNC45NS0yNy42OCwxNC45NSwyNy42OGgtMjkuOVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjguNjgsMTA5NC42NGMtMTUuODItMy4wOS0yMy4xOC00Ljg1LTIzLjE4LTEwLjUxLDAtNS4wOCw2LjAxLTguMTIsMjAuMzgtOC4xMiwxOS4xNSwwLDMwLjc3LDUuMzcsMzAuNzcsNS4zN2w5LjUyLTEzLjc4cy0xMS4zMy04LjQ3LTQwLjI5LTguNDdjLTMwLjQ4LDAtNDAuMDYsMTIuMTQtNDAuMDYsMjQuOTksMCwxNC4xOSw5LjcsMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM2LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTItNi44My0zMy45Mi02LjgzbC05LjUyLDEzLjc4czEzLjgzLDkuOTIsNDMuNDQsOS45MmMyNi45OCwwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNi0yNy4zM1oiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iNTIyLjU3IDExMTEuMDUgNTgyLjEyIDExMTEuMDUgNTgyLjEyIDEwOTQuNzYgNTIyLjU3IDEwOTQuNzYgNTIyLjU3IDEwNzguMzUgNTg0LjY0IDEwNzguMzUgNTg0LjY0IDEwNjEuNDggNTAzLjEyIDEwNjEuNDggNTAzLjEyIDExNDUuMjEgNTg1LjIyIDExNDUuMjEgNTg1LjIyIDExMjguMzMgNTIyLjU3IDExMjguMzMgNTIyLjU3IDExMTEuMDUiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03MDkuODgsMTA4OS44YzAtMTQuNzctMTAuMjItMjguMzItMzIuOTMtMjguMzJoLTU1djgzLjczaDE5LjQ0di0yOC44NGgzMC44OWwxNi43NiwyOC44NGgyMS42NmwtMTguMjItMzEuMzVjMTEuMDQtMy42OCwxNy40LTExLjU2LDE3LjQtMjQuMDZaTTY3Ni45NCwxMTAxLjI0aC0zNS41NnYtMjIuODloMzUuNTZjMTAuMSwwLDEzLjI1LDUuMzcsMTMuMjUsMTEuNDRzLTMuMTUsMTEuNDUtMTMuMjUsMTEuNDVaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODgzLjE5LDExMDguNzdsLTE4LjIyLTYuMjVjLTEuNjMsMy45MS00LjUsOS4zNC02Ljc3LDEzLjAyLTQuMTUtMy4zMy05LjA1LTcuNTktMTIuMzgtMTAuNzQsOC40Ny01LjI2LDE5Ljk3LTExLjE1LDE5Ljk3LTIzLjU5cy0xMS4xNS0yMS40OS0yNS45Mi0yMS40OS0yNi45OCw4LjIzLTI2Ljk4LDI0LjA2YzAsOC40NywzLjE1LDE0LjQyLDUuODQsMTcuNzUtOS4zNCw1LjM3LTE2LjI5LDEyLjczLTE2LjI5LDIzLjI0LDAsMTYuMjksMTMuOTUsMjIuMTksMzEuOTQsMjIuMTksMTMuOSwwLDIxLjI1LTIuODYsMjcuMjctNi42LDMuNTYsMi40NSw3LjE4LDQuODUsNy4xOCw0Ljg1aDI4LjQ0cy0xMy40OS05LjkzLTIzLjc3LTE3LjYzYzIuNjMtMy43OSw2LjcxLTEwLjc0LDkuNjktMTguOFpNODM5Ljg2LDEwNzYuNmMzLjc5LDAsNi40OCwxLjM0LDYuNDgsNC42MSwwLDUuNjYtNi41NCw5LjExLTExLjU2LDEyLjAzLTEuNTItMS45OC0yLjQ1LTQuOS0yLjQ1LTguMjksMC02LjQyLDQuMDktOC4zNSw3LjUzLTguMzVaTTgzNC4yLDExMzAuMDljLTkuNjksMC0xMi4zMi0yLjg2LTEyLjMyLTYuNDgsMC00LjU2LDMuMzMtNy43Nyw3LjM2LTkuODcsMy44NSwzLjY4LDExLjI3LDEwLjIyLDE1Ljg4LDEzLjktMS41Mi45OS00LjkxLDIuNDUtMTAuOTIsMi40NVoiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTAwNS41MiAxMTExLjA1IDEwNjUuMDggMTExMS4wNSAxMDY1LjA4IDEwOTQuNzYgMTAwNS41MiAxMDk0Ljc2IDEwMDUuNTIgMTA3OC4zNSAxMDY3LjU5IDEwNzguMzUgMTA2Ny41OSAxMDYxLjQ4IDk4Ni4wOCAxMDYxLjQ4IDk4Ni4wOCAxMTQ1LjIxIDEwNjguMTcgMTE0NS4yMSAxMDY4LjE3IDExMjguMzMgMTAwNS41MiAxMTI4LjMzIDEwMDUuNTIgMTExMS4wNSIvPgogICAgPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSIxMTI0LjM0IDEwNjEuNDggMTEwNC45IDEwNjEuNDggMTEwNC45IDExNDUuMjEgMTE4Mi42MSAxMTQ1LjIxIDExODIuNjEgMTEyOC4zMyAxMTI0LjM0IDExMjguMzMgMTEyNC4zNCAxMDYxLjQ4Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyMzcuNjEgMTExMS4wNSAxMjk3LjE3IDExMTEuMDUgMTI5Ny4xNyAxMDk0Ljc2IDEyMzcuNjEgMTA5NC43NiAxMjM3LjYxIDEwNzguMzUgMTI5OS42OCAxMDc4LjM1IDEyOTkuNjggMTA2MS40OCAxMjE4LjE3IDEwNjEuNDggMTIxOC4xNyAxMTQ1LjIxIDEzMDAuMjcgMTE0NS4yMSAxMzAwLjI3IDExMjguMzMgMTIzNy42MSAxMTI4LjMzIDEyMzcuNjEgMTExMS4wNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEzOTAuNDcsMTA3Ni4wMmMxNi4wNiwwLDI4LjE0LDYuODMsMjguMTQsNi44M2w5LjI5LTEzLjYxcy0xMS4yMS0xMC4xLTM3LjQzLTEwLjFjLTM3Ljk1LDAtNTUuODIsMjAuMi01NS44Miw0NC4yczE3Ljg3LDQ0LjIsNTUuODIsNDQuMmMyNi4yMiwwLDM3LjQzLTEwLjEsMzcuNDMtMTAuMWwtOS4yOS0xMy42cy0xMi4wOSw2LjgzLTI4LjE0LDYuODNjLTI1Ljc1LDAtMzUuNzktMTMuMDgtMzUuNzktMjcuMzNzMTAuMDQtMjcuMzMsMzUuNzktMjcuMzNaIi8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE0NTguNzkgMTA3OC4zNSAxNDk0Ljc2IDEwNzguMzUgMTQ5NC43NiAxMTQ1LjIxIDE1MTQuMiAxMTQ1LjIxIDE1MTQuMiAxMDc4LjM1IDE1NTAuMTYgMTA3OC4zNSAxNTUwLjE2IDEwNjEuNDggMTQ1OC43OSAxMDYxLjQ4IDE0NTguNzkgMTA3OC4zNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE2NzIuNDksMTA4OS44YzAtMTQuNzctMTAuMjItMjguMzItMzIuOTMtMjguMzJoLTU1djgzLjczaDE5LjQ0di0yOC44NGgzMC44OWwxNi43NiwyOC44NGgyMS42NmwtMTguMjItMzEuMzVjMTEuMDQtMy42OCwxNy40LTExLjU2LDE3LjQtMjQuMDZaTTE2MzkuNTUsMTEwMS4yNGgtMzUuNTZ2LTIyLjg5aDM1LjU2YzEwLjEsMCwxMy4yNSw1LjM3LDEzLjI1LDExLjQ0cy0zLjE1LDExLjQ1LTEzLjI1LDExLjQ1WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE3NjIuMzQsMTA1OS4xNGMtMzcuOTUsMC01NS44MiwyMC4yLTU1LjgyLDQ0LjJzMTcuODcsNDQuMiw1NS44Miw0NC4yLDU1LjgyLTIwLjIsNTUuODItNDQuMi0xNy44Ny00NC4yLTU1LjgyLTQ0LjJaTTE3NjIuMzQsMTEzMC42N2MtMjUuNzUsMC0zNS43OS0xMy4wOC0zNS43OS0yNy4zM3MxMC4wNC0yNy4zMywzNS43OS0yNy4zMywzNS43OSwxMy4wOCwzNS43OSwyNy4zMy0xMC4wNCwyNy4zMy0zNS43OSwyNy4zM1oiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTg3My4xNSAxMDYxLjQ4IDE4NTMuNzEgMTA2MS40OCAxODUzLjcxIDExNDUuMjEgMTkzMS40MiAxMTQ1LjIxIDE5MzEuNDIgMTEyOC4zMyAxODczLjE1IDExMjguMzMgMTg3My4xNSAxMDYxLjQ4Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE5OTIuOCAxMDk2LjQgMTk2My44NCAxMDYxLjQ4IDE5NDEuMjkgMTA2MS40OCAxOTgzLjA0IDExMTEuNTggMTk4My4wNCAxMTQ1LjIxIDIwMDIuNTUgMTE0NS4yMSAyMDAyLjU1IDExMTEuNTggMjA0NC4yOSAxMDYxLjQ4IDIwMjEuNzYgMTA2MS40OCAxOTkyLjggMTA5Ni40Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjExNi4yMywxMDk0LjY0Yy0xNS44My0zLjA5LTIzLjE4LTQuODUtMjMuMTgtMTAuNTEsMC01LjA4LDYuMDEtOC4xMiwyMC4zOC04LjEyLDE5LjE1LDAsMzAuNzcsNS4zNywzMC43Nyw1LjM3bDkuNTItMTMuNzhzLTExLjMzLTguNDctNDAuMjktOC40N2MtMzAuNDgsMC00MC4wNiwxMi4xNC00MC4wNiwyNC45OSwwLDE0LjE5LDkuNjksMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM1LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTMtNi44My0zMy45My02LjgzbC05LjUyLDEzLjc4czEzLjg0LDkuOTIsNDMuNDQsOS45MmMyNi45NywwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNS0yNy4zM1oiLz4KICAgIDxyZWN0IGNsYXNzPSJzdDAiIHg9IjIxOTAuNjciIHk9IjEwNjEuNDgiIHdpZHRoPSIxOS40NCIgaGVpZ2h0PSI4My43MyIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTIyOTAuNzYsMTA5NC42NGMtMTUuODItMy4wOS0yMy4xOC00Ljg1LTIzLjE4LTEwLjUxLDAtNS4wOCw2LjAxLTguMTIsMjAuMzgtOC4xMiwxOS4xNSwwLDMwLjc3LDUuMzcsMzAuNzcsNS4zN2w5LjUyLTEzLjc4cy0xMS4zMy04LjQ3LTQwLjI5LTguNDdjLTMwLjQ4LDAtNDAuMDYsMTIuMTQtNDAuMDYsMjQuOTksMCwxNC4xOSw5LjcsMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM2LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTItNi44My0zMy45Mi02LjgzbC05LjUyLDEzLjc4czEzLjgzLDkuOTIsNDMuNDQsOS45MmMyNi45OCwwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNi0yNy4zM1oiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTM0LjQ2LDgzNi45NGMtMTUuNDEtMTMuNTgtMTUuNDEtMzcuMDMtMTUuNDEtNTUuNTVWOS4wNEMxMTkuMDYsNC4wNSwxMTUuNTEsMCwxMTEuMTQsMEg3LjkxQzMuNTQsMCwwLDQuMDUsMCw5LjA0djg1OC4zN2MwLDQuOTksMy41NCw5LjA0LDcuOTEsOS4wNGgzNzMuNTZjNC4zNywwLDcuOTEtNC4wNSw3LjkxLTkuMDR2LTEzOC45MWMwLTguNDYtOS4zNy0xMi4zNi0xNC01Ljc2LTg4LjY3LDEyNi40My0yMDcuNjksMTE0LjItMjQwLjkyLDExNC4yWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTc3OC44MywwYy01Ljk5LDAtOS45NCw3LjM0LTcuMDQsMTMuMzIsNzYuMDUsMTU3LjI3LDU0Ljg3LDM3Ny4yLDU0Ljg3LDU2NS42MnMtNTYuMDMsMjY3Ljg3LTE0MC4wNywyNjcuODctMTIxLjg2LTEzNC41Ni0xMjEuODYtMjc4Ljk4VjkuMDRDNTY0LjczLDQuMDUsNTYxLjE5LDAsNTU2LjgyLDBoLTEwMy4yM2MtNC4zNywwLTcuOTEsNC4wNS03LjkxLDkuMDR2NTYxLjI3YzAsMjUwLjU5LDEyNC42NiwzMTguNDksMjI0LjExLDMxOC40OSwyNC4yNSwwLDgzLjk4LjcsMTI4Ljk4LTQzLjMzLDU5LjM5LTU4LjExLDYyLjMzLTE2My42Niw2Ny4zMy0zNDIuODUuNTYtMTkuOTguMDctMTUuMDEuNTYtMjkuNjEsOC4yNi0yNDYuMzItMy4yMi0zNDguNTUsNTAuMDItNDU5LjcxQzkxOS41NCw3LjMsOTE1LjYxLDAsOTA5LjY0LDBoLTEzMC44MloiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNjg1Ljk3LDUuODNsLTIzNS41Myw3MDguNjRjLTIuNDIsNy4yOS0xMS4yNCw3Ljg5LTE0LjQxLjk4TDExMTAuMjYsNC44NWMtMS4zNy0yLjk4LTQuMDctNC44NC03LjAxLTQuODRoLTExMS44NWMtNi4wNywwLTkuODgsNy40OS02Ljg3LDEzLjUxbDY5LjI5LDEzOC43OGMuNjYsMS4zMiwxLjAxLDIuNzgsMS4wNCw0LjMsNC4wMiwyNjQuNDksMTAuNDgsNjA1LjczLTIzLjMxLDcwNy43My0xLjk1LDUuODksMS44OSwxMi4xMyw3LjQxLDEyLjEzaDEyOC42MmM3LjE3LDAsMTAuNjgtMTAuMDQsNS4zOS0xNS41Ni03OS41OC04My4yNC03NC43Mi0zMzkuMjgtNzQuNzItNTMwLjA1di01MS45M2MwLTkuMzgsMTAuOTctMTIuNTUsMTQuODctNC4zbDI4Mi42Myw1OTcuMTFjMS4zOCwyLjkyLDQuMDUsNC43NCw2Ljk2LDQuNzRoMzQuNjVjMy4yOSwwLDYuMjMtMi4zMiw3LjQtNS44M2wyMTMuODYtNjQzLjEyYzMuMTItOS4zOCwxNS4zMS02LjgzLDE1LjMxLDMuMjF2NjM2LjdjMCw0Ljk5LDMuNTQsOS4wNCw3LjkxLDkuMDRoMTAzLjEzYzQuNDEsMCw3Ljk3LTQuMTIsNy45MS05LjE1bC05LjYtODU4LjM3Yy0uMDYtNC45NS0zLjU4LTguOTItNy45MS04LjkyaC04MS45N2MtMy4yOSwwLTYuMjMsMi4zMi03LjQsNS44M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNDY4Ljg4LDg2NC4yOEwyMTkxLjc4LDUuOTFjLTEuMTUtMy41NS00LjExLTUuOTEtNy40Mi01LjkxaC0xMDYuOTFjLTUuMzYsMC05LjE3LDUuOTYtNy41NCwxMS43OWwyMS4yNSw3NS45NGMuNDQsMS41Ni41LDMuMjUuMTcsNC44Ni00OC45OCwyNDAuODctMTE1Ljk3LDQ0My45Ny0xODAuMTksNjgxLjQxLTkuNTIsMzQuNjMtMTYuMDEsNjIuMTItMzEuNTEsODguNTQtMy40OCw1Ljk0LjM4LDEzLjkyLDYuNjQsMTMuOTJoMTMxLjkyYzcuMywwLDEwLjU1LTEwLjEzLDUuMjEtMTUuODEtMzIuNC0zNC40Mi01MC44NC0xMTMuNzktMjUuNDItMjM2LjAxLDQuMi0xNy4yOCw4LjQtMzQuNTYsMTIuNjEtNTEuODVsMS40Ni01LjgyYy45MS0zLjYxLDMuNjctNi4yNyw2Ljk2LTYuNTIsMTcuMi0xLjMxLDM5LjM2LS4wNCw2Mi40NywxMC4zMiw1Mi4xNiwyMy4zOSw4Mi42OSw4MS40MywxMjkuMjcsMTcxLjMzLDI5Ljk0LDU3LjgsNDEuMzgsOTAuNzQsNzcuODksMTE0LjE1LDIxLjc3LDEzLjk1LDQzLjA0LDE4LjUxLDU3LjcxLDIwLjE2LjI5LjAzLjU2LjA1Ljg1LjA1aDExNC4yN2M1LjUxLDAsOS4zMy02LjI2LDcuNDItMTIuMTZaTTIyNzguNTMsNzQ4LjgyYy01MS44OC00Ni44NC03MC43Ni05MS45My05NS41NS0xMjYuMzctMjUuODEtMzUuODUtNzAuMDEtNzYuNjQtMTUwLjk1LTEwMS40My00LjI5LTEuMzEtNi44Ni02LjM0LTUuNjQtMTEuMjFsNzkuODktMzE4LjI4YzIuMS04LjM1LDEyLjMtOC44NCwxNS0uNzIsNDYuMjEsMTM4Ljg1LDkyLjQxLDI3Ny43LDEzOC42Miw0MTYuNTRsNDcuMDQsMTQ1Ljc2YzIuNzYsOC41Ni02LjA2LDE1Ljg3LTEyLjMzLDEwLjIybC0xNi4wOS0xNC41WiIvPgogIDwvZz4KPC9zdmc+" alt="LUMA" class="nav-logo-img" />
     </a>
     </a>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="nav-cta" href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services/VQTP7F43D7EF6PJQHQQRPPK6" target="_blank" rel="noopener">Book an Appointment</a>
@@ -1504,127 +1904,262 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-close" aria-label="Close menu">✕</button>
     <div class="mobile-menu-nav">
-      <a href="#" class="mobile-menu-link">Home</a>
-      <a href="#about" class="mobile-menu-link">About</a>
-      <a href="#services" class="mobile-menu-link">Services</a>
+      <a href="/" class="mobile-menu-link">Home</a>
+      <a href="/#about" class="mobile-menu-link">About</a>
+      <a href="/#services" class="mobile-menu-link">Services</a>
       <a href="#contact" class="mobile-menu-link">Contact</a>
     </div>
   </div>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow fade-up">Lancaster, PA · Since 1989</p>
-      <h1 class="hero-title hero-title-desktop"><span style="white-space: nowrap;">36 Years of Experience.</span><br><em style="white-space: nowrap;">Care You Can&nbsp;Trust.</em></h1>
-      <h1 class="hero-title hero-title-mobile"><span style="white-space: nowrap;">Setting the standard for</span><br><em style="white-space: nowrap;">care.</em></h1>
-      <p class="hero-sub fade-up">Jill Sherman, formerly of Jill &amp; Bonnie's Hair Removal Clinic, <br>is partnering with Emma Schutte to introduce Luma Laser <br>&amp; Electrolysis—a family-owned practice in Lancaster, PA built <br>on 36 years of experience in laser hair removal, electrolysis, <br>and skin resurfacing.</p>
-      <div class="hero-bottom">
-        <div class="hero-actions fade-up">
-          <a href="https://app.squareup.com/appointments/book/lyff610olsalte/L9PXCF6VPWXRE/start" target="_blank" rel="noopener" class="btn-primary">Book an Appointment</a>
-          <a href="#services" class="btn-ghost">Our Services</a>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-strip">
-    <div class="marquee-inner">
-      <span class="marquee-item">Inclusive Studio</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Trusted Expertise</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Laser Hair Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Electrolysis</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Sun Damage Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Acne Laser Therapy</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Gender Affirming Hair Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Red Vein & Brown Spot Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Helix Skin Resurfacing</span><span class="marquee-dot"> ✦ </span>
-      <!-- duplicate for seamless loop -->
-      <span class="marquee-item">Inclusive Studio</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Trusted Expertise</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Laser Hair Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Electrolysis</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Sun Damage Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Acne Laser Therapy</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Gender Affirming Hair Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Red Vein & Brown Spot Removal</span><span class="marquee-dot"> ✦ </span>
-      <span class="marquee-item">Helix Skin Resurfacing</span><span class="marquee-dot"> ✦ </span>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-inner">
-      <div>
-        <p class="section-label fade-up">About LUMA</p>
-        <h2 class="section-title fade-up" style="white-space: nowrap;">A place where you&nbsp;<em>belong.</em></h2>
-        <p class="about-body fade-up">Luma Laser and Electrolysis is a studio created by Jill&nbsp;Sherman and Emma Schutte.<br> We offer laser hair removal, electrolysis, and skin treatments with a focus on thoughtful<br> care, expertise, and results.</p>
-        <p class="about-body fade-up">Founded on the belief that clinical shouldn't feel cold, we've created something different.<br> Our space is a reflection of who we are—thoughtful, warm, and personal. It's designed to<br> feel less like a place of service and more like an extension of our home. A place where you<br> can settle in and feel comfortable.</p>
-        <a href="#contact" class="about-story-btn fade-up">Learn More About Our Story</a>
-      </div>
-    </div>
-    <div class="about-photos">
-      <div class="about-photo" style="background: url('images/jill-emma.webp') 72% 42%/160% no-repeat;"></div>
-      <div class="about-photo" style="background: url('images/lounge.webp') center/cover no-repeat;"></div>
-      <div class="about-photo" style="background: url('images/treatment-room.webp') center/cover no-repeat;"></div>
+  <section class="svc-hero">
+    <div class="svc-hero-image" aria-hidden="true"></div>
+    <div class="svc-hero-content">
+      <h1 class="svc-hero-title">The standard for<br>permanent hair removal.</h1>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="services-header">
-      <div>
-        <p class="section-label fade-up">What we offer</p>
-        <h2 class="section-title fade-up">Our <em>services.</em></h2>
-        <p class="services-body fade-up">Click through to learn about the process,&nbsp;results,&nbsp;and&nbsp;pricing.</p>
+  <!-- THE TREATMENT -->
+  <section class="svc-overview" id="overview">
+    <div class="svc-overview-left">
+      <p class="section-label fade-up">The Treatment</p>
+      <h2 class="svc-overview-heading fade-up">What is <em>electrolysis?</em></h2>
+      <p class="svc-overview-body fade-up">Electrolysis is the only FDA-approved method for truly permanent hair removal. A fine probe is inserted into each individual follicle, where a precise electrical current destroys its ability to produce new hair &mdash; without affecting the surrounding skin.</p>
+      <p class="svc-overview-body fade-up">Because each follicle is treated individually, electrolysis works where laser can&rsquo;t &mdash; on every hair color, including white, gray, blonde, and red, and across the full spectrum of skin tones. Every plan is built around your goals, your skin, and your hair.</p>
+      <div class="svc-overview-tags fade-up">
+        <span class="svc-tag">All Hair Colors</span>
+        <span class="svc-tag">All Skin Tones</span>
+        <span class="svc-tag">FDA-Approved</span>
+        <span class="svc-tag">Truly Permanent</span>
+        <span class="svc-tag">Personalized Plans</span>
+      </div>
+    </div>
+    <div class="svc-overview-right">
+      <p class="section-label fade-up">The Results</p>
+      <h2 class="results-heading fade-up">Results that<br><em>truly last.</em></h2>
+      <div class="result-stat fade-up">
+        <div class="result-number">100%</div>
+        <div class="result-label">FDA-recognized as the only truly permanent hair removal method</div>
+      </div>
+      <div class="result-stat fade-up">
+        <div class="result-number">8&ndash;15</div>
+        <div class="result-label">Sessions typically needed for complete clearance of an area</div>
+      </div>
+      <div class="result-stat fade-up">
+        <div class="result-number">1&ndash;2</div>
+        <div class="result-label">Weeks between treatments for steady, lasting progress</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENT AREAS -->
+  <section class="svc-overview-areas" id="areas">
+    <div class="areas-intro fade-up">
+      <p class="section-label">The Treatment Areas</p>
+      <h2 class="areas-heading">Where we <em>treat.</em></h2>
+      <p class="areas-subtext">We treat every area with precision and care&mdash;from small, targeted zones to larger areas. Appointments range from 15 minutes to 3 hours, depending on your needs, with steady, lasting results over time.</p>
+    </div>
+    <div class="areas-grid fade-up">
+      <span class="area-item">Hairline</span>
+      <span class="area-item">Bridge of Nose</span>
+      <span class="area-item">Eyebrows</span>
+      <span class="area-item">Upper Lip</span>
+      <span class="area-item">Lower Lip</span>
+      <span class="area-item">Cheeks</span>
+      <span class="area-item">Sideburns</span>
+      <span class="area-item">Chin</span>
+      <span class="area-item">Neck</span>
+      <span class="area-item">Shoulders</span>
+      <span class="area-item">Arms and Underarms</span>
+      <span class="area-item">Hands</span>
+      <span class="area-item">Chest</span>
+      <span class="area-item">Breasts</span>
+      <span class="area-item">Abdomen</span>
+      <span class="area-item">Bikini Line</span>
+      <span class="area-item">Legs</span>
+      <span class="area-item">Toes</span>
+      <span class="area-item">Back</span>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="svc-technology" id="technology">
+    <div class="tech-left">
+      <p class="section-label fade-up">Our Technology</p>
+      <h2 class="tech-heading fade-up">Elite Spectrum Epilator<br><em>by Instantron.</em></h2>
+      <p class="tech-body fade-up">We chose the Elite Spectrum Epilator because precision matters in every session. Built for the demands of professional electrolysis, it delivers finely-tuned current to each individual follicle &mdash; for results that are both effective and exceptionally gentle. Sessions are calm, comfortable, and tailored to you, with no downtime needed before you continue with your day.</p>
+    </div>
+    <div class="tech-right">
+      <img class="tech-img" src="images/elite-spectrum-epilator.webp" alt="Elite Spectrum Epilator by Instantron" />
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="svc-process" id="how-it-works">
+    <p class="section-label fade-up">The Process</p>
+    <h2 class="svc-process-heading fade-up">How it <em>works.</em></h2>
+    <div class="process-grid">
+      <div class="process-step fade-up" style="transition-delay:0s">
+        <div class="process-num">01</div>
+        <div class="process-step-text">
+          <div class="process-title">Free Consultation</div>
+        </div>
+        <p class="process-body">We start with a complimentary 15-minute phone call to learn about your hair, your skin, and your goals. We&rsquo;ll walk you through what to expect from electrolysis and build a personalized treatment plan around you.</p>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.1s">
+        <div class="process-num">02</div>
+        <div class="process-step-text">
+          <div class="process-title">Treatment Session</div>
+        </div>
+        <p class="process-body">A fine probe is inserted into each individual follicle, delivering a precise electrical current that destroys its ability to grow new hair. Sessions range from 15 minutes to 3 hours depending on the area being treated.</p>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.2s">
+        <div class="process-num">03</div>
+        <div class="process-step-text">
+          <div class="process-title">Recovery &amp; Follow&#x2011;Up</div>
+        </div>
+        <p class="process-body">Mild redness or slight swelling around treated follicles is normal and typically resolves within a few hours. We&rsquo;ll send you home with aftercare guidance and schedule your next session, usually one to two weeks later.</p>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.3s">
+        <div class="process-num">04</div>
+        <div class="process-step-text">
+          <div class="process-title">Lasting Results</div>
+        </div>
+        <p class="process-body">Each treated follicle is permanently disabled &mdash; that&rsquo;s why electrolysis is FDA-recognized as the only truly permanent hair removal method. Most clients see complete clearance after 8&ndash;15 sessions, with no ongoing maintenance needed afterward.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE-TREATMENT -->
+  <section class="svc-before" id="before">
+    <p class="section-label fade-up">Pre-Treatment</p>
+    <h2 class="svc-before-heading fade-up">Before your <em>appointment.</em></h2>
+    <p class="svc-before-intro fade-up">A few simple steps before your electrolysis session help you stay comfortable and let us treat each follicle as effectively as possible. Please follow these recommendations once you&rsquo;ve scheduled your appointment.</p>
+    <div class="before-grid fade-up">
+
+      <!-- 1. Complete forms -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 3v0a1 1 0 011-1h4a1 1 0 011 1v0"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="13" y2="16"/></svg>
+        </div>
+        <p class="before-label">Complete forms &amp; get <br>cleared for treatment.</p>
+      </div>
+
+      <!-- 2. No waxing or tweezing -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M8 2C8 2 9.5 5 12 5C14.5 5 16 2 16 2"/><path d="M8 2L10.5 19"/><path d="M16 2L13.5 19"/><path d="M10.5 19Q12 22 13.5 19"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+        </div>
+        <p class="before-label">No waxing, tweezing, or <br>plucking for 4+ weeks.</p>
+      </div>
+
+      <!-- 3. Avoid caffeine -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M5 9h11v6a4 4 0 01-4 4H9a4 4 0 01-4-4V9z"/><path d="M16 11h2a2.5 2.5 0 010 5h-2"/><path d="M8 3c0 1.2-.8 1.5-.8 2.7s.8 1.3.8 2.3"/><path d="M12 3c0 1.2-.8 1.5-.8 2.7s.8 1.3.8 2.3"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+        </div>
+        <p class="before-label">No caffeine 2&ndash;4 hours <br>before your session.</p>
+      </div>
+
+      <!-- 4. Avoid alcohol -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M8 3h8l-1 7a3 3 0 01-6 0L8 3z"/><line x1="12" y1="13" x2="12" y2="20"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+        </div>
+        <p class="before-label">Avoid alcohol for <br>24 hours before.</p>
+      </div>
+
+      <!-- 5. Stay hydrated -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 3C9 7.5 7 10 7 13a5 5 0 0010 0c0-3-2-5.5-5-10z"/><path d="M10 16.5a2.5 2.5 0 001.5.5"/></svg>
+        </div>
+        <p class="before-label">Stay well hydrated for <br>24 hours before.</p>
+      </div>
+
+      <!-- 6. Eat a small meal -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M7 3v7a2 2 0 002 2v9"/><line x1="5" y1="3" x2="5" y2="7"/><line x1="9" y1="3" x2="9" y2="7"/><path d="M17 3a3 3 0 00-3 3v6a3 3 0 003 3v6"/></svg>
+        </div>
+        <p class="before-label">Eat a small meal before <br>your appointment.</p>
+      </div>
+
+      <!-- 7. Clean skin -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><rect x="10" y="2" width="4" height="3" rx="0.5"/><path d="M8 7h8v13a1.5 1.5 0 01-1.5 1.5h-5A1.5 1.5 0 018 20V7z"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+        </div>
+        <p class="before-label">Arrive with clean, <br>product-free skin.</p>
       </div>
 
     </div>
-    <div class="services-grid">
-      <div class="service-card fade-up">
-        <div class="service-card-content">
-          <h3 class="service-title">Laser Hair Removal</h3>
-          <p class="service-desc">Achieve permanent hair reduction with advanced laser technology calibrated for all skin tones and hair types. Safe, effective, and personalized — delivering lasting results in every session.</p>
-          <a href="laser-hair-removal.html" class="service-learn-more">Learn More</a>
+  </section>
+
+  <!-- POST-TREATMENT -->
+  <section class="svc-post" id="post-treatment">
+    <p class="section-label fade-up">Post-Treatment</p>
+    <h2 class="svc-before-heading fade-up">After your <em>appointment.</em></h2>
+    <p class="svc-before-intro fade-up">Some redness, slight swelling, or tiny pinpoint marks around treated follicles is normal and typically settles within a few hours. These simple steps help your skin heal cleanly between sessions.</p>
+    <div class="before-grid fade-up">
+
+      <!-- 1. No strenuous exercise -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><line x1="8.5" y1="12" x2="15.5" y2="12"/><rect x="1.5" y="9.5" width="7" height="5" rx="1.5"/><rect x="15.5" y="9.5" width="7" height="5" rx="1.5"/><line x1="5" y1="7.5" x2="5" y2="16.5"/><line x1="19" y1="7.5" x2="19" y2="16.5"/></svg>
         </div>
-        <div class="service-card-img" style="background: url('images/laser-hair-removal.webp') center/cover no-repeat;"></div>
+        <p class="before-label">No strenuous exercise <br>for 24 hours.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-card-content">
-          <h3 class="service-title">Electrolysis</h3>
-          <p class="service-desc">Electrolysis offers permanent hair removal that works across a wide range of hair colors and skin tones. Precise, thorough, and clinically proven — a trusted solution for lasting results.</p>
-          <a href="electrolysis.html" class="service-learn-more">Learn More</a>
+
+      <!-- 2. No hot environments -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M5 20c1-2 1-4 0-6s-1-4 0-6"/><path d="M12 20c1-2 1-4 0-6s-1-4 0-6"/><path d="M19 20c1-2 1-4 0-6s-1-4 0-6"/></svg>
         </div>
-        <div class="service-card-img" style="background: url('images/electrolysis.webp') center/cover no-repeat;"></div>
+        <p class="before-label">No saunas or hot tubs <br>for 48 hours.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-card-content">
-          <h3 class="service-title">Skin Treatments</h3>
-          <p class="service-desc">Restore clarity and confidence with results-driven skin treatments guided by decades of clinical experience. From skin resurfacing to acne laser therapy — every treatment is tailored to your unique skin needs.</p>
-          <a href="#contact" class="service-learn-more">Learn More</a>
+
+      <!-- 3. Cool compress -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/><polyline points="10 5 12 7 14 5"/><polyline points="10 19 12 17 14 19"/><polyline points="5 10 7 12 5 14"/><polyline points="19 10 17 12 19 14"/></svg>
         </div>
-        <div class="service-card-img" style="background: url('images/skin-treatments.webp') center/cover no-repeat;"></div>
+        <p class="before-label">Apply a cool compress <br>to soothe any redness.</p>
       </div>
-      <div class="service-card fade-up">
-        <div class="service-card-content">
-          <h3 class="service-title">Gender Affirming Care</h3>
-          <p class="service-desc">We proudly offer a welcoming, inclusive, and affirming space for LGBTQIA+ clients seeking electrolysis and laser hair removal services. We understand that gender-affirming hair removal is a deeply personal journey, and our goal is to offer compassionate care tailored to your needs.</p>
-          <a href="#contact" class="service-learn-more pride">Learn More</a>
+
+      <!-- 4. Soothing products -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><rect x="8" y="6" width="8" height="14" rx="2"/><path d="M10 6V4.5A1.5 1.5 0 0111.5 3h1A1.5 1.5 0 0114 4.5V6"/><path d="M10 11h4"/><path d="M10 14h4"/></svg>
         </div>
-        <div class="service-card-img" style="background: url('images/gender-affirming-care.webp') center/cover no-repeat;"></div>
+        <p class="before-label">Use fragrance-free <br>products like aloe vera.</p>
       </div>
+
+      <!-- 5. Sun protection -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="16.95" y2="7.05"/><line x1="7.05" y1="16.95" x2="4.93" y2="19.07"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+        </div>
+        <p class="before-label">Avoid unprotected sun <br>for at least 2 weeks.</p>
+      </div>
+
+      <!-- 6. Don't pick or touch -->
+      <div class="before-item">
+        <div class="before-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M9 13V6a1.5 1.5 0 113 0v6"/><path d="M12 12V4.5a1.5 1.5 0 113 0V12"/><path d="M15 12V7a1.5 1.5 0 113 0v6"/><path d="M6 13V9a1.5 1.5 0 113 0v3"/><path d="M6 13c0 5 2.5 8 6.5 8 3.8 0 6.5-3 6.5-7"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+        </div>
+        <p class="before-label">Don&rsquo;t pick or scratch <br>any small scabs.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- CONTACT -->
-
   <section class="contact-section" id="contact">
     <div class="contact-grid">
       <p class="section-label fade-up">Contact</p>
       <h2 class="section-title fade-up">Ready to <em>get started?</em></h2>
-      <p class="contact-body fade-up">New to Luma? Let&#x2019;s start with a free 15-min consultation. Returning clients, book your next appointment anytime.</p>
+      <p class="contact-body fade-up">New to Luma? Let&rsquo;s start with a free 15-min consultation. Returning clients, book your next appointment anytime.</p>
     </div>
     <div class="contact-methods fade-up">
       <a class="contact-method" href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services/VQTP7F43D7EF6PJQHQQRPPK6" target="_blank" rel="noopener">
@@ -1632,44 +2167,38 @@
           <div class="contact-method-label">New Clients</div>
           <div class="contact-method-value">Book a free 15-min consultation</div>
         </div>
-        <span class="contact-method-arrow">↗&#xFE0E;</span>
+        <span class="contact-method-arrow">&#x2197;&#xFE0E;</span>
       </a>
       <a class="contact-method" href="https://app.squareup.com/appointments/book/lyff610olsalte/L9PXCF6VPWXRE/start" target="_blank" rel="noopener">
         <div>
           <div class="contact-method-label">Returning Clients</div>
           <div class="contact-method-value">Book an appointment</div>
         </div>
-        <span class="contact-method-arrow">↗&#xFE0E;</span>
+        <span class="contact-method-arrow">&#x2197;&#xFE0E;</span>
       </a>
       <a class="contact-method" href="mailto:hello@lumalancaster.com">
         <div>
           <div class="contact-method-label">Email</div>
           <div class="contact-method-value">hello@lumalancaster.com</div>
         </div>
-        <span class="contact-method-arrow">↗&#xFE0E;</span>
+        <span class="contact-method-arrow">&#x2197;&#xFE0E;</span>
       </a>
       <a class="contact-method" href="tel:+17172010037">
         <div>
           <div class="contact-method-label">Phone</div>
           <div class="contact-method-value">717-201-0037</div>
         </div>
-        <span class="contact-method-arrow">↗&#xFE0E;</span>
+        <span class="contact-method-arrow">&#x2197;&#xFE0E;</span>
       </a>
       <a class="contact-method" href="https://maps.google.com/?q=440+E+Roseville+Road,+Lancaster,+PA+17601" target="_blank" rel="noopener" style="padding-bottom: 35px;">
         <div>
           <div class="contact-method-label">Studio Location</div>
           <div class="contact-method-value">440 E Roseville Road, Lancaster, PA 17601</div>
         </div>
-        <span class="contact-method-arrow">↗&#xFE0E;</span>
+        <span class="contact-method-arrow">&#x2197;&#xFE0E;</span>
       </a>
     </div>
   </section>
-
-  <!-- CTA BANNER -->
-  <div class="cta-banner">
-    <p class="section-label fade-up">LUMA Laser & Electrolysis</p>
-    <h2 class="cta-title fade-up">Confidence starts&nbsp;<em>here.</em></h2>
-  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -1679,9 +2208,9 @@
     <div class="footer-center">
       <a class="footer-book-btn" href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services/VQTP7F43D7EF6PJQHQQRPPK6" target="_blank" rel="noopener">Book an Appointment</a>
       <ul class="footer-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <p class="footer-copy">© 2026 LUMA Laser &amp; Electrolysis · Lancaster, PA</p>
