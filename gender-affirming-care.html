@@ -2164,9 +2164,14 @@
 
     /* ── VOICES WE FOLLOW ── */
     .svc-voices {
-      background: var(--juniper);
+      --active-bg: var(--juniper);
+      --voice-active-w: min(720px, 72vw);
+      --voice-inactive-w: 132px;
+      --voice-gap: 18px;
+      background: var(--active-bg);
       padding: 60px 52px 80px;
       border-top: 1px solid var(--border);
+      transition: background 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .voices-intro {
       max-width: 720px;
@@ -2194,58 +2199,59 @@
     }
     .voices-grid {
       display: flex;
-      gap: 24px;
+      gap: var(--voice-gap);
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-padding-inline: 52px;
-      scroll-behavior: smooth;
+      overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 4px 52px 56px;
-      perspective: 1500px;
-      perspective-origin: 50% 50%;
+      padding-top: 8px;
+      padding-bottom: 64px;
+      padding-left: 0;
+      padding-right: 0;
+      align-items: stretch;
     }
     .voices-grid::-webkit-scrollbar { display: none; }
     .voices-nav {
       position: absolute;
-      bottom: 0;
+      bottom: 8px;
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--warm-honey);
+      border: 1px solid rgba(224,216,195,0.32);
+      background: rgba(31,33,28,0.35);
+      color: var(--linen);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.1rem;
-      transition: background 0.2s ease, border-color 0.2s ease;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
       z-index: 10;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
     .voices-nav:hover {
-      background: rgba(157,142,104,0.12);
-      border-color: rgba(157,142,104,0.45);
+      background: rgba(31,33,28,0.55);
+      border-color: rgba(224,216,195,0.55);
     }
     .voices-prev { left: calc(50% - 60px); }
     .voices-next { left: calc(50% + 16px); }
     .voice-card {
       position: relative;
-      flex: 0 0 calc((100% - 48px) / 3);
-      aspect-ratio: 4 / 5;
-      background: var(--juniper);
-      border: 1px solid var(--border);
-      border-radius: 4px;
+      flex: 0 0 auto;
+      width: var(--voice-inactive-w);
+      height: 480px;
+      max-height: 60vh;
+      background: rgba(31,33,28,0.5);
+      border-radius: 18px;
       overflow: hidden;
       cursor: pointer;
-      scroll-snap-align: center;
-      transform: rotateY(var(--rot, 0deg));
-      transform-origin: 50% 50%;
-      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
-      will-change: transform;
+      transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: width;
     }
-    .voice-card:hover {
-      border-color: rgba(157,142,104,0.42);
+    .voice-card.is-active {
+      width: var(--voice-active-w);
+      cursor: default;
     }
     .voice-photo {
       position: absolute;
@@ -2253,144 +2259,154 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      transition: transform 0.6s ease, filter 0.4s ease;
+      transform: scale(1.04);
+      filter: blur(3px) brightness(0.9) saturate(1.05);
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.55s ease;
     }
-    .voice-card:hover .voice-photo {
-      transform: scale(1.06);
-      filter: brightness(0.32);
+    .voice-card.is-active .voice-photo {
+      transform: scale(1);
+      filter: blur(0) brightness(1) saturate(1);
     }
-    .voice-name {
+    .voice-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 35%, transparent 65%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .voice-card.is-active .voice-photo::after { opacity: 1; }
+    /* Subtle frosted scrim under the bio + button (ends below the title) for legibility */
+    .voice-card::before {
+      content: '';
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      margin: 0;
-      padding: 60px 24px 22px;
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      font-weight: 400;
-      letter-spacing: -0.005em;
-      color: var(--linen);
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
-      transition: opacity 0.3s ease, transform 0.4s ease;
+      height: 38%;
+      pointer-events: none;
       z-index: 1;
-    }
-    .voice-card:hover .voice-name {
       opacity: 0;
-      transform: translateY(8px);
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      mask-image: linear-gradient(to top, black 0%, black 70%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to top, black 0%, black 70%, transparent 100%);
+      transition: opacity 0.45s ease;
     }
-    .voice-hover {
+    .voice-card.is-active::before { opacity: 1; }
+    .voice-badge {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      padding: 7px 12px;
+      background: var(--warm-honey);
+      color: var(--midnight);
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.45s ease 0.1s, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+      z-index: 3;
+    }
+    .voice-card.is-active .voice-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .voice-content {
       position: absolute;
       inset: 0;
-      padding: 28px 24px;
+      padding: 28px 32px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 18px;
+      justify-content: flex-end;
+      gap: 16px;
       z-index: 2;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.4s ease;
     }
-    .voice-card:hover .voice-hover {
+    .voice-card.is-active .voice-content {
       opacity: 1;
       pointer-events: auto;
+      transition: opacity 0.5s ease 0.15s;
     }
-    .voice-hover .voice-name {
-      position: static;
-      padding: 0;
-      background: none;
-      font-size: 1.25rem;
-      opacity: 1;
-      transform: none;
+    .voice-name {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--linen);
+      max-width: 90%;
     }
     .voice-bio {
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       line-height: 1.65;
       color: var(--linen);
       font-weight: 300;
       margin: 0;
+      max-width: 88%;
     }
     .voice-link-btn {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
-      padding: 14px 18px;
-      background: rgba(157,142,104,0.08);
-      border: 1px solid var(--border);
-      border-radius: 4px;
+      padding: 0;
+      background: transparent;
+      border: 0;
       color: var(--linen);
       text-decoration: none;
       font-family: var(--sans);
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
-      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      width: fit-content;
+      margin-top: 4px;
+      transition: color 0.25s ease, transform 0.25s ease;
     }
-    .voice-link-btn:hover {
-      background: rgba(157,142,104,0.18);
-      border-color: rgba(157,142,104,0.5);
-      transform: translateY(-2px);
-    }
-    .voice-link-text {
-      flex: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+    .voice-link-btn:hover { transform: translateX(3px); }
     .voice-link-arrow {
-      font-size: 1.15rem;
-      color: var(--warm-honey);
-      flex-shrink: 0;
-      transition: transform 0.25s ease;
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(224,216,195,0.7);
+      border-radius: 50%;
+      font-size: 0.95rem;
+      transition: background 0.25s ease, border-color 0.25s ease;
     }
     .voice-link-btn:hover .voice-link-arrow {
-      transform: translate(3px, -3px);
+      background: rgba(224,216,195,0.18);
+      border-color: var(--linen);
     }
+    .voice-link-text { white-space: nowrap; }
     @media (max-width: 900px) {
-      .svc-voices { padding: 35px 28px 60px; }
+      .svc-voices {
+        padding: 35px 28px 60px;
+        --voice-active-w: 84vw;
+        --voice-inactive-w: 88px;
+        --voice-gap: 12px;
+      }
       .voices-intro { margin-bottom: 32px; }
       .voices-slider { margin-left: -28px; margin-right: -28px; }
       .voices-grid {
-        gap: 16px;
-        padding: 4px 28px 56px;
-        scroll-padding-inline: 28px;
-        perspective: 900px;
+        padding-top: 8px;
+        padding-bottom: 56px;
       }
-      .voices-prev { left: calc(50% - 56px); }
-      .voices-next { left: calc(50% + 12px); }
-      .voice-card {
-        flex: 0 0 78%;
-        aspect-ratio: 4 / 5;
-        cursor: default;
-        background: rgba(31,33,28,0.45);
-      }
-      .voice-card:hover { transform: none; }
-      .voice-photo {
-        position: relative;
-        inset: auto;
-        width: 100%;
-        aspect-ratio: 1 / 1;
-      }
-      .voice-card:hover .voice-photo {
-        transform: none;
-        filter: none;
-      }
-      .voice-name {
-        position: static;
-        background: none;
-        padding: 22px 24px 0;
-        font-size: 1.25rem;
-        opacity: 1 !important;
-        transform: none !important;
-      }
-      .voice-hover {
-        position: static;
-        padding: 12px 24px 24px;
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .voice-bio { color: var(--sandstone); }
+      .voices-prev { left: calc(50% - 56px); bottom: 4px; }
+      .voices-next { left: calc(50% + 12px); bottom: 4px; }
+      .voice-card { height: 420px; max-height: 55vh; border-radius: 14px; }
+      .voice-content { padding: 22px 22px; gap: 12px; }
+      .voice-name { font-size: 1.55rem; }
+      .voice-bio { font-size: 0.85rem; max-width: 100%; }
+      .voice-badge { top: 16px; left: 16px; font-size: 0.62rem; padding: 6px 10px; }
     }
   </style>
 </head>
@@ -2657,69 +2673,87 @@
     </div>
     <div class="voices-slider">
       <div class="voices-grid">
-        <article class="voice-card">
+        <article class="voice-card" data-bg="#2C3530">
           <div class="voice-photo" style="background-image: url('images/keystone-business-alliance.jpg');" aria-hidden="true"></div>
-          <h3 class="voice-name">Keystone Business Alliance</h3>
-          <div class="voice-hover">
+          <span class="voice-badge">Connector</span>
+          <div class="voice-content">
+            <h3 class="voice-name">Keystone Business Alliance</h3>
             <p class="voice-bio">A statewide LGBTQ+ Chamber of Commerce focused on creating inclusive business communities, supporting LGBTQ+ professionals and entrepreneurs, and helping connect affirming businesses across Pennsylvania.</p>
             <a class="voice-link-btn" href="https://keystonebusinessalliance.org/" target="_blank" rel="noopener">
+              <span class="voice-link-arrow" aria-hidden="true">&rarr;</span>
               <span class="voice-link-text">Explore Their Website</span>
-              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
             </a>
           </div>
         </article>
-        <article class="voice-card">
+        <article class="voice-card" data-bg="#3B2F26">
           <div class="voice-photo" style="background-image: url('images/lancaster-pride.webp');" aria-hidden="true"></div>
-          <h3 class="voice-name">Lancaster Pride</h3>
-          <div class="voice-hover">
+          <span class="voice-badge">Community</span>
+          <div class="voice-content">
+            <h3 class="voice-name">Lancaster Pride</h3>
             <p class="voice-bio">Lancaster Pride is a volunteer-driven nonprofit creating safe, visible, and affirming spaces for LGBTQIA+ people and allies across Lancaster County through community events, education, advocacy, and the annual Lancaster Pride Festival.</p>
             <a class="voice-link-btn" href="https://www.lancasterpride.org/" target="_blank" rel="noopener">
+              <span class="voice-link-arrow" aria-hidden="true">&rarr;</span>
               <span class="voice-link-text">Explore Their Website</span>
-              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
             </a>
           </div>
         </article>
-        <article class="voice-card">
+        <article class="voice-card" data-bg="#301413">
           <div class="voice-photo" style="background-image: url('images/lancaster-chooses-love.jpg');" aria-hidden="true"></div>
-          <h3 class="voice-name">Lancaster Chooses Love</h3>
-          <div class="voice-hover">
+          <span class="voice-badge">Advocacy</span>
+          <div class="voice-content">
+            <h3 class="voice-name">Lancaster Chooses Love</h3>
             <p class="voice-bio">A grassroots organization that is committed to advocating for LGBTQ+ individuals within the community by creating safe social spaces and connecting community members with local resources.</p>
             <a class="voice-link-btn" href="https://lancasterchooseslove.org/" target="_blank" rel="noopener">
+              <span class="voice-link-arrow" aria-hidden="true">&rarr;</span>
               <span class="voice-link-text">Explore Their Website</span>
-              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
             </a>
           </div>
         </article>
-        <article class="voice-card">
-          <div class="voice-photo" aria-hidden="true"></div>
-          <h3 class="voice-name">Organization Name</h3>
-          <div class="voice-hover">
-            <p class="voice-bio">Brief description of the organization and the work they do for the local LGBTQIA+ community in Lancaster County.</p>
-            <a class="voice-link-btn" href="#" target="_blank" rel="noopener">
+        <article class="voice-card" data-bg="#3D2820">
+          <div class="voice-photo" style="background-image: url('images/keystone-claws.jpg');" aria-hidden="true"></div>
+          <span class="voice-badge">Nail Salon</span>
+          <div class="voice-content">
+            <h3 class="voice-name">Keystone Claws</h3>
+            <p class="voice-bio">A Lancaster nail salon creating an inclusive, affirming space with forward-thinking nail art and design. Their tagline says it best: wear your claws with pride.</p>
+            <a class="voice-link-btn" href="https://www.keystoneclaws.com/" target="_blank" rel="noopener">
+              <span class="voice-link-arrow" aria-hidden="true">&rarr;</span>
               <span class="voice-link-text">Explore Their Website</span>
-              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
             </a>
           </div>
         </article>
-        <article class="voice-card">
-          <div class="voice-photo" aria-hidden="true"></div>
-          <h3 class="voice-name">Organization Name</h3>
-          <div class="voice-hover">
-            <p class="voice-bio">Brief description of the organization and the work they do for the local LGBTQIA+ community in Lancaster County.</p>
-            <a class="voice-link-btn" href="#" target="_blank" rel="noopener">
+        <article class="voice-card" data-bg="#3A2818">
+          <div class="voice-photo" style="background-image: url('images/space-lancaster.jpg');" aria-hidden="true"></div>
+          <span class="voice-badge">Vintage</span>
+          <div class="voice-content">
+            <h3 class="voice-name">Space</h3>
+            <p class="voice-bio">Lancaster&rsquo;s premier mid-century modern and vintage shop, queer-owned since 2013. A curated destination for furniture, decor, and the kind of pieces that turn a room into a moment.</p>
+            <a class="voice-link-btn" href="https://spacelancaster.com/" target="_blank" rel="noopener">
+              <span class="voice-link-arrow" aria-hidden="true">&rarr;</span>
               <span class="voice-link-text">Explore Their Website</span>
-              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
             </a>
           </div>
         </article>
-        <article class="voice-card">
-          <div class="voice-photo" aria-hidden="true"></div>
-          <h3 class="voice-name">Organization Name</h3>
-          <div class="voice-hover">
-            <p class="voice-bio">Brief description of the organization and the work they do for the local LGBTQIA+ community in Lancaster County.</p>
-            <a class="voice-link-btn" href="#" target="_blank" rel="noopener">
+        <article class="voice-card" data-bg="#2D2820">
+          <div class="voice-photo" style="background-image: url('images/studio-gandy.jpg');" aria-hidden="true"></div>
+          <span class="voice-badge">Brand/Creative</span>
+          <div class="voice-content">
+            <h3 class="voice-name">Studio Gandy</h3>
+            <p class="voice-bio">For creative entrepreneurs and business owners who care about the legacy of their work. Studio Gandy crafts unique brand and web designs that feel lived-in and deeply human.</p>
+            <a class="voice-link-btn" href="https://lauragandy.com/" target="_blank" rel="noopener">
+              <span class="voice-link-arrow" aria-hidden="true">&rarr;</span>
               <span class="voice-link-text">Explore Their Website</span>
-              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
+            </a>
+          </div>
+        </article>
+        <article class="voice-card" data-bg="#3A2218">
+          <div class="voice-photo" style="background-image: url('images/west-art.jpg');" aria-hidden="true"></div>
+          <span class="voice-badge">Cultural Space</span>
+          <div class="voice-content">
+            <h3 class="voice-name">West Art</h3>
+            <p class="voice-bio">A multi-purpose, ever-evolving community and cultural space housed within a historic church in Lancaster. West Art frequently hosts LGBTQ+ community events.</p>
+            <a class="voice-link-btn" href="https://www.westartlanc.com/" target="_blank" rel="noopener">
+              <span class="voice-link-arrow" aria-hidden="true">&rarr;</span>
+              <span class="voice-link-text">Explore Their Website</span>
             </a>
           </div>
         </article>
@@ -2826,45 +2860,168 @@
       }
     });
 
-    // Voices slider — curved coverflow rotation
+    // Voices slider — endless focus/blur carousel with morphing background
     (function() {
+      const section = document.querySelector('.svc-voices');
       const track = document.querySelector('.voices-grid');
       const prev = document.querySelector('.voices-prev');
       const next = document.querySelector('.voices-next');
-      if (!track || !prev || !next) return;
-      const cards = Array.from(track.querySelectorAll('.voice-card'));
-      const MAX_ROT = 28; // degrees at the far edges
+      if (!section || !track || !prev || !next) return;
+      const originals = Array.from(track.querySelectorAll('.voice-card'));
+      if (!originals.length) return;
 
-      function step() {
-        const card = cards[0];
-        if (!card) return 320;
-        const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 24;
-        return card.getBoundingClientRect().width + gap;
+      const N = originals.length;
+      const COPIES = 5;
+      // Clone the original list (COPIES - 1) more times for an endless feel.
+      for (let c = 1; c < COPIES; c++) {
+        originals.forEach(card => track.appendChild(card.cloneNode(true)));
       }
-      function updateRotations() {
-        const r = track.getBoundingClientRect();
-        const centerX = r.left + r.width / 2;
-        const halfW = r.width / 2;
-        cards.forEach(card => {
-          const cr = card.getBoundingClientRect();
-          const cx = cr.left + cr.width / 2;
-          const offset = (cx - centerX) / halfW; // -1 .. 1 across track
-          const clamped = Math.max(-1, Math.min(1, offset));
-          const rot = -clamped * MAX_ROT;
-          card.style.setProperty('--rot', rot.toFixed(2) + 'deg');
+      const cards = Array.from(track.querySelectorAll('.voice-card'));
+      const TOTAL = cards.length;
+      const SAFE_MIN = N;             // active must be >= this to allow scrolling left
+      const SAFE_MAX = TOTAL - N - 1; // active must be <= this to allow scrolling right
+      const START = Math.floor(COPIES / 2) * N;
+
+      let activeIndex = START;
+      let isAnimating = false;
+      let settleTimer = null;
+      let wrapTimer = null;
+
+      function metrics() {
+        const probe = document.createElement('div');
+        probe.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;width:var(--voice-active-w);';
+        section.appendChild(probe);
+        const activeW = probe.getBoundingClientRect().width;
+        probe.style.width = 'var(--voice-inactive-w)';
+        const inactiveW = probe.getBoundingClientRect().width;
+        probe.remove();
+        const tcs = getComputedStyle(track);
+        const gap = parseFloat(tcs.columnGap || tcs.rowGap || tcs.gap) || 18;
+        const padLeft = parseFloat(tcs.paddingLeft) || 0;
+        return { activeW, inactiveW, gap, padLeft, clientWidth: track.clientWidth };
+      }
+
+      // Predicted scroll target so the active card sits dead-center.
+      function targetScrollFor(i) {
+        const m = metrics();
+        const leftOfActive = m.padLeft + i * (m.inactiveW + m.gap);
+        const centerOfActive = leftOfActive + m.activeW / 2;
+        return centerOfActive - m.clientWidth / 2;
+      }
+
+      function applyActive(i) {
+        cards.forEach((c, idx) => c.classList.toggle('is-active', idx === i));
+        const bg = cards[i].dataset.bg;
+        if (bg) section.style.setProperty('--active-bg', bg);
+        activeIndex = i;
+      }
+
+      // Silent wrap: if active migrated to the first/last copy, jump to the equivalent
+      // card in the middle copy and shift scrollLeft so the user sees no change.
+      function wrapIfNeeded() {
+        if (activeIndex >= SAFE_MIN && activeIndex <= SAFE_MAX) return;
+        const oldIdx = activeIndex;
+        let newIdx = oldIdx;
+        while (newIdx < SAFE_MIN) newIdx += N;
+        while (newIdx > SAFE_MAX) newIdx -= N;
+        const m = metrics();
+        const stride = m.inactiveW + m.gap;
+        const diff = (newIdx - oldIdx) * stride;
+        // Disable transitions during the silent shift.
+        cards.forEach(c => c.style.transition = 'none');
+        applyActive(newIdx);
+        track.scrollLeft = track.scrollLeft + diff;
+        // Force reflow then restore transitions.
+        // eslint-disable-next-line no-unused-expressions
+        track.offsetWidth;
+        cards.forEach(c => c.style.transition = '');
+      }
+
+      function setActive(i, opts) {
+        opts = opts || {};
+        if (i < 0) i = 0;
+        if (i >= TOTAL) i = TOTAL - 1;
+        applyActive(i);
+        if (!opts.skipScroll) {
+          isAnimating = true;
+          const left = targetScrollFor(i);
+          track.scrollTo({ left, behavior: opts.behavior || 'smooth' });
+          clearTimeout(wrapTimer);
+          wrapTimer = setTimeout(() => {
+            isAnimating = false;
+            wrapIfNeeded();
+          }, opts.behavior === 'auto' ? 30 : 800);
+        }
+      }
+
+      cards.forEach((card, i) => {
+        card.addEventListener('click', () => {
+          if (i !== activeIndex) setActive(i);
+        });
+      });
+
+      prev.addEventListener('click', () => setActive(activeIndex - 1));
+      next.addEventListener('click', () => setActive(activeIndex + 1));
+
+      // Manual scroll: highlight the centered card, then snap precisely after settle.
+      let scrollRaf = null;
+      track.addEventListener('scroll', () => {
+        if (isAnimating) return;
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(() => {
+          scrollRaf = null;
+          const trackRect = track.getBoundingClientRect();
+          const centerX = trackRect.left + trackRect.width / 2;
+          let bestIdx = activeIndex;
+          let bestDist = Infinity;
+          cards.forEach((c, i) => {
+            const cr = c.getBoundingClientRect();
+            const cx = cr.left + cr.width / 2;
+            const d = Math.abs(cx - centerX);
+            if (d < bestDist) { bestDist = d; bestIdx = i; }
+          });
+          if (bestIdx !== activeIndex) applyActive(bestIdx);
+          clearTimeout(settleTimer);
+          settleTimer = setTimeout(() => {
+            isAnimating = true;
+            track.scrollTo({ left: targetScrollFor(activeIndex), behavior: 'smooth' });
+            clearTimeout(wrapTimer);
+            wrapTimer = setTimeout(() => {
+              isAnimating = false;
+              wrapIfNeeded();
+            }, 500);
+          }, 140);
+        });
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        track.scrollTo({ left: targetScrollFor(activeIndex), behavior: 'auto' });
+      });
+
+      // Initial: paint active state immediately, but defer the scroll-to-center
+      // until the section is on-screen and laid out — otherwise clientWidth/0-sized
+      // measurements at script-run can leave the carousel snapped to the wrong card.
+      applyActive(START);
+      function initScroll() {
+        if (track.clientWidth === 0) {
+          requestAnimationFrame(initScroll);
+          return;
+        }
+        isAnimating = true;
+        track.scrollTo({ left: targetScrollFor(START), behavior: 'auto' });
+        // Re-snap once more after one frame to guard against late layout shifts.
+        requestAnimationFrame(() => {
+          track.scrollTo({ left: targetScrollFor(START), behavior: 'auto' });
+          setTimeout(() => { isAnimating = false; }, 200);
         });
       }
-      let raf = null;
-      function onScroll() {
-        if (raf) return;
-        raf = requestAnimationFrame(() => { raf = null; updateRotations(); });
-      }
-      track.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', updateRotations);
-      prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-      next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
-      // Initial paint
-      requestAnimationFrame(updateRotations);
+      const initObs = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+          initObs.disconnect();
+          initScroll();
+        }
+      }, { threshold: 0.05 });
+      initObs.observe(section);
     })();
 
     // FAQ accordion
