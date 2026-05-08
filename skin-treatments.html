@@ -1936,20 +1936,16 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      border: 1.5px solid rgba(157,142,104,0.35);
-      background: rgba(157,142,104,0.08);
+      border: 1.5px solid transparent;
+      background: var(--juniper);
+      box-shadow:
+        inset 3px 3px 8px rgba(0,0,0,0.45),
+        inset -1px -1px 4px rgba(255,255,255,0.06);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-    }
-    .before-item:hover .before-icon-wrap {
-      background: var(--juniper);
-      border-color: transparent;
-      box-shadow:
-        inset 3px 3px 8px rgba(0,0,0,0.45),
-        inset -1px -1px 4px rgba(255,255,255,0.06);
+      transition: background 0.3s ease;
     }
     .before-icon-wrap svg {
       width: 44px;
@@ -1980,13 +1976,7 @@
       padding: 54px 52px 60px;
       border-top: 1px solid var(--border);
     }
-    .svc-post .before-item:hover .before-icon-wrap {
-      background: #4A5443;
-      border-color: transparent;
-      box-shadow:
-        inset 3px 3px 8px rgba(0,0,0,0.45),
-        inset -1px -1px 4px rgba(255,255,255,0.06);
-    }
+    .svc-post .before-icon-wrap { background: #4A5443; }
     @media (max-width: 900px) {
       .svc-post { padding: 35px 28px 50px; }
     }

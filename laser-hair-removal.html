@@ -664,6 +664,8 @@
       transform-origin: left;
       transition: transform 0.4s ease;
     }
+    .svc-before .before-item { background: var(--moss); }
+    .svc-post .before-item { background: var(--juniper); }
     .before-item:hover { background: rgba(48,20,19,0.55); border-color: rgba(157,142,104,0.3); }
     .before-item:hover::before { transform: scaleX(1); }
     .before-item:hover .before-label { font-weight: 600; }
@@ -787,25 +789,17 @@
       border-top: 1px solid var(--border);
     }
 
-    /* ── EMBOSS — Pre & Post-Treatment icon circles on hover only ── */
+    /* ── EMBOSS — Pre & Post-Treatment icon circles (default state) ── */
     .svc-before .before-icon-wrap,
     .svc-post .before-icon-wrap {
-      transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-    }
-    .svc-before .before-item:hover .before-icon-wrap {
-      background: var(--juniper);
       border-color: transparent;
       box-shadow:
         inset 3px 3px 8px rgba(0,0,0,0.45),
         inset -1px -1px 4px rgba(255,255,255,0.06);
+      transition: background 0.3s ease;
     }
-    .svc-post .before-item:hover .before-icon-wrap {
-      background: #4A5443;
-      border-color: transparent;
-      box-shadow:
-        inset 3px 3px 8px rgba(0,0,0,0.45),
-        inset -1px -1px 4px rgba(255,255,255,0.06);
-    }
+    .svc-before .before-icon-wrap { background: var(--juniper); }
+    .svc-post .before-icon-wrap { background: #4A5443; }
 
     /* ── TECHNOLOGY ── */
     .svc-technology {

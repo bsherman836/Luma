@@ -1838,20 +1838,16 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      border: 1.5px solid rgba(157,142,104,0.35);
-      background: rgba(157,142,104,0.08);
+      border: 1.5px solid transparent;
+      background: var(--juniper);
+      box-shadow:
+        inset 3px 3px 8px rgba(0,0,0,0.45),
+        inset -1px -1px 4px rgba(255,255,255,0.06);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-    }
-    .before-item:hover .before-icon-wrap {
-      background: var(--juniper);
-      border-color: transparent;
-      box-shadow:
-        inset 3px 3px 8px rgba(0,0,0,0.45),
-        inset -1px -1px 4px rgba(255,255,255,0.06);
+      transition: background 0.3s ease;
     }
     .before-icon-wrap svg {
       width: 44px;
@@ -1882,13 +1878,7 @@
       padding: 54px 52px 60px;
       border-top: 1px solid var(--border);
     }
-    .svc-post .before-item:hover .before-icon-wrap {
-      background: #4A5443;
-      border-color: transparent;
-      box-shadow:
-        inset 3px 3px 8px rgba(0,0,0,0.45),
-        inset -1px -1px 4px rgba(255,255,255,0.06);
-    }
+    .svc-post .before-icon-wrap { background: #4A5443; }
     @media (max-width: 900px) {
       .svc-post { padding: 35px 28px 50px; }
     }
@@ -2197,50 +2187,129 @@
       color: var(--sandstone);
       font-weight: 300;
     }
-    .voices-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .voices-slider {
+      position: relative;
+      margin-left: -52px;
+      margin-right: -52px;
     }
-    .voice-card {
+    .voices-grid {
       display: flex;
-      flex-direction: column;
-      background: rgba(31,33,28,0.45);
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 52px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 4px 52px 56px;
+      perspective: 1500px;
+      perspective-origin: 50% 50%;
+    }
+    .voices-grid::-webkit-scrollbar { display: none; }
+    .voices-nav {
+      position: absolute;
+      bottom: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--warm-honey);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      z-index: 10;
+    }
+    .voices-nav:hover {
+      background: rgba(157,142,104,0.12);
+      border-color: rgba(157,142,104,0.45);
+    }
+    .voices-prev { left: calc(50% - 60px); }
+    .voices-next { left: calc(50% + 16px); }
+    .voice-card {
+      position: relative;
+      flex: 0 0 calc((100% - 48px) / 3);
+      aspect-ratio: 4 / 5;
+      background: var(--juniper);
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 24px;
-      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+      overflow: hidden;
+      cursor: pointer;
+      scroll-snap-align: center;
+      transform: rotateY(var(--rot, 0deg));
+      transform-origin: 50% 50%;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
+      will-change: transform;
     }
     .voice-card:hover {
-      background: rgba(31,33,28,0.62);
-      border-color: rgba(157,142,104,0.32);
-      transform: translateY(-3px);
+      border-color: rgba(157,142,104,0.42);
     }
     .voice-photo {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 4px;
-      background: var(--moss);
+      position: absolute;
+      inset: 0;
       background-size: cover;
       background-position: center;
-      margin-bottom: 18px;
+      background-repeat: no-repeat;
+      transition: transform 0.6s ease, filter 0.4s ease;
+    }
+    .voice-card:hover .voice-photo {
+      transform: scale(1.06);
+      filter: brightness(0.32);
     }
     .voice-name {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 60px 24px 22px;
       font-family: var(--serif);
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: 400;
-      color: var(--linen);
-      margin-bottom: 4px;
       letter-spacing: -0.005em;
+      color: var(--linen);
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+      transition: opacity 0.3s ease, transform 0.4s ease;
+      z-index: 1;
+    }
+    .voice-card:hover .voice-name {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    .voice-hover {
+      position: absolute;
+      inset: 0;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .voice-card:hover .voice-hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .voice-hover .voice-name {
+      position: static;
+      padding: 0;
+      background: none;
+      font-size: 1.25rem;
+      opacity: 1;
+      transform: none;
     }
     .voice-bio {
       font-size: 0.88rem;
-      line-height: 1.7;
-      color: var(--sandstone);
+      line-height: 1.65;
+      color: var(--linen);
       font-weight: 300;
-      margin-top: 4px;
-      margin-bottom: 22px;
-      flex: 1;
+      margin: 0;
     }
     .voice-link-btn {
       display: flex;
@@ -2281,8 +2350,47 @@
     @media (max-width: 900px) {
       .svc-voices { padding: 35px 28px 60px; }
       .voices-intro { margin-bottom: 32px; }
-      .voices-grid { grid-template-columns: 1fr; gap: 16px; }
-      .voice-card { padding: 20px; }
+      .voices-slider { margin-left: -28px; margin-right: -28px; }
+      .voices-grid {
+        gap: 16px;
+        padding: 4px 28px 56px;
+        scroll-padding-inline: 28px;
+        perspective: 900px;
+      }
+      .voices-prev { left: calc(50% - 56px); }
+      .voices-next { left: calc(50% + 12px); }
+      .voice-card {
+        flex: 0 0 78%;
+        aspect-ratio: 4 / 5;
+        cursor: default;
+        background: rgba(31,33,28,0.45);
+      }
+      .voice-card:hover { transform: none; }
+      .voice-photo {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+      }
+      .voice-card:hover .voice-photo {
+        transform: none;
+        filter: none;
+      }
+      .voice-name {
+        position: static;
+        background: none;
+        padding: 22px 24px 0;
+        font-size: 1.25rem;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .voice-hover {
+        position: static;
+        padding: 12px 24px 24px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .voice-bio { color: var(--sandstone); }
     }
   </style>
 </head>
@@ -2547,34 +2655,77 @@
       <h2 class="voices-heading fade-up">Community we <em>stand with.</em></h2>
       <p class="voices-subtext fade-up">We believe affirming care extends beyond our treatment rooms. This is a collection of trusted local organizations, resources, businesses, and community spaces helping make Lancaster County a safer, more inclusive, and more supportive place for LGBTQIA+ community members. These are people and spaces we value and are proud to share as resources for connection, advocacy, support, and community.</p>
     </div>
-    <div class="voices-grid">
-      <article class="voice-card fade-up">
-        <div class="voice-photo" style="background-image: url('images/keystone-business-alliance.jpg');" aria-hidden="true"></div>
-        <h3 class="voice-name">Keystone Business Alliance</h3>
-        <p class="voice-bio">A statewide LGBTQ+ Chamber of Commerce focused on creating inclusive business communities, supporting LGBTQ+ professionals and entrepreneurs, and helping connect affirming businesses across Pennsylvania.</p>
-        <a class="voice-link-btn" href="https://keystonebusinessalliance.org/" target="_blank" rel="noopener">
-          <span class="voice-link-text">Explore Their Website</span>
-          <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
-        </a>
-      </article>
-      <article class="voice-card fade-up">
-        <div class="voice-photo" style="background-image: url('images/lancaster-pride.webp');" aria-hidden="true"></div>
-        <h3 class="voice-name">Lancaster Pride</h3>
-        <p class="voice-bio">Lancaster Pride is a volunteer-driven nonprofit creating safe, visible, and affirming spaces for LGBTQIA+ people and allies across Lancaster County through community events, education, advocacy, and the annual Lancaster Pride Festival.</p>
-        <a class="voice-link-btn" href="https://www.lancasterpride.org/" target="_blank" rel="noopener">
-          <span class="voice-link-text">Explore Their Website</span>
-          <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
-        </a>
-      </article>
-      <article class="voice-card fade-up">
-        <div class="voice-photo" style="background-image: url('images/lancaster-chooses-love.jpg');" aria-hidden="true"></div>
-        <h3 class="voice-name">Lancaster Chooses Love</h3>
-        <p class="voice-bio">A grassroots organization that is committed to advocating for LGBTQ+ individuals within the community by creating safe social spaces and connecting community members with local resources.</p>
-        <a class="voice-link-btn" href="https://lancasterchooseslove.org/" target="_blank" rel="noopener">
-          <span class="voice-link-text">Explore Their Website</span>
-          <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
-        </a>
-      </article>
+    <div class="voices-slider">
+      <div class="voices-grid">
+        <article class="voice-card">
+          <div class="voice-photo" style="background-image: url('images/keystone-business-alliance.jpg');" aria-hidden="true"></div>
+          <h3 class="voice-name">Keystone Business Alliance</h3>
+          <div class="voice-hover">
+            <p class="voice-bio">A statewide LGBTQ+ Chamber of Commerce focused on creating inclusive business communities, supporting LGBTQ+ professionals and entrepreneurs, and helping connect affirming businesses across Pennsylvania.</p>
+            <a class="voice-link-btn" href="https://keystonebusinessalliance.org/" target="_blank" rel="noopener">
+              <span class="voice-link-text">Explore Their Website</span>
+              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
+            </a>
+          </div>
+        </article>
+        <article class="voice-card">
+          <div class="voice-photo" style="background-image: url('images/lancaster-pride.webp');" aria-hidden="true"></div>
+          <h3 class="voice-name">Lancaster Pride</h3>
+          <div class="voice-hover">
+            <p class="voice-bio">Lancaster Pride is a volunteer-driven nonprofit creating safe, visible, and affirming spaces for LGBTQIA+ people and allies across Lancaster County through community events, education, advocacy, and the annual Lancaster Pride Festival.</p>
+            <a class="voice-link-btn" href="https://www.lancasterpride.org/" target="_blank" rel="noopener">
+              <span class="voice-link-text">Explore Their Website</span>
+              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
+            </a>
+          </div>
+        </article>
+        <article class="voice-card">
+          <div class="voice-photo" style="background-image: url('images/lancaster-chooses-love.jpg');" aria-hidden="true"></div>
+          <h3 class="voice-name">Lancaster Chooses Love</h3>
+          <div class="voice-hover">
+            <p class="voice-bio">A grassroots organization that is committed to advocating for LGBTQ+ individuals within the community by creating safe social spaces and connecting community members with local resources.</p>
+            <a class="voice-link-btn" href="https://lancasterchooseslove.org/" target="_blank" rel="noopener">
+              <span class="voice-link-text">Explore Their Website</span>
+              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
+            </a>
+          </div>
+        </article>
+        <article class="voice-card">
+          <div class="voice-photo" aria-hidden="true"></div>
+          <h3 class="voice-name">Organization Name</h3>
+          <div class="voice-hover">
+            <p class="voice-bio">Brief description of the organization and the work they do for the local LGBTQIA+ community in Lancaster County.</p>
+            <a class="voice-link-btn" href="#" target="_blank" rel="noopener">
+              <span class="voice-link-text">Explore Their Website</span>
+              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
+            </a>
+          </div>
+        </article>
+        <article class="voice-card">
+          <div class="voice-photo" aria-hidden="true"></div>
+          <h3 class="voice-name">Organization Name</h3>
+          <div class="voice-hover">
+            <p class="voice-bio">Brief description of the organization and the work they do for the local LGBTQIA+ community in Lancaster County.</p>
+            <a class="voice-link-btn" href="#" target="_blank" rel="noopener">
+              <span class="voice-link-text">Explore Their Website</span>
+              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
+            </a>
+          </div>
+        </article>
+        <article class="voice-card">
+          <div class="voice-photo" aria-hidden="true"></div>
+          <h3 class="voice-name">Organization Name</h3>
+          <div class="voice-hover">
+            <p class="voice-bio">Brief description of the organization and the work they do for the local LGBTQIA+ community in Lancaster County.</p>
+            <a class="voice-link-btn" href="#" target="_blank" rel="noopener">
+              <span class="voice-link-text">Explore Their Website</span>
+              <span class="voice-link-arrow" aria-hidden="true">&#x2197;&#xFE0E;</span>
+            </a>
+          </div>
+        </article>
+      </div>
+      <button class="voices-nav voices-prev" aria-label="Previous">&#8592;</button>
+      <button class="voices-nav voices-next" aria-label="Next">&#8594;</button>
     </div>
   </section>
 
@@ -2674,6 +2825,47 @@
         observer.observe(el);
       }
     });
+
+    // Voices slider — curved coverflow rotation
+    (function() {
+      const track = document.querySelector('.voices-grid');
+      const prev = document.querySelector('.voices-prev');
+      const next = document.querySelector('.voices-next');
+      if (!track || !prev || !next) return;
+      const cards = Array.from(track.querySelectorAll('.voice-card'));
+      const MAX_ROT = 28; // degrees at the far edges
+
+      function step() {
+        const card = cards[0];
+        if (!card) return 320;
+        const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 24;
+        return card.getBoundingClientRect().width + gap;
+      }
+      function updateRotations() {
+        const r = track.getBoundingClientRect();
+        const centerX = r.left + r.width / 2;
+        const halfW = r.width / 2;
+        cards.forEach(card => {
+          const cr = card.getBoundingClientRect();
+          const cx = cr.left + cr.width / 2;
+          const offset = (cx - centerX) / halfW; // -1 .. 1 across track
+          const clamped = Math.max(-1, Math.min(1, offset));
+          const rot = -clamped * MAX_ROT;
+          card.style.setProperty('--rot', rot.toFixed(2) + 'deg');
+        });
+      }
+      let raf = null;
+      function onScroll() {
+        if (raf) return;
+        raf = requestAnimationFrame(() => { raf = null; updateRotations(); });
+      }
+      track.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', updateRotations);
+      prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+      // Initial paint
+      requestAnimationFrame(updateRotations);
+    })();
 
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
