@@ -2169,7 +2169,7 @@
       --voice-inactive-w: 132px;
       --voice-gap: 18px;
       background: var(--active-bg);
-      padding: 60px 52px 80px;
+      padding: 60px 52px 65px;
       border-top: 1px solid var(--border);
       transition: background 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
@@ -2276,22 +2276,27 @@
       transition: opacity 0.5s ease;
     }
     .voice-card.is-active .voice-photo::after { opacity: 1; }
-    /* Subtle frosted scrim under the bio + button (ends below the title) for legibility */
+    /* Frosted scrim covering the bottom half so title + bio + button stay legible on busy photos */
     .voice-card::before {
       content: '';
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      height: 38%;
+      height: 60%;
       pointer-events: none;
       z-index: 1;
       opacity: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      background: linear-gradient(to top,
+        rgba(0,0,0,0.78) 0%,
+        rgba(0,0,0,0.6) 35%,
+        rgba(0,0,0,0.32) 65%,
+        rgba(0,0,0,0.08) 90%,
+        transparent 100%);
       backdrop-filter: blur(3px);
       -webkit-backdrop-filter: blur(3px);
-      mask-image: linear-gradient(to top, black 0%, black 70%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to top, black 0%, black 70%, transparent 100%);
+      mask-image: linear-gradient(to top, black 0%, black 80%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to top, black 0%, black 80%, transparent 100%);
       transition: opacity 0.45s ease;
     }
     .voice-card.is-active::before { opacity: 1; }
@@ -2344,14 +2349,16 @@
       letter-spacing: -0.01em;
       color: var(--linen);
       max-width: 90%;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     .voice-bio {
       font-size: 0.92rem;
       line-height: 1.65;
       color: var(--linen);
-      font-weight: 300;
+      font-weight: 400;
       margin: 0;
       max-width: 88%;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     }
     .voice-link-btn {
       display: inline-flex;
@@ -2389,7 +2396,7 @@
     .voice-link-text { white-space: nowrap; }
     @media (max-width: 900px) {
       .svc-voices {
-        padding: 35px 28px 60px;
+        padding: 35px 28px 45px;
         --voice-active-w: 84vw;
         --voice-inactive-w: 88px;
         --voice-gap: 12px;
@@ -2723,7 +2730,7 @@
         </article>
         <article class="voice-card" data-bg="#3A2818">
           <div class="voice-photo" style="background-image: url('images/space-lancaster.jpg');" aria-hidden="true"></div>
-          <span class="voice-badge">Vintage</span>
+          <span class="voice-badge">Vintage Shopping</span>
           <div class="voice-content">
             <h3 class="voice-name">Space</h3>
             <p class="voice-bio">Lancaster&rsquo;s premier mid-century modern and vintage shop, queer-owned since 2013. A curated destination for furniture, decor, and the kind of pieces that turn a room into a moment.</p>
