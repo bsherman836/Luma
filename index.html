@@ -479,7 +479,7 @@
     .mobile-menu { display: none; }
 
     /* ── SHARED ── */
-    section { padding: 36px 52px 120px; }
+    section { padding: 60px 52px; }
 
     .section-label {
       font-size: 0.6rem;
@@ -517,7 +517,7 @@
     }
 
     /* ── ABOUT ── */
-    .about { background: var(--juniper); padding-bottom: 0; overflow: hidden; scroll-margin-top: 120px; }
+    .about { background: var(--juniper); padding-top: 60px; padding-bottom: 60px; overflow: hidden; scroll-margin-top: 120px; }
 
     .about-inner {
       display: grid;
@@ -532,6 +532,7 @@
       line-height: 1.85;
       margin-top: 30px;
       font-weight: 300;
+      max-width: 500px;
     }
 
     .about-body + .about-body { margin-top: 16px; }
@@ -562,6 +563,44 @@
       margin-bottom: -40px;
       gap: 0.5px;
       background: var(--juniper);
+    }
+
+    /* about bento — 3 tiles: tall left, two stacked right */
+    .about-bento {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      min-height: 520px;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+    .about-bento .tile {
+      background: var(--moss);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+    .about-bento .tile.t1 {
+      grid-column: 1; grid-row: 1 / span 2;
+      background-image: url('images/jill-emma.webp');
+      background-position: 65% 35%;
+    }
+    .about-bento .tile.t2 {
+      grid-column: 2; grid-row: 1;
+      background-image: url('images/lounge.webp');
+    }
+    .about-bento .tile.t3 {
+      grid-column: 2; grid-row: 2;
+      background-image: url('images/treatment-room.webp');
+    }
+    @media (max-width: 1000px) {
+      .about-bento { grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; }
+      .about-bento .tile { height: 220px; }
+      .about-bento .tile.t1, .about-bento .tile.t2, .about-bento .tile.t3 { grid-column: 1; grid-row: auto; }
     }
 
     .about-photo {
@@ -682,7 +721,7 @@
     }
 
     /* ── SERVICES ── */
-    .services { background: var(--midnight); padding-bottom: 40px; scroll-margin-top: 120px; }
+    .services { background: var(--midnight); padding-top: 60px; padding-bottom: 60px; scroll-margin-top: 120px; }
 
     .services-header {
       display: flex;
@@ -721,6 +760,7 @@
       align-items: stretch;
       gap: 0;
       min-height: 300px;
+      flex-direction: row-reverse;
     }
 
     .service-card-content {
@@ -728,7 +768,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-right: 24px;
+      padding-left: 42px;
+      padding-right: 0;
+      text-align: left;
+      align-items: flex-start;
     }
 
     .service-card-img {
@@ -737,7 +780,7 @@
       display: block;
       border-radius: 0;
       background: var(--moss);
-      margin: -36px -44px -36px 0;
+      margin: -36px 0 -36px -44px;
     }
 
     .service-card::before {
@@ -1728,16 +1771,16 @@
     <div class="about-inner">
       <div>
         <p class="section-label fade-up">About LUMA</p>
-        <h2 class="section-title fade-up" style="white-space: nowrap;">A place where you&nbsp;<em>belong.</em></h2>
-        <p class="about-body fade-up">Luma Laser and Electrolysis is a studio created by Jill&nbsp;Sherman and Emma Schutte.<br> We offer laser hair removal, electrolysis, and skin treatments with a focus on thoughtful<br> care, expertise, and results.</p>
-        <p class="about-body fade-up">Founded on the belief that clinical shouldn't feel cold, we've created something different.<br> Our space is a reflection of who we are—thoughtful, warm, and personal. It's designed to<br> feel less like a place of service and more like an extension of our home. A place where you<br> can settle in and feel comfortable.</p>
+        <h2 class="section-title fade-up" style="white-space: nowrap;">A place where<br>you&nbsp;<em>belong.</em></h2>
+        <p class="about-body fade-up">Luma Laser and Electrolysis is a studio created by Jill&nbsp;Sherman and Emma Schutte. We offer laser hair removal, electrolysis, and skin treatments with a focus on thoughtful care, expertise, and results.</p>
+        <p class="about-body fade-up">Founded on the belief that clinical shouldn't feel cold, we've created something different. Our space is a reflection of who we are—thoughtful, warm, and personal. It's designed to feel less like a place of service and more like an extension of our home. A place where you can settle in and feel comfortable.</p>
         <a href="#contact" class="about-story-btn fade-up">Learn More About Our Story</a>
       </div>
-    </div>
-    <div class="about-photos">
-      <div class="about-photo" style="background: url('images/jill-emma.webp') 72% 42%/160% no-repeat;"></div>
-      <div class="about-photo" style="background: url('images/lounge.webp') center/cover no-repeat;"></div>
-      <div class="about-photo" style="background: url('images/treatment-room.webp') center/cover no-repeat;"></div>
+      <div class="about-bento">
+        <div class="tile t1"></div>
+        <div class="tile t2"></div>
+        <div class="tile t3"></div>
+      </div>
     </div>
   </section>
 
