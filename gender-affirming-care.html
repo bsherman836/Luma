@@ -989,40 +989,18 @@
 
     /* ── CTA BANNER ── */
     .cta-banner {
-      background: var(--merlot);
-      padding-top: 60px !important;
-      padding-bottom: 60px !important;
-      padding-left: 52px;
-      padding-right: 52px;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
+      background: #301413;
+      padding: 100px 52px;
+      text-align: center;
+      border-top: 1px solid var(--border);
     }
-
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 70% at 20% 50%, rgba(157,142,104,0.07) 0%, transparent 70%);
-    }
-
     .cta-title {
       font-family: var(--serif);
-      font-size: clamp(3.5rem, 7vw, 8rem);
+      font-size: clamp(2.8rem, 5vw, 5.5rem);
       font-weight: 400;
-      line-height: 0.96;
-      letter-spacing: -0.01em;
-      margin-top: 22px;
-      margin-bottom: 0;
       color: var(--linen);
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-title em {
-      font-style: italic;
-      color: var(--sandstone);
-      opacity: 0.6;
+      line-height: 1.08;
+      margin-top: 16px;
     }
 
     .cta-email {
@@ -2827,6 +2805,12 @@
       </a>
     </div>
   </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <p class="section-label fade-up" style="justify-content: center;">LUMA Laser &amp; Electrolysis</p>
+    <h2 class="cta-title fade-up">Confidence starts&nbsp;<em>here.</em></h2>
+  </div>
 
   <!-- FOOTER -->
   <footer>
