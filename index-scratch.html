@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>LUMA — Laser & Electrolysis</title>
+  <meta name="description" content="Luma Laser & Electrolysis — 36 years of family-owned care in Lancaster, PA. Laser hair removal, electrolysis, and skin resurfacing." />
+  <meta name="theme-color" content="#1F211C" />
+  <link rel="canonical" href="https://lumalancaster.com/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Luma Laser & Electrolysis" />
+  <meta property="og:title" content="Luma Laser & Electrolysis — Lancaster, PA" />
+  <meta property="og:description" content="36 years of family-owned care in Lancaster, PA. Laser hair removal, electrolysis, and skin resurfacing." />
+  <meta property="og:url" content="https://lumalancaster.com/" />
+  <meta property="og:image" content="https://lumalancaster.com/images/lounge.jpg" />
+  <meta property="og:image:width" content="1264" />
+  <meta property="og:image:height" content="845" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Luma Laser & Electrolysis — Lancaster, PA" />
+  <meta name="twitter:description" content="36 years of family-owned care in Lancaster, PA. Laser hair removal, electrolysis, and skin resurfacing." />
+  <meta name="twitter:image" content="https://lumalancaster.com/images/lounge.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Luma Laser & Electrolysis",
+    "description": "Family-owned laser hair removal, electrolysis, and skin resurfacing practice serving Lancaster, PA since 1989.",
+    "url": "https://lumalancaster.com/",
+    "image": "https://lumalancaster.com/images/lounge.jpg",
+    "telephone": "+1-717-201-0037",
+    "email": "hello@lumalancaster.com",
+    "foundingDate": "1989",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "440 E Roseville Road",
+      "addressLocality": "Lancaster",
+      "addressRegion": "PA",
+      "postalCode": "17601",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Lancaster, PA"
+    },
+    "sameAs": [
+      "https://www.instagram.com/lumalancaster/",
+      "https://www.linkedin.com/company/lumalancaster"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Hair Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electrolysis" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skin Treatments" } }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --midnight:    #1F211C;
+      --juniper:     #353B31;
+      --moss:        #4A5443;
+      --olive:       #444320;
+      --warm-honey:  #9D8E68;
+      --sandstone:   #C9BCA1;
+      --linen:       #E0D8C3;
+      --merlot:      #301413;
+
+      --bg:          var(--midnight);
+      --surface:     var(--juniper);
+      --accent:      var(--warm-honey);
+      --text:        var(--linen);
+      --text-muted:  var(--sandstone);
+      --text-dim:    rgba(201,188,161,0.42);
+      --border:      rgba(157,142,104,0.18);
+
+      --serif: 'Georgia', 'Times New Roman', serif;
+      --sans:  'Work Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.06;
+      background-image: url('paper_8.jpg');
+      background-repeat: repeat;
+      background-size: 600px 600px;
+      mix-blend-mode: multiply;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 120px;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+      transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(31,33,28,0.45);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(224,216,195,0.10);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    }
+
+    .nav-logo-img {
+      height: 55px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-logo-img {
+      height: 55px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-logo-main {
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      color: var(--warm-honey);
+      display: block;
+      line-height: 1;
+    }
+
+    .footer-logo-sub {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sandstone);
+      display: block;
+      margin-top: 4px;
+      margin-bottom: 14px;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .nav-logo-main {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      color: var(--linen);
+      text-transform: uppercase;
+    }
+
+    .nav-logo-sub {
+      font-family: var(--sans);
+      font-size: 0.52rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--warm-honey);
+      text-transform: uppercase;
+      margin-top: 3px;
+      opacity: 0.8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      margin-left: auto;
+      margin-right: 32px;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sandstone);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--warm-honey);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--linen); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--midnight);
+      background: var(--warm-honey);
+      text-decoration: none;
+      padding: 9px 22px;
+      border-radius: 100px;
+      transition: background 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .nav-cta:hover { background: var(--sandstone); }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 60px 64px 0;
+      position: relative;
+      overflow: hidden;
+      margin: 135px 16px 16px;
+      border-radius: 36px;
+    }
+
+    /* marquee inside hero — hugs the rounded bottom */
+    .hero .marquee-strip {
+      margin: 60px -64px 0;
+      border-radius: 0 0 36px 36px;
+      border-top: 1px solid rgba(157,142,104,0.18);
+      border-bottom: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 0 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background:
+        radial-gradient(ellipse 60% 55% at 82% 18%, rgba(74,84,67,0.55) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 60% at 12% 80%, rgba(48,20,19,0.65) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 45% at 70% 90%, rgba(201,188,161,0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 100% 80% at 50% 50%, rgba(53,59,49,0.22) 0%, transparent 100%),
+        var(--midnight);
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: -8%; right: 8%;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(157,142,104,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+      margin-bottom: 32px;
+      margin-top: 5px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0.85;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px; height: 1px;
+      background: var(--warm-honey);
+      opacity: 0.55;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-title-mobile { display: none; }
+    .mobile-nav-cap { display: none; }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 7vw, 8rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      max-width: 880px;
+      position: relative;
+      z-index: 1;
+      color: var(--linen);
+      animation: heroFadeIn 1s ease forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--sandstone);
+      opacity: 0.7;
+    }
+
+    .hero-bottom {
+      margin-top: 0;
+      margin-bottom: -17px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 880px;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-top: 16px;
+      margin-bottom: 40px;
+    }
+    .hero-sub br { display: none; }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .btn-primary {
+      background: var(--warm-honey);
+      color: var(--midnight);
+      padding: 14px 32px;
+      border-radius: 2px;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+    .btn-primary:hover { background: var(--sandstone); }
+
+    .btn-ghost {
+      color: var(--text-muted);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      padding: 13px 28px;
+      border-radius: 2px;
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .btn-ghost:hover { color: var(--linen); border-color: rgba(157,142,104,0.42); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-scroll span {
+      font-size: 0.56rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .scroll-line {
+      width: 1px; height: 38px;
+      background: linear-gradient(to bottom, var(--warm-honey), transparent);
+      animation: spulse 2s ease-in-out infinite;
+    }
+
+    @keyframes spulse {
+      0%, 100% { opacity: 0.25; transform: scaleY(0.5); transform-origin: top; }
+      50% { opacity: 0.9; transform: scaleY(1); }
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-strip {
+      background: var(--merlot);
+      padding: 13px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid rgba(157,142,104,0.12);
+      border-bottom: 1px solid rgba(157,142,104,0.12);
+    }
+
+    .marquee-inner {
+      display: inline-flex;
+      animation: marquee 34s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.88rem;
+      padding: 0 36px;
+      color: rgba(201,188,161,0.55);
+      letter-spacing: 0.04em;
+    }
+
+    .marquee-dot { color: var(--warm-honey); opacity: 0.6; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── HAMBURGER / MOBILE MENU — hidden on desktop ── */
+    .nav-hamburger { display: none; }
+    .mobile-menu { display: none; }
+
+    /* ── SHARED ── */
+    section { padding: 36px 52px 120px; }
+
+    .section-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0.85;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 26px; height: 1px;
+      background: var(--warm-honey);
+      opacity: 0.5;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 4.8vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.03;
+      letter-spacing: -0.01em;
+      color: var(--linen);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--sandstone);
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--midnight); padding-bottom: 0; overflow: hidden; scroll-margin-top: 120px; }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .about-body {
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-top: 30px;
+      font-weight: 300;
+    }
+
+    .about-body + .about-body { margin-top: 16px; }
+
+    .about-story-btn {
+      display: inline-block;
+      margin-top: 24px;
+      margin-bottom: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--midnight);
+      background: var(--warm-honey);
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+    .about-story-btn:hover { background: var(--sandstone); }
+
+    .about-photos {
+      display: flex;
+      width: calc(100% + 104px);
+      margin-left: -52px;
+      margin-right: -52px;
+      margin-top: 40px;
+      margin-bottom: -40px;
+      gap: 0.5px;
+      background: var(--juniper);
+    }
+
+    /* about bento — 3 tiles: tall left, two stacked on right */
+    .about-bento {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      min-height: 520px;
+    }
+    .about-bento .tile {
+      background: var(--moss);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+    .about-bento .tile.t1 { grid-column: 1; grid-row: 1 / span 2; }
+    .about-bento .tile.t2 { grid-column: 2; grid-row: 1; }
+    .about-bento .tile.t3 { grid-column: 2; grid-row: 2; }
+    @media (max-width: 1000px) {
+      .about-bento { grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; }
+      .about-bento .tile { height: 220px; }
+      .about-bento .tile.t1 { grid-column: 1; grid-row: auto; }
+      .about-bento .tile.t2, .about-bento .tile.t3 { grid-column: 1; grid-row: auto; }
+    }
+
+    .about-photo {
+      flex: 1;
+      height: 340px;
+      display: block;
+      position: relative;
+    }
+
+    .about-photo-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(224,216,195,0.4);
+    }
+
+    .about-values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 40px;
+    }
+
+    .about-tag {
+      background: rgba(157,142,104,0.07);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 7px 16px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+    }
+
+    .about-visual {
+      position: relative;
+      height: 560px;
+    }
+
+    .about-block-main {
+      position: absolute;
+      top: 0; right: 0;
+      width: 76%; height: 440px;
+      background: linear-gradient(155deg, var(--juniper) 0%, var(--moss) 45%, var(--olive) 100%);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .about-block-main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 30% 70%, rgba(48,20,19,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(157,142,104,0.08) 0%, transparent 60%);
+    }
+
+    .about-main-text {
+      font-family: var(--serif);
+      font-size: 5.5rem;
+      font-weight: 400;
+      color: rgba(201,188,161,0.05);
+      letter-spacing: 0.1em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-block-secondary {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 56%; height: 270px;
+      background: var(--merlot);
+      border-radius: 3px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .about-block-secondary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--warm-honey), transparent);
+    }
+
+    .about-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--linen);
+      line-height: 1.45;
+      opacity: 0.88;
+    }
+
+    .about-quote-attr {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+      margin-top: 16px;
+      opacity: 0.65;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--midnight); padding-bottom: 40px; scroll-margin-top: 120px; }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 0;
+    }
+
+    .services-body {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.82;
+      margin-top: 12px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 25px;
+      align-items: stretch;
+    }
+
+    .service-card {
+      background: rgba(31,33,28,0.72);
+      padding: 36px 44px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      min-height: 300px;
+    }
+
+    .service-card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 24px;
+    }
+
+    .service-card-img {
+      width: 380px;
+      flex-shrink: 0;
+      display: block;
+      border-radius: 0;
+      background: var(--moss);
+      margin: -36px -44px -36px 0;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--warm-honey), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover { background: rgba(48,20,19,0.55); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 4rem;
+      color: var(--warm-honey);
+      opacity: 0.14;
+      line-height: 1;
+      margin-bottom: 36px;
+    }
+
+    .service-title {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--linen);
+    }
+
+    .service-desc {
+      font-size: 0.97rem;
+      color: var(--text-dim);
+      line-height: 1.78;
+      font-weight: 300;
+      max-width: calc(50vw - 104px);
+    }
+
+    /* ── TEAM ── */
+    .team { background: var(--midnight); }
+
+    .team-header {
+      margin-bottom: 64px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .team-card {
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--juniper);
+      transition: transform 0.35s ease, border-color 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(157,142,104,0.38);
+    }
+
+    /* ── FAQ ── */
+    .faq { background: var(--midnight); }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 100px;
+    }
+
+    .faq-list { padding-top: 52px; }
+
+    .faq-item { border-top: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 24px 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--linen);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--sandstone); }
+
+    .faq-toggle {
+      width: 26px; height: 26px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--warm-honey);
+      flex-shrink: 0;
+      transition: transform 0.35s, border-color 0.25s;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      border-color: var(--warm-honey);
+    }
+
+    .faq-answer {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      font-weight: 300;
+    }
+
+    .faq-item.open .faq-answer { max-height: 260px; padding-bottom: 28px; }
+
+    /* ── CONTACT ── */
+    /* ── PRICING ── */
+    .pricing-section {
+      background: var(--juniper);
+      padding: 60px 52px 52px 37px;
+      position: relative;
+    }
+
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--warm-honey), transparent);
+      opacity: 0.3;
+    }
+
+    .pricing-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 36px;
+    }
+
+    .pricing-grid {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(201,188,161,0.12);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .pricing-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 36px;
+      background: rgba(31,33,28,0.45);
+      border-bottom: 1px solid rgba(201,188,161,0.08);
+      transition: background 0.3s ease;
+      cursor: default;
+    }
+
+    .pricing-card:last-child { border-bottom: none; }
+    .pricing-card:hover { background: rgba(48,20,19,0.45); }
+
+    .pricing-card-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .pricing-tag {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--linen);
+      letter-spacing: 0.01em;
+    }
+
+    .pricing-desc {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-section {
+      background: #353B31;
+      padding: 60px 52px;
+      border-top: 1px solid var(--border);
+      scroll-margin-top: 120px;
+    }
+    .contact-grid { margin-bottom: 56px; }
+    .contact-section .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      color: var(--linen);
+      line-height: 1.1;
+    }
+    .contact-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--sandstone);
+      margin-top: 16px;
+      max-width: 520px;
+    }
+    .contact-methods { border-top: 1px solid var(--border); }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .contact-method:hover { background: rgba(157,142,104,0.04); padding-left: 8px; padding-right: 8px; margin: 0 -8px; }
+    .contact-method-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+      margin-bottom: 4px;
+    }
+    .contact-method-value {
+      font-size: 0.95rem;
+      color: var(--sandstone);
+    }
+    .contact-method-arrow {
+      font-size: 1.1rem;
+      color: var(--warm-honey);
+      flex-shrink: 0;
+      margin-left: 24px;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--merlot);
+      padding-top: 60px !important;
+      padding-bottom: 60px !important;
+      padding-left: 52px;
+      padding-right: 52px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 20% 50%, rgba(157,142,104,0.07) 0%, transparent 70%);
+    }
+
+    .cta-title {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 7vw, 8rem);
+      font-weight: 400;
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+      margin-top: 22px;
+      margin-bottom: 0;
+      color: var(--linen);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title em {
+      font-style: italic;
+      color: var(--sandstone);
+      opacity: 0.6;
+    }
+
+    .cta-email {
+      display: inline-block;
+      font-size: 1rem;
+      color: var(--sandstone);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,188,161,0.22);
+      padding-bottom: 3px;
+      transition: color 0.25s, border-color 0.25s;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-email:hover { color: var(--linen); border-color: rgba(201,188,161,0.5); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--midnight);
+      border-top: 1px solid var(--border);
+      padding: 40px 52px 32px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .footer-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      transform: none;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(201,188,161,0.35);
+      text-decoration: none;
+      transition: color 0.22s;
+    }
+
+    .footer-links a:hover { color: var(--text-muted); }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(157,142,104,0.2);
+      color: rgba(201,188,161,0.4);
+      text-decoration: none;
+      transition: border-color 0.22s, color 0.22s;
+    }
+
+    .footer-social a:hover {
+      border-color: var(--warm-honey);
+      color: var(--warm-honey);
+    }
+
+    .footer-social svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .footer-desc {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+
+    .footer-book-btn { display: none; }
+
+    .footer-copy {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(201,188,161,0.2);
+    }
+      text-transform: uppercase;
+      color: rgba(201,188,161,0.3);
+      text-decoration: none;
+      transition: color 0.22s;
+    }
+    .footer-links a:hover { color: var(--text-muted); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.78s ease, transform 0.78s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .service-learn-more {
+      display: inline-block;
+      align-self: flex-start;
+      margin-top: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--midnight);
+      background: var(--warm-honey);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+    .service-learn-more:hover { background: var(--sandstone); }
+
+    /* Rainbow + sparkle hover for Gender Affirming Care */
+    .service-learn-more.pride {
+      position: relative;
+      overflow: visible;
+      transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-learn-more.pride:hover {
+      background: linear-gradient(90deg,
+        #e63946 0%,
+        #f4a261 16.6%,
+        #f1c40f 33.3%,
+        #2a9d8f 50%,
+        #4361ee 66.6%,
+        #7b2cbf 83.3%,
+        #e63946 100%);
+      background-size: 200% 100%;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.3),
+        0 0 24px rgba(255,180,220,0.45);
+      animation: pride-shift 2.4s linear infinite;
+    }
+    @keyframes pride-shift {
+      from { background-position: 0% 50%; }
+      to   { background-position: 200% 50%; }
+    }
+
+    /* Big anchor sparkle (top-left) */
+    .service-learn-more.pride::before {
+      content: '\2726';
+      position: absolute;
+      top: -10px;
+      left: -8px;
+      font-size: 0.95rem;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.95), 0 0 14px rgba(255,200,255,0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .service-learn-more.pride:hover::before {
+      opacity: 1;
+      animation: pride-spin 1.8s linear infinite;
+    }
+    @keyframes pride-spin {
+      0%   { transform: scale(0.5) rotate(0deg);   opacity: 0.4; }
+      50%  { transform: scale(1.2) rotate(180deg); opacity: 1; }
+      100% { transform: scale(0.5) rotate(360deg); opacity: 0.4; }
+    }
+
+    /* Sparkle field overlay */
+    .service-learn-more.pride::after {
+      content: '';
+      position: absolute;
+      inset: -14px -12px;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 60'><g fill='white'><path d='M30 12 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M90 6 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M150 14 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M200 8 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M50 50 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/><path d='M120 48 l1.6 3 3 1-3 1-1.6 3-1.6-3-3-1 3-1z'/><path d='M180 50 l1.4 2.6 2.8 1-2.8 1-1.4 2.6-1.4-2.6-2.8-1 2.8-1z'/></g></svg>");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .service-learn-more.pride:hover::after {
+      opacity: 1;
+      animation: pride-twinkle 1.2s ease-in-out infinite;
+    }
+    /* Mobile: same effect when card is in view (no hover on touch) */
+    @media (max-width: 768px) {
+      .service-learn-more.pride.in-view {
+        background: linear-gradient(90deg,
+          #e63946 0%,
+          #f4a261 16.6%,
+          #f1c40f 33.3%,
+          #2a9d8f 50%,
+          #4361ee 66.6%,
+          #7b2cbf 83.3%,
+          #e63946 100%);
+        background-size: 200% 100%;
+        color: #fff;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.3),
+          0 0 24px rgba(255,180,220,0.45);
+        animation: pride-shift 2.4s linear infinite;
+      }
+      .service-learn-more.pride.in-view::before {
+        opacity: 1;
+        animation: pride-spin 1.8s linear infinite;
+      }
+      .service-learn-more.pride.in-view::after {
+        opacity: 1;
+        animation: pride-twinkle 1.2s ease-in-out infinite;
+      }
+    }
+    @keyframes pride-twinkle {
+      0%, 100% { opacity: 0.45; transform: scale(0.95); }
+      50%      { opacity: 1;    transform: scale(1.05); }
+    }
+    .tagline-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #9D8E68;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+      height: 260px;
+    }
+
+    .tagline-inner {
+      text-align: center;
+      max-width: 810px;
+      padding: 0 24px;
+    }
+
+    .tagline-small {
+      font-family: var(--sans);
+      font-style: italic;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--midnight);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .tagline-large {
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--midnight);
+      opacity: 0.55;
+      line-height: 1;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      nav { padding: 0 28px; }
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 0.75rem; }
+      .nav-cta { padding: 7px 14px; font-size: 0.75rem; }
+      section { padding: 36px 28px 80px; }
+      .hero { padding: 170px 28px 65px; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 28px; }
+      .about-inner { grid-template-columns: 1fr; gap: 52px; }
+      .about-visual { height: 360px; }
+      .about-block-main { width: 80%; height: 300px; }
+      .about-block-secondary { width: 60%; height: 220px; }
+      .services-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; gap: 0; }
+      .faq-list { padding-top: 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+      .contact-form { padding: 36px 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .cta-banner { padding: 96px 28px; }
+      .footer-links { flex-wrap: wrap; }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+
+      /* NAV — locked solid on mobile */
+      .nav-links { display: none; }
+      nav,
+      nav.scrolled {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 80px !important;
+        min-height: 80px !important;
+        max-height: 80px !important;
+        padding: 0 24px !important;
+        background: #1f211c !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border-bottom: 1px solid rgba(224,216,195,0.08) !important;
+        box-shadow: none !important;
+        transition: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        z-index: 200 !important;
+      }
+      .nav-logo-img { height: 44px !important; }
+      .nav-cta {
+        font-size: 0.6rem;
+        padding: 10px 14px;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+
+      /* HAMBURGER */
+      .nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        margin-right: -8px;
+      }
+      .nav-hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--warm-honey);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+      .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      /* MOBILE MENU OVERLAY */
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        background: var(--midnight);
+        z-index: 99999;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 32px 48px;
+        gap: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      .mobile-menu.open {
+        display: flex;
+        opacity: 1;
+        pointer-events: all;
+      }
+      .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        background: none;
+        border: none;
+        color: var(--warm-honey);
+        font-size: 1.4rem;
+        cursor: pointer;
+        padding: 8px;
+        line-height: 1;
+      }
+      .mobile-menu-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        margin-bottom: 48px;
+      }
+      .mobile-menu-link {
+        font-family: var(--serif);
+        font-size: 2.8rem;
+        color: var(--cream);
+        text-decoration: none;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        transition: color 0.2s;
+        letter-spacing: -0.01em;
+        text-align: left;
+        width: 100%;
+        display: block;
+      }
+      .mobile-menu-link:first-child { border-top: 1px solid var(--border); }
+      .mobile-menu-link:hover { color: var(--warm-honey); }
+
+      .hero-title-desktop { display: none; }
+      .hero-title-mobile { display: block; }
+      body { overscroll-behavior-y: none; }
+      .mobile-nav-cap { display: none; }
+      /* HERO */
+      .hero { padding: 24px 24px 24px; }
+      .hero-title {
+        font-size: clamp(2.6rem, 11vw, 3.6rem);
+        white-space: normal !important;
+      }
+      .hero-title span, .hero-title em { white-space: normal !important; }
+      .hero-sub { max-width: 100%; font-size: 0.9rem; margin-top: 20px; margin-bottom: 20px; }
+      .hero-sub br { display: none; }
+      .hero-eyebrow { margin-bottom: 20px; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 0; }
+      .hero-actions { flex-direction: column; width: 100%; gap: 12px; align-items: flex-start; }
+      .btn-primary, .btn-outline, .btn-ghost { width: 70%; text-align: center; justify-content: center; box-sizing: border-box; white-space: nowrap; }
+
+      /* SECTIONS */
+      section { padding: 30px 24px 64px; }
+      .about, .services, .contact-section { scroll-margin-top: 80px !important; }
+      .section-title { font-size: clamp(2.2rem, 9vw, 3rem); white-space: normal !important; }
+
+      /* MARQUEE */
+      .marquee-track { gap: 24px; }
+      .marquee-item { font-size: 0.7rem; }
+
+      /* ABOUT */
+      .about-inner { gap: 40px; }
+      .about-text { padding: 48px 24px 0; }
+      .about-body { font-size: 0.875rem; }
+      .about-body br { display: none; }
+      .about-photos { flex-direction: column; height: auto; gap: 0; margin-bottom: 0; }
+      .about-photo { height: 300px; flex: none; }
+      .about-block-main { width: 88%; height: 260px; }
+      .about-block-secondary { display: none; }
+
+      /* SERVICES */
+      .services-header { padding: 0 0 27px; }
+      .service-card { flex-direction: column; min-height: unset; padding: 0; }
+      .service-card-content { padding: 32px 24px; padding-right: 24px; }
+      .service-card-img { width: 100%; height: 220px; margin: 0; flex-shrink: unset; }
+      .service-desc { max-width: 100%; }
+
+      /* CONTACT */
+      .contact-section { padding-top: 35px; padding-left: 28px; padding-right: 28px; }
+
+      /* CTA BANNER */
+      .cta-banner { padding: 60px 24px !important; }
+      .cta-title { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+
+      /* FOOTER */
+      footer { display: grid; grid-template-areas: "left right" "center center"; grid-template-columns: 1fr auto; align-items: center; text-align: left; padding: 36px 28px 28px; gap: 20px 0; }
+      .footer-left { grid-area: left; justify-content: flex-start; align-items: flex-start; }
+      .footer-center { grid-area: center; align-items: flex-start; gap: 14px; transform: none; }
+      .footer-links { display: none; }
+      .footer-right { grid-area: right; align-items: flex-start; justify-content: flex-start; }
+      .footer-social a:active { border-color: var(--warm-honey); color: var(--warm-honey); }
+      .footer-social a:active { border-color: var(--warm-honey); color: var(--warm-honey); }
+    }
+
+    /* ── TESTIMONIALS ── */
+    .svc-testimonials {
+      background: #4A5443;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+    .svc-testimonials-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 4.8vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.03;
+      letter-spacing: -0.01em;
+      color: var(--linen);
+      margin-bottom: 56px;
+      max-width: 700px;
+      padding: 0 52px;
+    }
+    .svc-testimonials .section-label {
+      padding: 0 52px;
+    }
+    @keyframes testimonials-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonials-track-wrapper {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+    .testimonials-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: testimonials-scroll 32s linear infinite;
+    }
+    .testimonials-track:hover { animation-play-state: paused; }
+    .testimonial-card {
+      background: var(--juniper);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 32px;
+      width: 420px;
+      flex-shrink: 0;
+    }
+    @keyframes star-light {
+      0%   { color: var(--warm-honey); text-shadow: none; }
+      55%  { color: #FFE898; text-shadow: 0 0 10px rgba(255,220,100,1), 0 0 22px rgba(255,200,60,0.7), 0 0 36px rgba(255,170,30,0.4); }
+      100% { color: #FFD97A; text-shadow: 0 0 6px rgba(255,210,80,0.8), 0 0 14px rgba(255,190,50,0.4); }
+    }
+    @keyframes star-light-half {
+      0%   { color: rgba(157,142,104,0.4); text-shadow: none; }
+      55%  { color: rgba(255,220,100,0.65); text-shadow: 0 0 8px rgba(255,210,80,0.5); }
+      100% { color: rgba(255,200,80,0.5); text-shadow: 0 0 4px rgba(255,190,50,0.3); }
+    }
+    .testimonial-stars { font-size: 1rem; letter-spacing: 1px; }
+    .star { color: var(--warm-honey); display: inline-block; }
+    .star.half { color: rgba(157,142,104,0.4); }
+    .star.empty { color: rgba(157,142,104,0.15); }
+    .testimonial-card:hover .star { animation: star-light 0.5s ease-out both; }
+    .testimonial-card:hover .star.half { animation: star-light-half 0.5s ease-out both; }
+    .testimonial-card:hover .star.empty { animation: none; }
+    .testimonial-card:hover .star:nth-child(1) { animation-delay: 0s; }
+    .testimonial-card:hover .star:nth-child(2) { animation-delay: 0.09s; }
+    .testimonial-card:hover .star:nth-child(3) { animation-delay: 0.18s; }
+    .testimonial-card:hover .star:nth-child(4) { animation-delay: 0.27s; }
+    .testimonial-card:hover .star:nth-child(5) { animation-delay: 0.36s; }
+    @media (min-width: 901px) {
+      .testimonial-card.stars-active .star { animation: star-light 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.half { animation: star-light-half 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.empty { animation: none; }
+      .testimonial-card.stars-active .star:nth-child(1) { animation-delay: 0s; }
+      .testimonial-card.stars-active .star:nth-child(2) { animation-delay: 0.09s; }
+      .testimonial-card.stars-active .star:nth-child(3) { animation-delay: 0.18s; }
+      .testimonial-card.stars-active .star:nth-child(4) { animation-delay: 0.27s; }
+      .testimonial-card.stars-active .star:nth-child(5) { animation-delay: 0.36s; }
+    }
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.02rem;
+      line-height: 1.72;
+      color: var(--linen);
+      margin-top: 18px;
+    }
+    .testimonial-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 22px 0;
+    }
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .testimonial-meta { display: flex; flex-direction: column; }
+    .testimonial-name {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+    }
+    .testimonial-source {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      margin-top: 3px;
+    }
+    .mobile-review-nav { display: none; }
+
+    @media (max-width: 900px) {
+      .svc-testimonials { padding-top: 35px; padding-bottom: 50px; }
+      .svc-testimonials-heading { padding-left: 28px !important; padding-right: 28px !important; }
+      .svc-testimonials .section-label { padding-left: 28px !important; padding-right: 28px !important; }
+      .testimonials-track-wrapper { -webkit-mask-image: none; mask-image: none; overflow: hidden; width: 100%; }
+      .testimonials-track { animation: none !important; display: flex; gap: 0; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
+      .testimonial-card.stars-active .star { animation: star-light 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.half { animation: star-light-half 0.5s ease-out both; }
+      .testimonial-card.stars-active .star.empty { animation: none; }
+      .testimonial-card.stars-active .star:nth-child(1) { animation-delay: 0s; }
+      .testimonial-card.stars-active .star:nth-child(2) { animation-delay: 0.09s; }
+      .testimonial-card.stars-active .star:nth-child(3) { animation-delay: 0.18s; }
+      .testimonial-card.stars-active .star:nth-child(4) { animation-delay: 0.27s; }
+      .testimonial-card.stars-active .star:nth-child(5) { animation-delay: 0.36s; }
+      .testimonial-card { margin: 0; box-sizing: border-box; flex-shrink: 0; }
+      .mobile-review-nav { display: flex !important; align-items: center; justify-content: center; gap: 20px; padding: 20px 28px 0; }
+      .mobile-nav-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--warm-honey); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; flex-shrink: 0; }
+      .mobile-nav-btn:hover { background: rgba(157,142,104,0.12); }
+      .mobile-nav-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--warm-honey); opacity: 0.3; margin: 0 3px; cursor: pointer; transition: opacity 0.2s; }
+      .mobile-nav-dot.active { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-nav-cap"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNDY5LjM3IDExNDguMDQiPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAzMC4zLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuMyBCdWlsZCAxODIpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2M5YmNhMTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE1OCAxMDYxLjQ4IDEzOC41NiAxMDYxLjQ4IDEzOC41NiAxMTQ1LjIxIDIxNi4yNyAxMTQ1LjIxIDIxNi4yNyAxMTI4LjMzIDE1OCAxMTI4LjMzIDE1OCAxMDYxLjQ4Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjkxLjk0LDEwNjEuNDhsLTQ1LjM3LDgzLjczaDIwLjczbDguODctMTYuNDFoNDcuNTNsOC44OCwxNi40MWgyMC43M2wtNDUuMzctODMuNzNoLTE2Wk0yODQuOTksMTExMi41MWwxNC45NS0yNy42OCwxNC45NSwyNy42OGgtMjkuOVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjguNjgsMTA5NC42NGMtMTUuODItMy4wOS0yMy4xOC00Ljg1LTIzLjE4LTEwLjUxLDAtNS4wOCw2LjAxLTguMTIsMjAuMzgtOC4xMiwxOS4xNSwwLDMwLjc3LDUuMzcsMzAuNzcsNS4zN2w5LjUyLTEzLjc4cy0xMS4zMy04LjQ3LTQwLjI5LTguNDdjLTMwLjQ4LDAtNDAuMDYsMTIuMTQtNDAuMDYsMjQuOTksMCwxNC4xOSw5LjcsMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM2LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTItNi44My0zMy45Mi02LjgzbC05LjUyLDEzLjc4czEzLjgzLDkuOTIsNDMuNDQsOS45MmMyNi45OCwwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNi0yNy4zM1oiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iNTIyLjU3IDExMTEuMDUgNTgyLjEyIDExMTEuMDUgNTgyLjEyIDEwOTQuNzYgNTIyLjU3IDEwOTQuNzYgNTIyLjU3IDEwNzguMzUgNTg0LjY0IDEwNzguMzUgNTg0LjY0IDEwNjEuNDggNTAzLjEyIDEwNjEuNDggNTAzLjEyIDExNDUuMjEgNTg1LjIyIDExNDUuMjEgNTg1LjIyIDExMjguMzMgNTIyLjU3IDExMjguMzMgNTIyLjU3IDExMTEuMDUiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03MDkuODgsMTA4OS44YzAtMTQuNzctMTAuMjItMjguMzItMzIuOTMtMjguMzJoLTU1djgzLjczaDE5LjQ0di0yOC44NGgzMC44OWwxNi43NiwyOC44NGgyMS42NmwtMTguMjItMzEuMzVjMTEuMDQtMy42OCwxNy40LTExLjU2LDE3LjQtMjQuMDZaTTY3Ni45NCwxMTAxLjI0aC0zNS41NnYtMjIuODloMzUuNTZjMTAuMSwwLDEzLjI1LDUuMzcsMTMuMjUsMTEuNDRzLTMuMTUsMTEuNDUtMTMuMjUsMTEuNDVaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODgzLjE5LDExMDguNzdsLTE4LjIyLTYuMjVjLTEuNjMsMy45MS00LjUsOS4zNC02Ljc3LDEzLjAyLTQuMTUtMy4zMy05LjA1LTcuNTktMTIuMzgtMTAuNzQsOC40Ny01LjI2LDE5Ljk3LTExLjE1LDE5Ljk3LTIzLjU5cy0xMS4xNS0yMS40OS0yNS45Mi0yMS40OS0yNi45OCw4LjIzLTI2Ljk4LDI0LjA2YzAsOC40NywzLjE1LDE0LjQyLDUuODQsMTcuNzUtOS4zNCw1LjM3LTE2LjI5LDEyLjczLTE2LjI5LDIzLjI0LDAsMTYuMjksMTMuOTUsMjIuMTksMzEuOTQsMjIuMTksMTMuOSwwLDIxLjI1LTIuODYsMjcuMjctNi42LDMuNTYsMi40NSw3LjE4LDQuODUsNy4xOCw0Ljg1aDI4LjQ0cy0xMy40OS05LjkzLTIzLjc3LTE3LjYzYzIuNjMtMy43OSw2LjcxLTEwLjc0LDkuNjktMTguOFpNODM5Ljg2LDEwNzYuNmMzLjc5LDAsNi40OCwxLjM0LDYuNDgsNC42MSwwLDUuNjYtNi41NCw5LjExLTExLjU2LDEyLjAzLTEuNTItMS45OC0yLjQ1LTQuOS0yLjQ1LTguMjksMC02LjQyLDQuMDktOC4zNSw3LjUzLTguMzVaTTgzNC4yLDExMzAuMDljLTkuNjksMC0xMi4zMi0yLjg2LTEyLjMyLTYuNDgsMC00LjU2LDMuMzMtNy43Nyw3LjM2LTkuODcsMy44NSwzLjY4LDExLjI3LDEwLjIyLDE1Ljg4LDEzLjktMS41Mi45OS00LjkxLDIuNDUtMTAuOTIsMi40NVoiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTAwNS41MiAxMTExLjA1IDEwNjUuMDggMTExMS4wNSAxMDY1LjA4IDEwOTQuNzYgMTAwNS41MiAxMDk0Ljc2IDEwMDUuNTIgMTA3OC4zNSAxMDY3LjU5IDEwNzguMzUgMTA2Ny41OSAxMDYxLjQ4IDk4Ni4wOCAxMDYxLjQ4IDk4Ni4wOCAxMTQ1LjIxIDEwNjguMTcgMTE0NS4yMSAxMDY4LjE3IDExMjguMzMgMTAwNS41MiAxMTI4LjMzIDEwMDUuNTIgMTExMS4wNSIvPgogICAgPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSIxMTI0LjM0IDEwNjEuNDggMTEwNC45IDEwNjEuNDggMTEwNC45IDExNDUuMjEgMTE4Mi42MSAxMTQ1LjIxIDExODIuNjEgMTEyOC4zMyAxMTI0LjM0IDExMjguMzMgMTEyNC4zNCAxMDYxLjQ4Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyMzcuNjEgMTExMS4wNSAxMjk3LjE3IDExMTEuMDUgMTI5Ny4xNyAxMDk0Ljc2IDEyMzcuNjEgMTA5NC43NiAxMjM3LjYxIDEwNzguMzUgMTI5OS42OCAxMDc4LjM1IDEyOTkuNjggMTA2MS40OCAxMjE4LjE3IDEwNjEuNDggMTIxOC4xNyAxMTQ1LjIxIDEzMDAuMjcgMTE0NS4yMSAxMzAwLjI3IDExMjguMzMgMTIzNy42MSAxMTI4LjMzIDEyMzcuNjEgMTExMS4wNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEzOTAuNDcsMTA3Ni4wMmMxNi4wNiwwLDI4LjE0LDYuODMsMjguMTQsNi44M2w5LjI5LTEzLjYxcy0xMS4yMS0xMC4xLTM3LjQzLTEwLjFjLTM3Ljk1LDAtNTUuODIsMjAuMi01NS44Miw0NC4yczE3Ljg3LDQ0LjIsNTUuODIsNDQuMmMyNi4yMiwwLDM3LjQzLTEwLjEsMzcuNDMtMTAuMWwtOS4yOS0xMy42cy0xMi4wOSw2LjgzLTI4LjE0LDYuODNjLTI1Ljc1LDAtMzUuNzktMTMuMDgtMzUuNzktMjcuMzNzMTAuMDQtMjcuMzMsMzUuNzktMjcuMzNaIi8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE0NTguNzkgMTA3OC4zNSAxNDk0Ljc2IDEwNzguMzUgMTQ5NC43NiAxMTQ1LjIxIDE1MTQuMiAxMTQ1LjIxIDE1MTQuMiAxMDc4LjM1IDE1NTAuMTYgMTA3OC4zNSAxNTUwLjE2IDEwNjEuNDggMTQ1OC43OSAxMDYxLjQ4IDE0NTguNzkgMTA3OC4zNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE2NzIuNDksMTA4OS44YzAtMTQuNzctMTAuMjItMjguMzItMzIuOTMtMjguMzJoLTU1djgzLjczaDE5LjQ0di0yOC44NGgzMC44OWwxNi43NiwyOC44NGgyMS42NmwtMTguMjItMzEuMzVjMTEuMDQtMy42OCwxNy40LTExLjU2LDE3LjQtMjQuMDZaTTE2MzkuNTUsMTEwMS4yNGgtMzUuNTZ2LTIyLjg5aDM1LjU2YzEwLjEsMCwxMy4yNSw1LjM3LDEzLjI1LDExLjQ0cy0zLjE1LDExLjQ1LTEzLjI1LDExLjQ1WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE3NjIuMzQsMTA1OS4xNGMtMzcuOTUsMC01NS44MiwyMC4yLTU1LjgyLDQ0LjJzMTcuODcsNDQuMiw1NS44Miw0NC4yLDU1LjgyLTIwLjIsNTUuODItNDQuMi0xNy44Ny00NC4yLTU1LjgyLTQ0LjJaTTE3NjIuMzQsMTEzMC42N2MtMjUuNzUsMC0zNS43OS0xMy4wOC0zNS43OS0yNy4zM3MxMC4wNC0yNy4zMywzNS43OS0yNy4zMywzNS43OSwxMy4wOCwzNS43OSwyNy4zMy0xMC4wNCwyNy4zMy0zNS43OSwyNy4zM1oiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTg3My4xNSAxMDYxLjQ4IDE4NTMuNzEgMTA2MS40OCAxODUzLjcxIDExNDUuMjEgMTkzMS40MiAxMTQ1LjIxIDE5MzEuNDIgMTEyOC4zMyAxODczLjE1IDExMjguMzMgMTg3My4xNSAxMDYxLjQ4Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE5OTIuOCAxMDk2LjQgMTk2My44NCAxMDYxLjQ4IDE5NDEuMjkgMTA2MS40OCAxOTgzLjA0IDExMTEuNTggMTk4My4wNCAxMTQ1LjIxIDIwMDIuNTUgMTE0NS4yMSAyMDAyLjU1IDExMTEuNTggMjA0NC4yOSAxMDYxLjQ4IDIwMjEuNzYgMTA2MS40OCAxOTkyLjggMTA5Ni40Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjExNi4yMywxMDk0LjY0Yy0xNS44My0zLjA5LTIzLjE4LTQuODUtMjMuMTgtMTAuNTEsMC01LjA4LDYuMDEtOC4xMiwyMC4zOC04LjEyLDE5LjE1LDAsMzAuNzcsNS4zNywzMC43Nyw1LjM3bDkuNTItMTMuNzhzLTExLjMzLTguNDctNDAuMjktOC40N2MtMzAuNDgsMC00MC4wNiwxMi4xNC00MC4wNiwyNC45OSwwLDE0LjE5LDkuNjksMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM1LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTMtNi44My0zMy45My02LjgzbC05LjUyLDEzLjc4czEzLjg0LDkuOTIsNDMuNDQsOS45MmMyNi45NywwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNS0yNy4zM1oiLz4KICAgIDxyZWN0IGNsYXNzPSJzdDAiIHg9IjIxOTAuNjciIHk9IjEwNjEuNDgiIHdpZHRoPSIxOS40NCIgaGVpZ2h0PSI4My43MyIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTIyOTAuNzYsMTA5NC42NGMtMTUuODItMy4wOS0yMy4xOC00Ljg1LTIzLjE4LTEwLjUxLDAtNS4wOCw2LjAxLTguMTIsMjAuMzgtOC4xMiwxOS4xNSwwLDMwLjc3LDUuMzcsMzAuNzcsNS4zN2w5LjUyLTEzLjc4cy0xMS4zMy04LjQ3LTQwLjI5LTguNDdjLTMwLjQ4LDAtNDAuMDYsMTIuMTQtNDAuMDYsMjQuOTksMCwxNC4xOSw5LjcsMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM2LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTItNi44My0zMy45Mi02LjgzbC05LjUyLDEzLjc4czEzLjgzLDkuOTIsNDMuNDQsOS45MmMyNi45OCwwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNi0yNy4zM1oiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTM0LjQ2LDgzNi45NGMtMTUuNDEtMTMuNTgtMTUuNDEtMzcuMDMtMTUuNDEtNTUuNTVWOS4wNEMxMTkuMDYsNC4wNSwxMTUuNTEsMCwxMTEuMTQsMEg3LjkxQzMuNTQsMCwwLDQuMDUsMCw5LjA0djg1OC4zN2MwLDQuOTksMy41NCw5LjA0LDcuOTEsOS4wNGgzNzMuNTZjNC4zNywwLDcuOTEtNC4wNSw3LjkxLTkuMDR2LTEzOC45MWMwLTguNDYtOS4zNy0xMi4zNi0xNC01Ljc2LTg4LjY3LDEyNi40My0yMDcuNjksMTE0LjItMjQwLjkyLDExNC4yWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTc3OC44MywwYy01Ljk5LDAtOS45NCw3LjM0LTcuMDQsMTMuMzIsNzYuMDUsMTU3LjI3LDU0Ljg3LDM3Ny4yLDU0Ljg3LDU2NS42MnMtNTYuMDMsMjY3Ljg3LTE0MC4wNywyNjcuODctMTIxLjg2LTEzNC41Ni0xMjEuODYtMjc4Ljk4VjkuMDRDNTY0LjczLDQuMDUsNTYxLjE5LDAsNTU2LjgyLDBoLTEwMy4yM2MtNC4zNywwLTcuOTEsNC4wNS03LjkxLDkuMDR2NTYxLjI3YzAsMjUwLjU5LDEyNC42NiwzMTguNDksMjI0LjExLDMxOC40OSwyNC4yNSwwLDgzLjk4LjcsMTI4Ljk4LTQzLjMzLDU5LjM5LTU4LjExLDYyLjMzLTE2My42Niw2Ny4zMy0zNDIuODUuNTYtMTkuOTguMDctMTUuMDEuNTYtMjkuNjEsOC4yNi0yNDYuMzItMy4yMi0zNDguNTUsNTAuMDItNDU5LjcxQzkxOS41NCw3LjMsOTE1LjYxLDAsOTA5LjY0LDBoLTEzMC44MloiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNjg1Ljk3LDUuODNsLTIzNS41Myw3MDguNjRjLTIuNDIsNy4yOS0xMS4yNCw3Ljg5LTE0LjQxLjk4TDExMTAuMjYsNC44NWMtMS4zNy0yLjk4LTQuMDctNC44NC03LjAxLTQuODRoLTExMS44NWMtNi4wNywwLTkuODgsNy40OS02Ljg3LDEzLjUxbDY5LjI5LDEzOC43OGMuNjYsMS4zMiwxLjAxLDIuNzgsMS4wNCw0LjMsNC4wMiwyNjQuNDksMTAuNDgsNjA1LjczLTIzLjMxLDcwNy43My0xLjk1LDUuODksMS44OSwxMi4xMyw3LjQxLDEyLjEzaDEyOC42MmM3LjE3LDAsMTAuNjgtMTAuMDQsNS4zOS0xNS41Ni03OS41OC04My4yNC03NC43Mi0zMzkuMjgtNzQuNzItNTMwLjA1di01MS45M2MwLTkuMzgsMTAuOTctMTIuNTUsMTQuODctNC4zbDI4Mi42Myw1OTcuMTFjMS4zOCwyLjkyLDQuMDUsNC43NCw2Ljk2LDQuNzRoMzQuNjVjMy4yOSwwLDYuMjMtMi4zMiw3LjQtNS44M2wyMTMuODYtNjQzLjEyYzMuMTItOS4zOCwxNS4zMS02LjgzLDE1LjMxLDMuMjF2NjM2LjdjMCw0Ljk5LDMuNTQsOS4wNCw3LjkxLDkuMDRoMTAzLjEzYzQuNDEsMCw3Ljk3LTQuMTIsNy45MS05LjE1bC05LjYtODU4LjM3Yy0uMDYtNC45NS0zLjU4LTguOTItNy45MS04LjkyaC04MS45N2MtMy4yOSwwLTYuMjMsMi4zMi03LjQsNS44M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNDY4Ljg4LDg2NC4yOEwyMTkxLjc4LDUuOTFjLTEuMTUtMy41NS00LjExLTUuOTEtNy40Mi01LjkxaC0xMDYuOTFjLTUuMzYsMC05LjE3LDUuOTYtNy41NCwxMS43OWwyMS4yNSw3NS45NGMuNDQsMS41Ni41LDMuMjUuMTcsNC44Ni00OC45OCwyNDAuODctMTE1Ljk3LDQ0My45Ny0xODAuMTksNjgxLjQxLTkuNTIsMzQuNjMtMTYuMDEsNjIuMTItMzEuNTEsODguNTQtMy40OCw1Ljk0LjM4LDEzLjkyLDYuNjQsMTMuOTJoMTMxLjkyYzcuMywwLDEwLjU1LTEwLjEzLDUuMjEtMTUuODEtMzIuNC0zNC40Mi01MC44NC0xMTMuNzktMjUuNDItMjM2LjAxLDQuMi0xNy4yOCw4LjQtMzQuNTYsMTIuNjEtNTEuODVsMS40Ni01LjgyYy45MS0zLjYxLDMuNjctNi4yNyw2Ljk2LTYuNTIsMTcuMi0xLjMxLDM5LjM2LS4wNCw2Mi40NywxMC4zMiw1Mi4xNiwyMy4zOSw4Mi42OSw4MS40MywxMjkuMjcsMTcxLjMzLDI5Ljk0LDU3LjgsNDEuMzgsOTAuNzQsNzcuODksMTE0LjE1LDIxLjc3LDEzLjk1LDQzLjA0LDE4LjUxLDU3LjcxLDIwLjE2LjI5LjAzLjU2LjA1Ljg1LjA1aDExNC4yN2M1LjUxLDAsOS4zMy02LjI2LDcuNDItMTIuMTZaTTIyNzguNTMsNzQ4LjgyYy01MS44OC00Ni44NC03MC43Ni05MS45My05NS41NS0xMjYuMzctMjUuODEtMzUuODUtNzAuMDEtNzYuNjQtMTUwLjk1LTEwMS40My00LjI5LTEuMzEtNi44Ni02LjM0LTUuNjQtMTEuMjFsNzkuODktMzE4LjI4YzIuMS04LjM1LDEyLjMtOC44NCwxNS0uNzIsNDYuMjEsMTM4Ljg1LDkyLjQxLDI3Ny43LDEzOC42Miw0MTYuNTRsNDcuMDQsMTQ1Ljc2YzIuNzYsOC41Ni02LjA2LDE1Ljg3LTEyLjMzLDEwLjIybC0xNi4wOS0xNC41WiIvPgogIDwvZz4KPC9zdmc+" alt="LUMA" class="nav-logo-img" />
+    </a>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services/VQTP7F43D7EF6PJQHQQRPPK6" target="_blank" rel="noopener">Book an Appointment</a>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Close menu">✕</button>
+    <div class="mobile-menu-nav">
+      <a href="#" class="mobile-menu-link">Home</a>
+      <a href="#about" class="mobile-menu-link">About</a>
+      <a href="#services" class="mobile-menu-link">Services</a>
+      <a href="#contact" class="mobile-menu-link">Contact</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-up">Lancaster, PA · Since 1989</p>
+      <h1 class="hero-title hero-title-desktop"><span style="white-space: nowrap;">36 Years of Experience.</span><br><em style="white-space: nowrap;">Care You Can&nbsp;Trust.</em></h1>
+      <h1 class="hero-title hero-title-mobile"><span style="white-space: nowrap;">Setting the standard for</span><br><em style="white-space: nowrap;">care.</em></h1>
+      <p class="hero-sub fade-up">Jill Sherman, formerly of Jill &amp; Bonnie's Hair Removal Clinic, <br>is partnering with Emma Schutte to introduce Luma Laser <br>&amp; Electrolysis—a family-owned practice in Lancaster, PA built <br>on 36 years of experience in laser hair removal, electrolysis, <br>and skin resurfacing.</p>
+      <div class="hero-bottom">
+        <div class="hero-actions fade-up">
+          <a href="https://app.squareup.com/appointments/book/lyff610olsalte/L9PXCF6VPWXRE/start" target="_blank" rel="noopener" class="btn-primary">Book an Appointment</a>
+          <a href="#services" class="btn-ghost">Our Services</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARQUEE inside hero -->
+    <div class="marquee-strip">
+      <div class="marquee-inner">
+        <span class="marquee-item">Inclusive Studio</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Trusted Expertise</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Laser Hair Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Electrolysis</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Sun Damage Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Acne Laser Therapy</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Gender Affirming Hair Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Red Vein & Brown Spot Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Helix Skin Resurfacing</span><span class="marquee-dot"> ✦ </span>
+        <!-- duplicate for seamless loop -->
+        <span class="marquee-item">Inclusive Studio</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Trusted Expertise</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Laser Hair Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Electrolysis</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Sun Damage Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Acne Laser Therapy</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Gender Affirming Hair Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Red Vein & Brown Spot Removal</span><span class="marquee-dot"> ✦ </span>
+        <span class="marquee-item">Helix Skin Resurfacing</span><span class="marquee-dot"> ✦ </span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div>
+        <p class="section-label fade-up">About LUMA</p>
+        <h2 class="section-title fade-up" style="white-space: nowrap;">A place where<br>you&nbsp;<em>belong.</em></h2>
+        <p class="about-body fade-up">Luma Laser and Electrolysis is a studio created by Jill&nbsp;Sherman and Emma Schutte.<br> We offer laser hair removal, electrolysis, and skin treatments with a focus on thoughtful<br> care, expertise, and results.</p>
+        <p class="about-body fade-up">Founded on the belief that clinical shouldn't feel cold, we've created something different.<br> Our space is a reflection of who we are—thoughtful, warm, and personal. It's designed to<br> feel less like a place of service and more like an extension of our home. A place where you<br> can settle in and feel comfortable.</p>
+        <a href="#contact" class="about-story-btn fade-up">Learn More About Our Story</a>
+      </div>
+      <div class="about-bento">
+        <div class="tile t1"></div>
+        <div class="tile t2"></div>
+        <div class="tile t3"></div>
+      </div>
+    </div>
+    <div class="about-photos">
+      <div class="about-photo" style="background: url('images/jill-emma.webp') 72% 42%/160% no-repeat;"></div>
+      <div class="about-photo" style="background: url('images/lounge.webp') center/cover no-repeat;"></div>
+      <div class="about-photo" style="background: url('images/treatment-room.webp') center/cover no-repeat;"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <div>
+        <p class="section-label fade-up">What we offer</p>
+        <h2 class="section-title fade-up">Our <em>services.</em></h2>
+        <p class="services-body fade-up">Click through to learn about the process,&nbsp;results,&nbsp;and&nbsp;pricing.</p>
+      </div>
+
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-card-content">
+          <h3 class="service-title">Laser Hair Removal</h3>
+          <p class="service-desc">Achieve permanent hair reduction with advanced laser technology calibrated for all skin tones and hair types. Safe, effective, and personalized — delivering lasting results in every session.</p>
+          <a href="laser-hair-removal.html" class="service-learn-more">Learn More</a>
+        </div>
+        <div class="service-card-img" style="background: url('images/laser-hair-removal.webp') center/cover no-repeat;"></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-content">
+          <h3 class="service-title">Electrolysis</h3>
+          <p class="service-desc">Electrolysis offers permanent hair removal that works across a wide range of hair colors and skin tones. Precise, thorough, and clinically proven — a trusted solution for lasting results.</p>
+          <a href="electrolysis.html" class="service-learn-more">Learn More</a>
+        </div>
+        <div class="service-card-img" style="background: url('images/electrolysis.webp') center/cover no-repeat;"></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-content">
+          <h3 class="service-title">Skin Treatments</h3>
+          <p class="service-desc">Restore clarity and confidence with results-driven skin treatments guided by decades of clinical experience. From skin resurfacing to acne laser therapy — every treatment is tailored to your unique skin needs.</p>
+          <a href="skin-treatments.html" class="service-learn-more">Learn More</a>
+        </div>
+        <div class="service-card-img" style="background: url('images/skin-treatments.webp') center/cover no-repeat;"></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-content">
+          <h3 class="service-title">Gender Affirming Care</h3>
+          <p class="service-desc">We proudly offer a welcoming, inclusive, and affirming space for LGBTQIA+ clients seeking electrolysis and laser hair removal services. We understand that gender-affirming hair removal is a deeply personal journey, and our goal is to offer compassionate care tailored to your needs.</p>
+          <a href="gender-affirming-care.html" class="service-learn-more pride">Learn More</a>
+        </div>
+        <div class="service-card-img" style="background: url('images/gender-affirming-care.webp') center/cover no-repeat;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="svc-testimonials" id="testimonials">
+    <p class="section-label fade-up">Client Reviews</p>
+    <h2 class="svc-testimonials-heading fade-up">See what our<br><em>clients are saying.</em></h2>
+    <div class="testimonials-track-wrapper">
+      <div class="testimonials-track">
+
+        <!-- Set 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;I&#x2019;ve been going to Jill &amp; Emma for a year and the difference is remarkable. Jill and Emma are so knowledgeable and put me completely at ease from day one. After six sessions I&#x2019;ve seen an incredible reduction. I wish I&#x2019;d started sooner!&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Sarah+M&background=6B7A62&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Sarah M." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Sarah M.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;As someone with darker skin, I was nervous about laser hair removal. Emma was incredibly thorough during the consultation, explained exactly how she&#x2019;d calibrate the settings, and made me feel so comfortable. Truly the best experience.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Taylor+R&background=5C4A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Taylor R." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Taylor R.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;The studio itself is beautiful &#x2014; warm and calm. But beyond the atmosphere, Emma&#x2019;s results speak for themselves. I&#x2019;m six sessions in and barely need to shave anymore. Highly recommend Luma to anyone considering laser hair removal.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Melissa+K&background=3A4A55&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Melissa K." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Melissa K.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;As a trans woman, finding someone I could truly trust to treat me felt impossible. Jill approached my care with such sensitivity and never made me feel like anything other than exactly who I am.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Riley+M&background=7A4A6B&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Riley M." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Riley M.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;Jill and Emma create a space where everyone is genuinely welcome. As a non-binary person I never once felt judged or misunderstood &#x2014; they listened to my specific goals and treated me with complete respect. The results speak for themselves, but the care is what keeps me coming back.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Jordan+T&background=4A6B8A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Jordan T." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Jordan T.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;I&#x2019;ve followed Jill for years and she never disappoints. The level of care she brings to every appointment is unlike anything I&#x2019;ve experienced elsewhere. She genuinely cares about your results &#x2014; not just getting you in and out.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Rachel+H&background=5C5A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Rachel H." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Rachel H.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;What sets Jill and Emma apart is how personal it feels. They remember everything &#x2014; your skin, your goals, even what you talked about last time. You&#x2019;re never just another appointment. I won&#x2019;t go anywhere else.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Camille+B&background=3A5C5A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Camille B." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Camille B.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;A close friend raved about Emma for months before I finally made an appointment. I completely understand the hype now. Her expertise, her warmth, the results &#x2014; she&#x2019;s truly in a league of her own.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Nicole+S&background=5C3A4A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Nicole S." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Nicole S.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Set 2 (duplicate all 8 for seamless loop) -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;I&#x2019;ve been going to Jill &amp; Emma for a year and the difference is remarkable. Jill and Emma are so knowledgeable and put me completely at ease from day one. After six sessions I&#x2019;ve seen an incredible reduction. I wish I&#x2019;d started sooner!&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Sarah+M&background=6B7A62&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Sarah M." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Sarah M.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;As someone with darker skin, I was nervous about laser hair removal. Emma was incredibly thorough during the consultation, explained exactly how she&#x2019;d calibrate the settings, and made me feel so comfortable. Truly the best experience.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Taylor+R&background=5C4A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Taylor R." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Taylor R.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;The studio itself is beautiful &#x2014; warm and calm. But beyond the atmosphere, Emma&#x2019;s results speak for themselves. I&#x2019;m six sessions in and barely need to shave anymore. Highly recommend Luma to anyone considering laser hair removal.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Melissa+K&background=3A4A55&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Melissa K." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Melissa K.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;As a trans woman, finding someone I could truly trust to treat me felt impossible. Jill approached my care with such sensitivity and never made me feel like anything other than exactly who I am.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Riley+M&background=7A4A6B&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Riley M." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Riley M.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;Jill and Emma create a space where everyone is genuinely welcome. As a non-binary person I never once felt judged or misunderstood &#x2014; they listened to my specific goals and treated me with complete respect. The results speak for themselves, but the care is what keeps me coming back.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Jordan+T&background=4A6B8A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Jordan T." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Jordan T.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;I&#x2019;ve followed Jill for years and she never disappoints. The level of care she brings to every appointment is unlike anything I&#x2019;ve experienced elsewhere. She genuinely cares about your results &#x2014; not just getting you in and out.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Rachel+H&background=5C5A3A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Rachel H." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Rachel H.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testimonial-quote">&#x201C;What sets Jill and Emma apart is how personal it feels. They remember everything &#x2014; your skin, your goals, even what you talked about last time. You&#x2019;re never just another appointment. I won&#x2019;t go anywhere else.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Camille+B&background=3A5C5A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Camille B." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Camille B.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span></div>
+          <p class="testimonial-quote">&#x201C;A close friend raved about Emma for months before I finally made an appointment. I completely understand the hype now. Her expertise, her warmth, the results &#x2014; she&#x2019;s truly in a league of her own.&#x201D;</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-footer">
+            <img class="testimonial-avatar" src="https://ui-avatars.com/api/?name=Nicole+S&background=5C3A4A&color=E0D8C3&size=88&bold=true&font-size=0.4" alt="Nicole S." />
+            <div class="testimonial-meta">
+              <div class="testimonial-name">Nicole S.</div>
+              <div class="testimonial-source">via Google</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Mobile arrow nav (hidden on desktop via CSS) -->
+    <div class="mobile-review-nav" aria-hidden="true">
+      <button class="mobile-nav-btn mobile-nav-prev" aria-label="Previous review">&#8592;</button>
+      <div class="mobile-nav-dots"></div>
+      <button class="mobile-nav-btn mobile-nav-next" aria-label="Next review">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact-section" id="contact">
+    <div class="contact-grid">
+      <p class="section-label fade-up">Contact</p>
+      <h2 class="section-title fade-up">Ready to <em>get started?</em></h2>
+      <p class="contact-body fade-up">New to Luma? Let&#x2019;s start with a free 15-min consultation. Returning clients, book your next appointment anytime.</p>
+    </div>
+    <div class="contact-methods fade-up">
+      <a class="contact-method" href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services/VQTP7F43D7EF6PJQHQQRPPK6" target="_blank" rel="noopener">
+        <div>
+          <div class="contact-method-label">New Clients</div>
+          <div class="contact-method-value">Book a free 15-min consultation</div>
+        </div>
+        <span class="contact-method-arrow">↗&#xFE0E;</span>
+      </a>
+      <a class="contact-method" href="https://app.squareup.com/appointments/book/lyff610olsalte/L9PXCF6VPWXRE/start" target="_blank" rel="noopener">
+        <div>
+          <div class="contact-method-label">Returning Clients</div>
+          <div class="contact-method-value">Book an appointment</div>
+        </div>
+        <span class="contact-method-arrow">↗&#xFE0E;</span>
+      </a>
+      <a class="contact-method" href="mailto:hello@lumalancaster.com">
+        <div>
+          <div class="contact-method-label">Email</div>
+          <div class="contact-method-value">hello@lumalancaster.com</div>
+        </div>
+        <span class="contact-method-arrow">↗&#xFE0E;</span>
+      </a>
+      <a class="contact-method" href="tel:+17172010037">
+        <div>
+          <div class="contact-method-label">Phone</div>
+          <div class="contact-method-value">717-201-0037</div>
+        </div>
+        <span class="contact-method-arrow">↗&#xFE0E;</span>
+      </a>
+      <a class="contact-method" href="https://maps.google.com/?q=440+E+Roseville+Road,+Lancaster,+PA+17601" target="_blank" rel="noopener" style="padding-bottom: 35px;">
+        <div>
+          <div class="contact-method-label">Studio Location</div>
+          <div class="contact-method-value">440 E Roseville Road, Lancaster, PA 17601</div>
+        </div>
+        <span class="contact-method-arrow">↗&#xFE0E;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <p class="section-label fade-up">LUMA Laser & Electrolysis</p>
+    <h2 class="cta-title fade-up">Confidence starts&nbsp;<em>here.</em></h2>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNDY5LjM3IDExNDguMDQiPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAzMC4zLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuMyBCdWlsZCAxODIpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2M5YmNhMTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE1OCAxMDYxLjQ4IDEzOC41NiAxMDYxLjQ4IDEzOC41NiAxMTQ1LjIxIDIxNi4yNyAxMTQ1LjIxIDIxNi4yNyAxMTI4LjMzIDE1OCAxMTI4LjMzIDE1OCAxMDYxLjQ4Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjkxLjk0LDEwNjEuNDhsLTQ1LjM3LDgzLjczaDIwLjczbDguODctMTYuNDFoNDcuNTNsOC44OCwxNi40MWgyMC43M2wtNDUuMzctODMuNzNoLTE2Wk0yODQuOTksMTExMi41MWwxNC45NS0yNy42OCwxNC45NSwyNy42OGgtMjkuOVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjguNjgsMTA5NC42NGMtMTUuODItMy4wOS0yMy4xOC00Ljg1LTIzLjE4LTEwLjUxLDAtNS4wOCw2LjAxLTguMTIsMjAuMzgtOC4xMiwxOS4xNSwwLDMwLjc3LDUuMzcsMzAuNzcsNS4zN2w5LjUyLTEzLjc4cy0xMS4zMy04LjQ3LTQwLjI5LTguNDdjLTMwLjQ4LDAtNDAuMDYsMTIuMTQtNDAuMDYsMjQuOTksMCwxNC4xOSw5LjcsMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM2LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTItNi44My0zMy45Mi02LjgzbC05LjUyLDEzLjc4czEzLjgzLDkuOTIsNDMuNDQsOS45MmMyNi45OCwwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNi0yNy4zM1oiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iNTIyLjU3IDExMTEuMDUgNTgyLjEyIDExMTEuMDUgNTgyLjEyIDEwOTQuNzYgNTIyLjU3IDEwOTQuNzYgNTIyLjU3IDEwNzguMzUgNTg0LjY0IDEwNzguMzUgNTg0LjY0IDEwNjEuNDggNTAzLjEyIDEwNjEuNDggNTAzLjEyIDExNDUuMjEgNTg1LjIyIDExNDUuMjEgNTg1LjIyIDExMjguMzMgNTIyLjU3IDExMjguMzMgNTIyLjU3IDExMTEuMDUiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03MDkuODgsMTA4OS44YzAtMTQuNzctMTAuMjItMjguMzItMzIuOTMtMjguMzJoLTU1djgzLjczaDE5LjQ0di0yOC44NGgzMC44OWwxNi43NiwyOC44NGgyMS42NmwtMTguMjItMzEuMzVjMTEuMDQtMy42OCwxNy40LTExLjU2LDE3LjQtMjQuMDZaTTY3Ni45NCwxMTAxLjI0aC0zNS41NnYtMjIuODloMzUuNTZjMTAuMSwwLDEzLjI1LDUuMzcsMTMuMjUsMTEuNDRzLTMuMTUsMTEuNDUtMTMuMjUsMTEuNDVaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODgzLjE5LDExMDguNzdsLTE4LjIyLTYuMjVjLTEuNjMsMy45MS00LjUsOS4zNC02Ljc3LDEzLjAyLTQuMTUtMy4zMy05LjA1LTcuNTktMTIuMzgtMTAuNzQsOC40Ny01LjI2LDE5Ljk3LTExLjE1LDE5Ljk3LTIzLjU5cy0xMS4xNS0yMS40OS0yNS45Mi0yMS40OS0yNi45OCw4LjIzLTI2Ljk4LDI0LjA2YzAsOC40NywzLjE1LDE0LjQyLDUuODQsMTcuNzUtOS4zNCw1LjM3LTE2LjI5LDEyLjczLTE2LjI5LDIzLjI0LDAsMTYuMjksMTMuOTUsMjIuMTksMzEuOTQsMjIuMTksMTMuOSwwLDIxLjI1LTIuODYsMjcuMjctNi42LDMuNTYsMi40NSw3LjE4LDQuODUsNy4xOCw0Ljg1aDI4LjQ0cy0xMy40OS05LjkzLTIzLjc3LTE3LjYzYzIuNjMtMy43OSw2LjcxLTEwLjc0LDkuNjktMTguOFpNODM5Ljg2LDEwNzYuNmMzLjc5LDAsNi40OCwxLjM0LDYuNDgsNC42MSwwLDUuNjYtNi41NCw5LjExLTExLjU2LDEyLjAzLTEuNTItMS45OC0yLjQ1LTQuOS0yLjQ1LTguMjksMC02LjQyLDQuMDktOC4zNSw3LjUzLTguMzVaTTgzNC4yLDExMzAuMDljLTkuNjksMC0xMi4zMi0yLjg2LTEyLjMyLTYuNDgsMC00LjU2LDMuMzMtNy43Nyw3LjM2LTkuODcsMy44NSwzLjY4LDExLjI3LDEwLjIyLDE1Ljg4LDEzLjktMS41Mi45OS00LjkxLDIuNDUtMTAuOTIsMi40NVoiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTAwNS41MiAxMTExLjA1IDEwNjUuMDggMTExMS4wNSAxMDY1LjA4IDEwOTQuNzYgMTAwNS41MiAxMDk0Ljc2IDEwMDUuNTIgMTA3OC4zNSAxMDY3LjU5IDEwNzguMzUgMTA2Ny41OSAxMDYxLjQ4IDk4Ni4wOCAxMDYxLjQ4IDk4Ni4wOCAxMTQ1LjIxIDEwNjguMTcgMTE0NS4yMSAxMDY4LjE3IDExMjguMzMgMTAwNS41MiAxMTI4LjMzIDEwMDUuNTIgMTExMS4wNSIvPgogICAgPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSIxMTI0LjM0IDEwNjEuNDggMTEwNC45IDEwNjEuNDggMTEwNC45IDExNDUuMjEgMTE4Mi42MSAxMTQ1LjIxIDExODIuNjEgMTEyOC4zMyAxMTI0LjM0IDExMjguMzMgMTEyNC4zNCAxMDYxLjQ4Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyMzcuNjEgMTExMS4wNSAxMjk3LjE3IDExMTEuMDUgMTI5Ny4xNyAxMDk0Ljc2IDEyMzcuNjEgMTA5NC43NiAxMjM3LjYxIDEwNzguMzUgMTI5OS42OCAxMDc4LjM1IDEyOTkuNjggMTA2MS40OCAxMjE4LjE3IDEwNjEuNDggMTIxOC4xNyAxMTQ1LjIxIDEzMDAuMjcgMTE0NS4yMSAxMzAwLjI3IDExMjguMzMgMTIzNy42MSAxMTI4LjMzIDEyMzcuNjEgMTExMS4wNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEzOTAuNDcsMTA3Ni4wMmMxNi4wNiwwLDI4LjE0LDYuODMsMjguMTQsNi44M2w5LjI5LTEzLjYxcy0xMS4yMS0xMC4xLTM3LjQzLTEwLjFjLTM3Ljk1LDAtNTUuODIsMjAuMi01NS44Miw0NC4yczE3Ljg3LDQ0LjIsNTUuODIsNDQuMmMyNi4yMiwwLDM3LjQzLTEwLjEsMzcuNDMtMTAuMWwtOS4yOS0xMy42cy0xMi4wOSw2LjgzLTI4LjE0LDYuODNjLTI1Ljc1LDAtMzUuNzktMTMuMDgtMzUuNzktMjcuMzNzMTAuMDQtMjcuMzMsMzUuNzktMjcuMzNaIi8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE0NTguNzkgMTA3OC4zNSAxNDk0Ljc2IDEwNzguMzUgMTQ5NC43NiAxMTQ1LjIxIDE1MTQuMiAxMTQ1LjIxIDE1MTQuMiAxMDc4LjM1IDE1NTAuMTYgMTA3OC4zNSAxNTUwLjE2IDEwNjEuNDggMTQ1OC43OSAxMDYxLjQ4IDE0NTguNzkgMTA3OC4zNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE2NzIuNDksMTA4OS44YzAtMTQuNzctMTAuMjItMjguMzItMzIuOTMtMjguMzJoLTU1djgzLjczaDE5LjQ0di0yOC44NGgzMC44OWwxNi43NiwyOC44NGgyMS42NmwtMTguMjItMzEuMzVjMTEuMDQtMy42OCwxNy40LTExLjU2LDE3LjQtMjQuMDZaTTE2MzkuNTUsMTEwMS4yNGgtMzUuNTZ2LTIyLjg5aDM1LjU2YzEwLjEsMCwxMy4yNSw1LjM3LDEzLjI1LDExLjQ0cy0zLjE1LDExLjQ1LTEzLjI1LDExLjQ1WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTE3NjIuMzQsMTA1OS4xNGMtMzcuOTUsMC01NS44MiwyMC4yLTU1LjgyLDQ0LjJzMTcuODcsNDQuMiw1NS44Miw0NC4yLDU1LjgyLTIwLjIsNTUuODItNDQuMi0xNy44Ny00NC4yLTU1LjgyLTQ0LjJaTTE3NjIuMzQsMTEzMC42N2MtMjUuNzUsMC0zNS43OS0xMy4wOC0zNS43OS0yNy4zM3MxMC4wNC0yNy4zMywzNS43OS0yNy4zMywzNS43OSwxMy4wOCwzNS43OSwyNy4zMy0xMC4wNCwyNy4zMy0zNS43OSwyNy4zM1oiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTg3My4xNSAxMDYxLjQ4IDE4NTMuNzEgMTA2MS40OCAxODUzLjcxIDExNDUuMjEgMTkzMS40MiAxMTQ1LjIxIDE5MzEuNDIgMTEyOC4zMyAxODczLjE1IDExMjguMzMgMTg3My4xNSAxMDYxLjQ4Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE5OTIuOCAxMDk2LjQgMTk2My44NCAxMDYxLjQ4IDE5NDEuMjkgMTA2MS40OCAxOTgzLjA0IDExMTEuNTggMTk4My4wNCAxMTQ1LjIxIDIwMDIuNTUgMTE0NS4yMSAyMDAyLjU1IDExMTEuNTggMjA0NC4yOSAxMDYxLjQ4IDIwMjEuNzYgMTA2MS40OCAxOTkyLjggMTA5Ni40Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjExNi4yMywxMDk0LjY0Yy0xNS44My0zLjA5LTIzLjE4LTQuODUtMjMuMTgtMTAuNTEsMC01LjA4LDYuMDEtOC4xMiwyMC4zOC04LjEyLDE5LjE1LDAsMzAuNzcsNS4zNywzMC43Nyw1LjM3bDkuNTItMTMuNzhzLTExLjMzLTguNDctNDAuMjktOC40N2MtMzAuNDgsMC00MC4wNiwxMi4xNC00MC4wNiwyNC45OSwwLDE0LjE5LDkuNjksMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM1LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTMtNi44My0zMy45My02LjgzbC05LjUyLDEzLjc4czEzLjg0LDkuOTIsNDMuNDQsOS45MmMyNi45NywwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNS0yNy4zM1oiLz4KICAgIDxyZWN0IGNsYXNzPSJzdDAiIHg9IjIxOTAuNjciIHk9IjEwNjEuNDgiIHdpZHRoPSIxOS40NCIgaGVpZ2h0PSI4My43MyIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTIyOTAuNzYsMTA5NC42NGMtMTUuODItMy4wOS0yMy4xOC00Ljg1LTIzLjE4LTEwLjUxLDAtNS4wOCw2LjAxLTguMTIsMjAuMzgtOC4xMiwxOS4xNSwwLDMwLjc3LDUuMzcsMzAuNzcsNS4zN2w5LjUyLTEzLjc4cy0xMS4zMy04LjQ3LTQwLjI5LTguNDdjLTMwLjQ4LDAtNDAuMDYsMTIuMTQtNDAuMDYsMjQuOTksMCwxNC4xOSw5LjcsMjEuNTQsMzkuMTgsMjcuNTYsMTguMzMsMy43NCwyNC4wNiw0LjY3LDI0LjA2LDEwLjI4cy03LjM2LDguNy0yMy4xOCw4LjdjLTIwLjU1LDAtMzMuOTItNi44My0zMy45Mi02LjgzbC05LjUyLDEzLjc4czEzLjgzLDkuOTIsNDMuNDQsOS45MmMyNi45OCwwLDQyLjg2LTguNyw0Mi44Ni0yNS41N3MtMTIuOS0yMi4wMS00MC4wNi0yNy4zM1oiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTM0LjQ2LDgzNi45NGMtMTUuNDEtMTMuNTgtMTUuNDEtMzcuMDMtMTUuNDEtNTUuNTVWOS4wNEMxMTkuMDYsNC4wNSwxMTUuNTEsMCwxMTEuMTQsMEg3LjkxQzMuNTQsMCwwLDQuMDUsMCw5LjA0djg1OC4zN2MwLDQuOTksMy41NCw5LjA0LDcuOTEsOS4wNGgzNzMuNTZjNC4zNywwLDcuOTEtNC4wNSw3LjkxLTkuMDR2LTEzOC45MWMwLTguNDYtOS4zNy0xMi4zNi0xNC01Ljc2LTg4LjY3LDEyNi40My0yMDcuNjksMTE0LjItMjQwLjkyLDExNC4yWiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTc3OC44MywwYy01Ljk5LDAtOS45NCw3LjM0LTcuMDQsMTMuMzIsNzYuMDUsMTU3LjI3LDU0Ljg3LDM3Ny4yLDU0Ljg3LDU2NS42MnMtNTYuMDMsMjY3Ljg3LTE0MC4wNywyNjcuODctMTIxLjg2LTEzNC41Ni0xMjEuODYtMjc4Ljk4VjkuMDRDNTY0LjczLDQuMDUsNTYxLjE5LDAsNTU2LjgyLDBoLTEwMy4yM2MtNC4zNywwLTcuOTEsNC4wNS03LjkxLDkuMDR2NTYxLjI3YzAsMjUwLjU5LDEyNC42NiwzMTguNDksMjI0LjExLDMxOC40OSwyNC4yNSwwLDgzLjk4LjcsMTI4Ljk4LTQzLjMzLDU5LjM5LTU4LjExLDYyLjMzLTE2My42Niw2Ny4zMy0zNDIuODUuNTYtMTkuOTguMDctMTUuMDEuNTYtMjkuNjEsOC4yNi0yNDYuMzItMy4yMi0zNDguNTUsNTAuMDItNDU5LjcxQzkxOS41NCw3LjMsOTE1LjYxLDAsOTA5LjY0LDBoLTEzMC44MloiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNjg1Ljk3LDUuODNsLTIzNS41Myw3MDguNjRjLTIuNDIsNy4yOS0xMS4yNCw3Ljg5LTE0LjQxLjk4TDExMTAuMjYsNC44NWMtMS4zNy0yLjk4LTQuMDctNC44NC03LjAxLTQuODRoLTExMS44NWMtNi4wNywwLTkuODgsNy40OS02Ljg3LDEzLjUxbDY5LjI5LDEzOC43OGMuNjYsMS4zMiwxLjAxLDIuNzgsMS4wNCw0LjMsNC4wMiwyNjQuNDksMTAuNDgsNjA1LjczLTIzLjMxLDcwNy43My0xLjk1LDUuODksMS44OSwxMi4xMyw3LjQxLDEyLjEzaDEyOC42MmM3LjE3LDAsMTAuNjgtMTAuMDQsNS4zOS0xNS41Ni03OS41OC04My4yNC03NC43Mi0zMzkuMjgtNzQuNzItNTMwLjA1di01MS45M2MwLTkuMzgsMTAuOTctMTIuNTUsMTQuODctNC4zbDI4Mi42Myw1OTcuMTFjMS4zOCwyLjkyLDQuMDUsNC43NCw2Ljk2LDQuNzRoMzQuNjVjMy4yOSwwLDYuMjMtMi4zMiw3LjQtNS44M2wyMTMuODYtNjQzLjEyYzMuMTItOS4zOCwxNS4zMS02LjgzLDE1LjMxLDMuMjF2NjM2LjdjMCw0Ljk5LDMuNTQsOS4wNCw3LjkxLDkuMDRoMTAzLjEzYzQuNDEsMCw3Ljk3LTQuMTIsNy45MS05LjE1bC05LjYtODU4LjM3Yy0uMDYtNC45NS0zLjU4LTguOTItNy45MS04LjkyaC04MS45N2MtMy4yOSwwLTYuMjMsMi4zMi03LjQsNS44M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNDY4Ljg4LDg2NC4yOEwyMTkxLjc4LDUuOTFjLTEuMTUtMy41NS00LjExLTUuOTEtNy40Mi01LjkxaC0xMDYuOTFjLTUuMzYsMC05LjE3LDUuOTYtNy41NCwxMS43OWwyMS4yNSw3NS45NGMuNDQsMS41Ni41LDMuMjUuMTcsNC44Ni00OC45OCwyNDAuODctMTE1Ljk3LDQ0My45Ny0xODAuMTksNjgxLjQxLTkuNTIsMzQuNjMtMTYuMDEsNjIuMTItMzEuNTEsODguNTQtMy40OCw1Ljk0LjM4LDEzLjkyLDYuNjQsMTMuOTJoMTMxLjkyYzcuMywwLDEwLjU1LTEwLjEzLDUuMjEtMTUuODEtMzIuNC0zNC40Mi01MC44NC0xMTMuNzktMjUuNDItMjM2LjAxLDQuMi0xNy4yOCw4LjQtMzQuNTYsMTIuNjEtNTEuODVsMS40Ni01LjgyYy45MS0zLjYxLDMuNjctNi4yNyw2Ljk2LTYuNTIsMTcuMi0xLjMxLDM5LjM2LS4wNCw2Mi40NywxMC4zMiw1Mi4xNiwyMy4zOSw4Mi42OSw4MS40MywxMjkuMjcsMTcxLjMzLDI5Ljk0LDU3LjgsNDEuMzgsOTAuNzQsNzcuODksMTE0LjE1LDIxLjc3LDEzLjk1LDQzLjA0LDE4LjUxLDU3LjcxLDIwLjE2LjI5LjAzLjU2LjA1Ljg1LjA1aDExNC4yN2M1LjUxLDAsOS4zMy02LjI2LDcuNDItMTIuMTZaTTIyNzguNTMsNzQ4LjgyYy01MS44OC00Ni44NC03MC43Ni05MS45My05NS41NS0xMjYuMzctMjUuODEtMzUuODUtNzAuMDEtNzYuNjQtMTUwLjk1LTEwMS40My00LjI5LTEuMzEtNi44Ni02LjM0LTUuNjQtMTEuMjFsNzkuODktMzE4LjI4YzIuMS04LjM1LDEyLjMtOC44NCwxNS0uNzIsNDYuMjEsMTM4Ljg1LDkyLjQxLDI3Ny43LDEzOC42Miw0MTYuNTRsNDcuMDQsMTQ1Ljc2YzIuNzYsOC41Ni02LjA2LDE1Ljg3LTEyLjMzLDEwLjIybC0xNi4wOS0xNC41WiIvPgogIDwvZz4KPC9zdmc+" alt="LUMA" class="footer-logo-img" />
+    </div>
+    <div class="footer-center">
+      <a class="footer-book-btn" href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services/VQTP7F43D7EF6PJQHQQRPPK6" target="_blank" rel="noopener">Book an Appointment</a>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 LUMA Laser &amp; Electrolysis · Lancaster, PA</p>
+    </div>
+    <div class="footer-right">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/lumalancaster/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/lumalancaster" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 90);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  </script>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.querySelector('.nav-hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    const navEl = document.querySelector('body > nav');
+
+    function openMenu() {
+      hamburger.classList.add('active');
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    document.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          e.preventDefault();
+          closeMenu();
+          setTimeout(() => {
+            const target = document.querySelector(href);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 50);
+        } else {
+          closeMenu();
+        }
+      });
+    });
+
+    // Desktop: trigger stars when card reaches viewport center
+    if (window.innerWidth > 900) {
+      const starObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const card = entry.target;
+          if (entry.isIntersecting) {
+            card.classList.remove('stars-active');
+            void card.offsetWidth; // restart animation
+            card.classList.add('stars-active');
+          } else {
+            card.classList.remove('stars-active');
+          }
+        });
+      }, {
+        rootMargin: '0px -42% 0px -42%',
+        threshold: 0
+      });
+      document.querySelectorAll('.testimonial-card').forEach(c => starObserver.observe(c));
+    }
+
+    // Mobile review slider
+    (function() {
+      if (window.innerWidth > 900) return;
+      const wrapper = document.querySelector('.testimonials-track-wrapper');
+      const track = document.querySelector('.testimonials-track');
+      const reviewNav = document.querySelector('.mobile-review-nav');
+      if (!track || !reviewNav) return;
+
+      const allCards = Array.from(track.querySelectorAll('.testimonial-card'));
+      const cards = allCards.slice(0, 8);
+      allCards.slice(8).forEach(c => c.style.display = 'none');
+
+      function resize() {
+        const w = wrapper.offsetWidth;
+        track.style.width = (w * cards.length) + 'px';
+        cards.forEach(c => { c.style.width = w + 'px'; c.style.minWidth = w + 'px'; c.style.maxWidth = w + 'px'; });
+        goTo(current);
+      }
+
+      let current = 0;
+      const dotsContainer = reviewNav.querySelector('.mobile-nav-dots');
+
+      cards.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'mobile-nav-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function goTo(index) {
+        current = (index + cards.length) % cards.length;
+        const w = wrapper.offsetWidth;
+        track.style.transform = 'translateX(' + (-current * w) + 'px)';
+        dotsContainer.querySelectorAll('.mobile-nav-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+        cards.forEach(c => c.classList.remove('stars-active'));
+        setTimeout(() => cards[current].classList.add('stars-active'), 350);
+      }
+
+      reviewNav.querySelector('.mobile-nav-prev').addEventListener('click', () => goTo(current - 1));
+      reviewNav.querySelector('.mobile-nav-next').addEventListener('click', () => goTo(current + 1));
+
+      resize();
+      window.addEventListener('resize', resize);
+    })();
+
+    // Mobile: activate rainbow on Gender Affirming Care button when its card is in view
+    (function() {
+      if (window.innerWidth > 768) return;
+      const card = Array.from(document.querySelectorAll('.service-card'))
+        .find(c => c.querySelector('.service-title')?.textContent?.includes('Gender Affirming'));
+      if (!card) return;
+      const btn = card.querySelector('.service-learn-more.pride');
+      if (!btn) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => btn.classList.toggle('in-view', e.isIntersecting));
+      }, { threshold: 0.5 });
+      obs.observe(card);
+    })();
+  </script>
+
+</body>
+</html>
