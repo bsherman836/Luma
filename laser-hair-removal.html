@@ -643,16 +643,32 @@
       flex: 0 0 calc(25% - 15px);
       background: rgba(157,142,104,0.05);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 40px 28px 36px;
+      border-radius: 22px;
+      padding: 30px 32px 36px;
+      min-height: 320px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 22px;
-      text-align: center;
+      align-items: flex-start;
+      text-align: left;
       transition: background 0.25s, border-color 0.25s;
       position: relative;
       overflow: hidden;
+      box-shadow:
+        inset 1px 1px 0 rgba(0,0,0,0.28),
+        inset -1px -1px 0 rgba(255,255,255,0.14),
+        inset 0 3px 6px rgba(0,0,0,0.22),
+        inset 0 -2px 4px rgba(255,255,255,0.05);
+    }
+    .before-title {
+      font-family: var(--sans);
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--linen);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-top: 80px;
+      margin-bottom: 10px;
+      white-space: nowrap;
     }
     .before-item::before {
       content: '';
@@ -670,19 +686,19 @@
     .before-item:hover::before { transform: scaleX(1); }
     .before-item:hover .before-label { font-weight: 600; }
     .before-icon-wrap {
-      width: 100px;
-      height: 100px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      border: 1.5px solid rgba(157,142,104,0.35);
-      background: rgba(157,142,104,0.08);
+      background: var(--linen);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
     .before-icon-wrap svg {
-      width: 44px;
-      height: 44px;
+      display: block;
+      width: 27px;
+      height: 27px;
       stroke: var(--warm-honey);
       fill: none;
       stroke-width: 1.5;
@@ -691,10 +707,10 @@
     }
     .before-label {
       font-family: var(--sans);
-      font-size: 0.9rem;
-      line-height: 1.78;
+      font-size: 0.95rem;
+      line-height: 1.55;
       color: var(--sandstone);
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ── PRICING ── */
@@ -1314,7 +1330,8 @@
         <div class="before-icon-wrap">
           <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 3v0a1 1 0 011-1h4a1 1 0 011 1v0"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="13" y2="16"/></svg>
         </div>
-        <p class="before-label">Complete forms &amp; get <br>cleared for treatment.</p>
+        <h3 class="before-title">Get Cleared</h3>
+        <p class="before-label">Complete your intake forms and get cleared for treatment before your first appointment.</p>
       </div>
 
       <!-- 2. No waxing / tweezing -->
@@ -1322,23 +1339,26 @@
         <div class="before-icon-wrap">
           <svg viewBox="0 0 24 24"><path d="M8 2C8 2 9.5 5 12 5C14.5 5 16 2 16 2"/><path d="M8 2L10.5 19"/><path d="M16 2L13.5 19"/><path d="M10.5 19Q12 22 13.5 19"/></svg>
         </div>
-        <p class="before-label">No waxing or tweezing for 4 weeks.</p>
+        <h3 class="before-title">Skip Waxing</h3>
+        <p class="before-label">Avoid waxing, tweezing, or plucking for at least 4 weeks before your session.</p>
       </div>
 
       <!-- 3. No sun exposure -->
       <div class="before-item">
         <div class="before-icon-wrap">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="16.95" y2="7.05"/><line x1="7.05" y1="16.95" x2="4.93" y2="19.07"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="16.95" y2="7.05"/><line x1="7.05" y1="16.95" x2="4.93" y2="19.07"/></svg>
         </div>
-        <p class="before-label">No sun exposure or sunless <br>tanner for 2–4 weeks.</p>
+        <h3 class="before-title">Avoid Sun</h3>
+        <p class="before-label">Avoid sun exposure and sunless tanner for 2–4 weeks before your appointment.</p>
       </div>
 
       <!-- 4. No aggressive treatments -->
       <div class="before-item">
         <div class="before-icon-wrap">
-          <svg viewBox="0 0 24 24"><rect x="8" y="7" width="8" height="13" rx="1.5"/><path d="M10 7V5.5A1.5 1.5 0 0111.5 4h1A1.5 1.5 0 0114 5.5V7"/><line x1="10" y1="11" x2="14" y2="11"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+          <svg viewBox="0 0 24 24"><rect x="8" y="7" width="8" height="13" rx="1.5"/><path d="M10 7V5.5A1.5 1.5 0 0111.5 4h1A1.5 1.5 0 0114 5.5V7"/><line x1="10" y1="11" x2="14" y2="11"/></svg>
         </div>
-        <p class="before-label">No aggressive skin treatments <br>for 2–4 weeks.</p>
+        <h3 class="before-title">Pause Treatments</h3>
+        <p class="before-label">Skip aggressive skin treatments like peels or microneedling for 2–4 weeks.</p>
       </div>
 
       <!-- 5. Gentle skincare only -->
@@ -1346,7 +1366,8 @@
         <div class="before-icon-wrap">
           <svg viewBox="0 0 24 24"><path d="M12 3C9 7.5 7 10 7 13a5 5 0 0010 0c0-3-2-5.5-5-10z"/><path d="M10 16.5a2.5 2.5 0 001.5.5"/></svg>
         </div>
-        <p class="before-label">Only use gentle skincare — no retinoids or chemical exfoliants 1–2 weeks before.</p>
+        <h3 class="before-title">Stay Gentle</h3>
+        <p class="before-label">Stop retinoids and chemical exfoliants 1–2 weeks before — use gentle skincare only.</p>
       </div>
 
       <!-- 6. Shave -->
@@ -1354,7 +1375,8 @@
         <div class="before-icon-wrap">
           <svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="2.5" rx="1.25"/><rect x="10" y="10.5" width="4" height="9" rx="1"/><line x1="12" y1="5" x2="12" y2="8"/><line x1="9" y1="6" x2="12" y2="8"/><line x1="15" y1="6" x2="12" y2="8"/></svg>
         </div>
-        <p class="before-label">Shave 24–48 hours before <br>your appointment.</p>
+        <h3 class="before-title">Pre-Shave</h3>
+        <p class="before-label">Shave the area 24–48 hours before your appointment.</p>
       </div>
 
       <!-- 7. Arrive early / clean skin -->
@@ -1362,7 +1384,8 @@
         <div class="before-icon-wrap">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
         </div>
-        <p class="before-label">Arrive early and with clean, <br>product-free skin.</p>
+        <h3 class="before-title">Arrive Clean</h3>
+        <p class="before-label">Arrive with freshly cleansed skin — no lotion or deodorant on the area.</p>
       </div>
 
     </div>
@@ -1380,16 +1403,18 @@
           <!-- Dumbbell -->
           <svg viewBox="0 0 24 24"><line x1="8.5" y1="12" x2="15.5" y2="12"/><rect x="1.5" y="9.5" width="7" height="5" rx="1.5"/><rect x="15.5" y="9.5" width="7" height="5" rx="1.5"/><line x1="5" y1="7.5" x2="5" y2="16.5"/><line x1="19" y1="7.5" x2="19" y2="16.5"/></svg>
         </div>
-        <p class="before-label">Avoid strenuous exercise <br>for 24–48 hours.</p>
+        <h3 class="before-title">No Exercise</h3>
+        <p class="before-label">Skip strenuous exercise and heavy sweating for 24–48 hours after treatment.</p>
       </div>
 
       <!-- 2. No hot environments -->
       <div class="before-item">
         <div class="before-icon-wrap">
           <!-- Steam waves -->
-          <svg viewBox="0 0 24 24"><path d="M5 20c1-2 1-4 0-6s-1-4 0-6"/><path d="M12 20c1-2 1-4 0-6s-1-4 0-6"/><path d="M19 20c1-2 1-4 0-6s-1-4 0-6"/></svg>
+          <svg viewBox="0 0 24 24"><g transform="translate(0 -2)"><path d="M5 20c1-2 1-4 0-6s-1-4 0-6"/><path d="M12 20c1-2 1-4 0-6s-1-4 0-6"/><path d="M19 20c1-2 1-4 0-6s-1-4 0-6"/></g></svg>
         </div>
-        <p class="before-label">No saunas, hot tubs, or <br>steam rooms for 48 hours.</p>
+        <h3 class="before-title">Avoid Heat</h3>
+        <p class="before-label">Stay out of saunas, hot tubs, and steam rooms for at least 48 hours.</p>
       </div>
 
       <!-- 3. Keep area clean -->
@@ -1397,31 +1422,35 @@
         <div class="before-icon-wrap">
           <svg viewBox="0 0 24 24"><path d="M7 16c0 2.2 2.2 4 5 4s5-1.8 5-4"/><path d="M12 4C9 8.5 7 11 7 14a5 5 0 0010 0c0-3-2-5.5-5-10z"/><path d="M9.5 15.5a3 3 0 002.5.5"/></svg>
         </div>
-        <p class="before-label">Keep the treated area clean <br>with a gentle cleanser.</p>
+        <h3 class="before-title">Clean Gently</h3>
+        <p class="before-label">Wash the treated area with a mild, fragrance-free cleanser only.</p>
       </div>
 
       <!-- 4. Soothing products -->
       <div class="before-item">
         <div class="before-icon-wrap">
-          <svg viewBox="0 0 24 24"><rect x="8" y="6" width="8" height="14" rx="2"/><path d="M10 6V4.5A1.5 1.5 0 0111.5 3h1A1.5 1.5 0 0114 4.5V6"/><path d="M10 11h4"/><path d="M10 14h4"/></svg>
+          <svg viewBox="0 0 24 24"><g transform="translate(0 0.5)"><rect x="8" y="6" width="8" height="14" rx="2"/><path d="M10 6V4.5A1.5 1.5 0 0111.5 3h1A1.5 1.5 0 0114 4.5V6"/><path d="M10 11h4"/><path d="M10 14h4"/></g></svg>
         </div>
-        <p class="before-label">Apply fragrance-free, soothing <br>products like aloe vera.</p>
+        <h3 class="before-title">Soothe Skin</h3>
+        <p class="before-label">Apply fragrance-free soothing products like pure aloe vera as needed.</p>
       </div>
 
       <!-- 5. Sun protection -->
       <div class="before-item">
         <div class="before-icon-wrap">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="16.95" y2="7.05"/><line x1="7.05" y1="16.95" x2="4.93" y2="19.07"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="16.95" y2="7.05"/><line x1="7.05" y1="16.95" x2="4.93" y2="19.07"/></svg>
         </div>
-        <p class="before-label">Avoid unprotected sun exposure <br>for at least 2 weeks.</p>
+        <h3 class="before-title">Avoid Sun</h3>
+        <p class="before-label">Avoid unprotected sun exposure for at least 2 weeks after treatment.</p>
       </div>
 
       <!-- 6. No shaving or exfoliating -->
       <div class="before-item">
         <div class="before-icon-wrap">
-          <svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="2.5" rx="1.25"/><rect x="10" y="10.5" width="4" height="9" rx="1"/><line x1="12" y1="5" x2="12" y2="8"/><line x1="9" y1="6" x2="12" y2="8"/><line x1="15" y1="6" x2="12" y2="8"/><line x1="3" y1="21" x2="21" y2="3" stroke-width="1.6"/></svg>
+          <svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="2.5" rx="1.25"/><rect x="10" y="10.5" width="4" height="9" rx="1"/><line x1="12" y1="5" x2="12" y2="8"/><line x1="9" y1="6" x2="12" y2="8"/><line x1="15" y1="6" x2="12" y2="8"/></svg>
         </div>
-        <p class="before-label">No shaving or exfoliating <br>for 10 days post-treatment.</p>
+        <h3 class="before-title">Skip Shaving</h3>
+        <p class="before-label">Don't shave or exfoliate the treated area for 10 days after your session.</p>
       </div>
 
     </div>
