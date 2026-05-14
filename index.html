@@ -93,7 +93,7 @@
       --sans:  'Work Sans', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--bg); }
 
     body {
       background: var(--bg);
@@ -103,6 +103,9 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      max-width: 1440px;
+      margin: 0 auto;
+      position: relative;
     }
 
     /* grain overlay */
@@ -134,7 +137,11 @@
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
       z-index: 200;
       display: flex;
       align-items: center;
@@ -1074,7 +1081,7 @@
 
     .cta-title {
       font-family: var(--serif);
-      font-size: clamp(3.5rem, 7vw, 8rem);
+      font-size: clamp(2.6rem, 4.8vw, 5.2rem);
       font-weight: 400;
       line-height: 0.96;
       letter-spacing: -0.01em;
@@ -1579,6 +1586,7 @@
       padding: 60px 0;
       overflow: hidden;
     }
+    .svc-testimonials-heading-mobile { display: none; }
     .svc-testimonials-heading {
       font-family: var(--serif);
       font-size: clamp(2.6rem, 4.8vw, 5.2rem);
@@ -1695,6 +1703,8 @@
     @media (max-width: 900px) {
       .svc-testimonials { padding-top: 35px; padding-bottom: 50px; }
       .svc-testimonials-heading { padding-left: 28px !important; padding-right: 28px !important; }
+      .svc-testimonials-heading-desktop { display: none; }
+      .svc-testimonials-heading-mobile { display: block; }
       .svc-testimonials .section-label { padding-left: 28px !important; padding-right: 28px !important; }
       .testimonials-track-wrapper { -webkit-mask-image: none; mask-image: none; overflow: hidden; width: 100%; }
       .testimonials-track { animation: none !important; display: flex; gap: 0; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
@@ -1857,7 +1867,8 @@
   <!-- TESTIMONIALS -->
   <section class="svc-testimonials" id="testimonials">
     <p class="section-label fade-up">Client Reviews</p>
-    <h2 class="svc-testimonials-heading fade-up">See what our<br><em>clients are saying.</em></h2>
+    <h2 class="svc-testimonials-heading svc-testimonials-heading-desktop fade-up">See what our clients<br><em>are saying.</em></h2>
+    <h2 class="svc-testimonials-heading svc-testimonials-heading-mobile fade-up">See what our<br><em>clients are saying.</em></h2>
     <div class="testimonials-track-wrapper">
       <div class="testimonials-track">
 
