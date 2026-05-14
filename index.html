@@ -764,29 +764,26 @@
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
       margin-top: 25px;
       align-items: stretch;
     }
 
     .service-card {
-      background-color: rgb(28,30,25);
+      background: rgba(31,33,28,0.72);
       padding: 36px 44px;
       position: relative;
       overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 26px;
       transition: background 0.35s;
       display: flex;
       align-items: stretch;
       gap: 0;
       min-height: 300px;
       flex-direction: row-reverse;
-      box-shadow:
-        inset 1px 1px 0 rgba(0,0,0,0.28),
-        inset -1px -1px 0 rgba(255,255,255,0.14),
-        inset 0 3px 6px rgba(0,0,0,0.22),
-        inset 0 -2px 4px rgba(255,255,255,0.05);
     }
 
     .service-card-content {
@@ -1612,18 +1609,12 @@
     }
     .testimonials-track:hover { animation-play-state: paused; }
     .testimonial-card {
-      position: relative;
-      background-color: rgb(67, 76, 60);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 26px;
-      padding: 40px 36px;
+      background: var(--juniper);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 32px;
       width: 420px;
       flex-shrink: 0;
-      box-shadow:
-        inset 1px 1px 0 rgba(0,0,0,0.28),
-        inset -1px -1px 0 rgba(255,255,255,0.14),
-        inset 0 3px 6px rgba(0,0,0,0.22),
-        inset 0 -2px 4px rgba(255,255,255,0.05);
     }
     @keyframes star-light {
       0%   { color: var(--warm-honey); text-shadow: none; }
