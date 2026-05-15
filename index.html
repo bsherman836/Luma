@@ -1219,10 +1219,15 @@
     }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+    .service-card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      align-self: flex-start;
+      flex-wrap: wrap;
+    }
     .service-learn-more {
       display: inline-block;
-      align-self: flex-start;
-      margin-top: 20px;
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -1235,6 +1240,24 @@
       transition: background 0.2s;
     }
     .service-learn-more:hover { background: var(--sandstone); }
+    .service-prices {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+      background: transparent;
+      border: 1px solid var(--warm-honey);
+      text-decoration: none;
+      padding: 7px 17px;
+      border-radius: 100px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .service-prices:hover {
+      background: var(--warm-honey);
+      color: var(--midnight);
+    }
 
     /* Rainbow + sparkle hover for Gender Affirming Care */
     .service-learn-more.pride {
@@ -1829,7 +1852,10 @@
         <div class="service-card-content">
           <h3 class="service-title">Laser Hair Removal</h3>
           <p class="service-desc">Achieve permanent hair reduction with advanced laser technology calibrated for all skin tones and hair types. Safe, effective, and personalized — delivering lasting results in every session.</p>
-          <a href="laser-hair-removal.html" class="service-learn-more">Learn More</a>
+          <div class="service-card-actions">
+            <a href="laser-hair-removal.html" class="service-learn-more">Learn More</a>
+            <a href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services" target="_blank" rel="noopener" class="service-prices">Our Prices</a>
+          </div>
         </div>
         <div class="service-card-img" style="background: url('images/laser-hair-removal.webp') center/cover no-repeat;"></div>
       </div>
@@ -1837,7 +1863,10 @@
         <div class="service-card-content">
           <h3 class="service-title">Electrolysis</h3>
           <p class="service-desc">Electrolysis offers permanent hair removal that works across a wide range of hair colors and skin tones. Precise, thorough, and clinically proven — a trusted solution for lasting results.</p>
-          <a href="electrolysis.html" class="service-learn-more">Learn More</a>
+          <div class="service-card-actions">
+            <a href="electrolysis.html" class="service-learn-more">Learn More</a>
+            <a href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services" target="_blank" rel="noopener" class="service-prices">Our Prices</a>
+          </div>
         </div>
         <div class="service-card-img" style="background: url('images/electrolysis.webp') center/cover no-repeat;"></div>
       </div>
@@ -1845,7 +1874,10 @@
         <div class="service-card-content">
           <h3 class="service-title">Skin Treatments</h3>
           <p class="service-desc">Restore clarity and confidence with results-driven skin treatments guided by decades of clinical experience. From skin resurfacing to acne laser therapy — every treatment is tailored to your unique skin needs.</p>
-          <a href="skin-treatments.html" class="service-learn-more">Learn More</a>
+          <div class="service-card-actions">
+            <a href="skin-treatments.html" class="service-learn-more">Learn More</a>
+            <a href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services" target="_blank" rel="noopener" class="service-prices">Our Prices</a>
+          </div>
         </div>
         <div class="service-card-img" style="background: url('images/skin-treatments.webp') center/cover no-repeat;"></div>
       </div>
@@ -1853,7 +1885,10 @@
         <div class="service-card-content">
           <h3 class="service-title">Gender Affirming Care</h3>
           <p class="service-desc">We proudly offer a welcoming, inclusive, and affirming space for LGBTQIA+ clients seeking electrolysis and laser hair removal services. We understand that gender-affirming hair removal is a deeply personal journey, and our goal is to offer compassionate care tailored to your needs.</p>
-          <a href="gender-affirming-care.html" class="service-learn-more pride">Learn More</a>
+          <div class="service-card-actions">
+            <a href="gender-affirming-care.html" class="service-learn-more pride">Learn More</a>
+            <a href="https://book.squareup.com/appointments/lyff610olsalte/location/L9PXCF6VPWXRE/services" target="_blank" rel="noopener" class="service-prices">Our Prices</a>
+          </div>
         </div>
         <div class="service-card-img" style="background: url('images/gender-affirming-care.webp') center/cover no-repeat;"></div>
       </div>
