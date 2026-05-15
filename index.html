@@ -1660,6 +1660,10 @@
     .testimonial-card:hover .star:nth-child(4) { animation-delay: 0.27s; }
     .testimonial-card:hover .star:nth-child(5) { animation-delay: 0.36s; }
     @media (min-width: 901px) {
+      .testimonial-card .star,
+      .testimonial-card .star.half {
+        transition: color 0.9s ease-out, text-shadow 0.9s ease-out;
+      }
       .testimonial-card.stars-active .star { animation: star-light 0.5s ease-out both; }
       .testimonial-card.stars-active .star.half { animation: star-light-half 0.5s ease-out both; }
       .testimonial-card.stars-active .star.empty { animation: none; }
