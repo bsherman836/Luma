@@ -68,6 +68,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1739,9 +1740,120 @@
       .mobile-nav-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--warm-honey); opacity: 0.3; margin: 0 3px; cursor: pointer; transition: opacity 0.2s; }
       .mobile-nav-dot.active { opacity: 1; }
     }
+
+    /* WELCOME MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(31,33,28,0.72);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+
+    .modal-box {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      background: var(--surface);
+      color: var(--linen);
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      padding: 52px 48px 48px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+      transform: translateY(16px);
+      transition: transform 0.5s ease;
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: transparent;
+      color: var(--warm-honey);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .modal-close:hover { background: rgba(157,142,104,0.14); color: var(--linen); }
+
+    .modal-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--warm-honey);
+      margin: 0 0 14px;
+    }
+    .modal-title {
+      font-family: var(--serif);
+      font-size: 1.85rem;
+      line-height: 1.2;
+      margin: 0 0 18px;
+      color: var(--linen);
+    }
+    .modal-body {
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+    .modal-signature {
+      font-family: 'Herr Von Muellerhoff', cursive;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--warm-honey);
+      margin: 14px 0 0;
+      transform: rotate(-1deg);
+      transform-origin: left center;
+      display: inline-block;
+    }
+    .modal-link {
+      color: var(--warm-honey);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+    .modal-link:hover { color: var(--linen); }
+
+    @media (max-width: 600px) {
+      .modal-box { padding: 46px 26px 32px; }
+      .modal-title { font-size: 1.55rem; }
+    }
   </style>
 </head>
 <body>
+  <!-- WELCOME MODAL -->
+  <div class="modal-overlay" id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeModalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="welcomeModalClose" aria-label="Close">&times;</button>
+      <p class="modal-eyebrow">Welcome to Luma</p>
+      <h2 class="modal-title" id="welcomeModalTitle">A New Chapter Begins</h2>
+      <p class="modal-body">If you're looking for Jill Sherman's newest practice, Luma Laser &amp; Electrolysis, you're in the right place. Please close this message and continue exploring our website for information about our services and booking.</p>
+      <p class="modal-body">If you're looking for Bonnie Fissella or Olivia Duncan, they are now operating independently through Bare + Brilliant Studio. For more information, please visit <a class="modal-link" href="https://www.bareandbrilliant.studio" target="_blank" rel="noopener">www.bareandbrilliant.studio</a>.</p>
+      <p class="modal-body">Thank you for your patience during this transition.</p>
+      <p class="modal-signature">Jill Sherman</p>
+    </div>
+  </div>
+
   <div class="mobile-nav-cap"></div>
 
   <!-- NAV -->
@@ -2331,6 +2443,30 @@
         entries.forEach(e => btn.classList.toggle('in-view', e.isIntersecting));
       }, { threshold: 0.5 });
       obs.observe(card);
+    })();
+  </script>
+
+  <script>
+    // Welcome modal
+    (function () {
+      const overlay = document.getElementById('welcomeModal');
+      const closeBtn = document.getElementById('welcomeModalClose');
+      if (!overlay) return;
+
+      function open() {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', close);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+      window.setTimeout(open, 600);
     })();
   </script>
 
