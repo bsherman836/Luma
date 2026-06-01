@@ -417,6 +417,26 @@
     }
     .btn-ghost:hover { color: var(--linen); border-color: rgba(157,142,104,0.42); }
 
+    /* Centered hero (desktop only) */
+    @media (min-width: 1001px) {
+      /* Header + hero + marquee fill exactly one screen; marquee sits at the bottom edge */
+      .hero {
+        min-height: calc(100vh - 56px);
+        justify-content: center;
+        padding-top: 120px;
+        padding-bottom: 14px;
+      }
+      .hero-content {
+        align-items: center;
+        text-align: center;
+      }
+      .hero-eyebrow { justify-content: center; }
+      .hero-title { max-width: none; }
+      .hero-sub { max-width: 680px; margin-left: auto; margin-right: auto; }
+      .hero-bottom { justify-content: center; width: 100%; }
+      .hero-actions { justify-content: center; }
+    }
+
     .hero-scroll {
       position: absolute;
       bottom: 36px; left: 50%;
@@ -1821,6 +1841,7 @@
       line-height: 1;
       color: var(--warm-honey);
       margin: 14px 0 0;
+      text-indent: 0.3em;
       transform: rotate(-1deg);
       transform-origin: left center;
       display: inline-block;
@@ -1890,9 +1911,9 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <p class="hero-eyebrow fade-up">Lancaster, PA · Since 1989</p>
-      <h1 class="hero-title hero-title-desktop"><span style="white-space: nowrap;">Care that feels</span><br><em style="white-space: nowrap;">personal.</em></h1>
+      <h1 class="hero-title hero-title-desktop"><span style="white-space: nowrap;">Care that feels</span> <em style="white-space: nowrap;">personal.</em></h1>
       <h1 class="hero-title hero-title-mobile"><span style="white-space: nowrap;">Setting the standard for</span><br><em style="white-space: nowrap;">care.</em></h1>
-      <p class="hero-sub fade-up">Jill Sherman, formerly of Jill &amp; Bonnie's Hair Removal <br>and Skin Clinic, is partnering with Emma Schutte to <br>introduce Luma Laser &amp; Electrolysis—a family-owned <br>practice in Lancaster, PA built on 36 years of experience <br>in laser hair removal, electrolysis, and skin resurfacing.</p>
+      <p class="hero-sub fade-up">Jill Sherman, formerly of Jill &amp; Bonnie's Hair Removal and Skin Clinic, <br>is partnering with Emma Schutte to introduce Luma Laser &amp; Electrolysis— <br>a family-owned practice in Lancaster, PA built on 36 years of experience <br>in laser hair removal, electrolysis, and skin resurfacing.</p>
       <div class="hero-bottom">
         <div class="hero-actions fade-up">
           <a href="https://app.squareup.com/appointments/book/lyff610olsalte/L9PXCF6VPWXRE/start" target="_blank" rel="noopener" class="btn-primary">Book an Appointment</a>
