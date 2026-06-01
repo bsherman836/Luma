@@ -1108,6 +1108,12 @@
       opacity: 0.6;
     }
 
+    /* Center the "Confidence starts here" CTA banner (desktop only) */
+    @media (min-width: 1001px) {
+      .cta-banner { text-align: center; }
+      .cta-banner .section-label { justify-content: center; }
+    }
+
     .cta-email {
       display: inline-block;
       font-size: 1rem;
